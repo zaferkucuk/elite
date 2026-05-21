@@ -11,17 +11,83 @@ This is a **guidance document**, not authority.
 | Document | Contains | Authority |
 |---|---|---|
 | Project Instructions (Claude Project settings) | Behavior rules, positioning, language policy, safety gates | Authoritative |
-| `02-strategy/` documents | Strategic direction (three horizons, phase design) | Source of truth for scope |
-| `03-proposal/draft-de.md` | Customer-facing narrative | Source of truth for customer messaging |
+| `ARCHITECTURE.md` | Repo structure, file naming, three-layer information model | Source of truth for structure |
+| `docs/R&D/strategy/` documents | Strategic direction (three horizons, phase design) | Source of truth for scope |
+| `docs/R&D/elite-strategic-roadmap.md` | Customer-facing main deliverable | Source of truth for customer messaging |
 | `CLAUDE.md` (this file) | Navigation, references, operational hints | Guidance |
 
-**Conflict resolution:** defer to Project Instructions for behavior; defer to strategy documents for scope and sequence; defer to proposal draft for customer-facing language.
-
-> **Status note (May 2026):** Many referenced documents listed below are not yet created. Until they ship, work from this CLAUDE.md + Project Instructions + existing audit/research artifacts. Surface gaps to the user rather than acting on assumptions.
+**Conflict resolution:** defer to Project Instructions for behavior; defer to ARCHITECTURE.md for structure; defer to strategy documents for scope and sequence; defer to roadmap draft for customer-facing language.
 
 ---
 
-## 2. Customer & Engagement Reference
+## 2. Session Start Protocol — MANDATORY
+
+**At the start of every session, before any other action, Claude reads these three files in full:**
+
+1. `CLAUDE.md` — operational guidance (this file)
+2. `ARCHITECTURE.md` — repo structure and information model
+3. `docs/R&D/elite-strategic-roadmap.md` — current state of the main deliverable
+
+This is non-negotiable. Reading takes a few seconds; skipping creates drift, contradictions, and lost context across sessions.
+
+**Sequence:**
+
+1. User triggers session: "başla", "devam", "devam et", or similar
+2. Claude reads the three mandatory files in full (via `github:get_file_contents` from `zaferkucuk/elite`)
+3. Claude reads the **active workstream document** if a workstream is in progress (see Workstream Workflow)
+4. Claude presents a **session dashboard**:
+   - Where we are (active workstream, % complete)
+   - What's done since last session (if known)
+   - What's next (current task)
+   - Blockers (if any)
+5. If FREE MODE (between workstreams) → list 3-5 candidate next actions, ask "neyi ilerletmek istiyorsun?"
+6. Wait for user's next instruction.
+
+**Do not skip step 2 even if context appears fresh.** Memory pointers can drift from document truth; the three files hold the truth.
+
+**If a mandatory file is missing** (e.g. `elite-strategic-roadmap.md` not yet created): say so explicitly, do not proceed silently. Surface the gap to the user.
+
+---
+
+## 3. Repo Structure (quick reference)
+
+For full structure see `ARCHITECTURE.md`. Quick map:
+
+```
+elite/
+├── README.md
+├── CLAUDE.md                              ◀ this file
+├── ARCHITECTURE.md
+│
+└── docs/R&D/
+    ├── elite-strategic-roadmap.md         ◀ MAIN DELIVERABLE
+    ├── appendices/                        ◀ customer-facing deep documents (A–F)
+    ├── research/                          ◀ raw research (Soluty internal, archived)
+    ├── context/                           ◀ customer profile, positioning, meetings
+    ├── strategy/                          ◀ internal strategy notes
+    ├── internal/                          ◀ productization, decisions, blackbox
+    └── assets/                            ◀ diagrams, screenshots
+```
+
+---
+
+## 4. Three-Layer Information Model
+
+Every topic produces three artifacts at three different layers. This is the core working pattern.
+
+| Layer | Location | Reader | Lifecycle |
+|---|---|---|---|
+| **Raw research** | `docs/R&D/research/YYYY-MM-DD-<topic>-raw.md` | Soluty (internal) | Frozen on creation, dated archive |
+| **Appendix** | `docs/R&D/appendices/<letter>-<topic>.md` | Customer (deep readers) | Versioned (v1.0, v1.1) |
+| **Roadmap summary** | `docs/R&D/elite-strategic-roadmap.md` (relevant section) | Customer (all) | Lives with main doc version |
+
+**Flow:** raw research → distill into appendix → extract summary into roadmap section + reference appendix at end.
+
+**Implication for Claude:** when a topic is worked on, ask which layer the current task targets. Don't write to one layer assuming it will trickle to others — flow is explicit.
+
+---
+
+## 5. Customer & Engagement Reference
 
 ### Customer
 
@@ -44,7 +110,7 @@ This is a **guidance document**, not authority.
 | Trainers (4) | Subject matter for capability design; world-class credentials, brand asset |
 | Members | End users in Phase 1 (mobile app); voice in Phase 0 user interviews |
 
-Detailed personal context lives in `00-context/customer-profile.md` (not yet created — load when written).
+Detailed personal context lives in `docs/R&D/context/customer-profile.md`.
 
 ### Engagement vision (three horizons)
 
@@ -56,74 +122,32 @@ Detailed personal context lives in `00-context/customer-profile.md` (not yet cre
 
 ---
 
-## 3. Documentation Map
-
-| Layer | Location | Purpose | Load when |
-|---|---|---|---|
-| Project Instructions | Claude Project settings | Behavior rules, positioning, safety | Every session start |
-| Context | `00-context/` | Customer profile, positioning notes, meeting records | Customer-facing work |
-| Audit | `01-audit/` | Technical/SEO/GEO findings, compliance gaps, open questions | Diagnosis or current-state discussion |
-| Strategy | `02-strategy/` | Three horizons, phase design, win strategy, competitive research | Scope or phase discussion |
-| Proposal | `03-proposal/` | Outline, German draft, visual assets | Drafting or revising the customer document |
-| Internal | `04-internal/` | Productization notes, decisions log, blackbox lessons | Pricing, productization, retrospection |
-| This file | `CLAUDE.md` (repo root) | Operational navigation | Every session start |
-
-### Sub-folder detail
-
-**`00-context/`**
-- `customer-profile.md` — principals, dynamics, decision-making patterns *(TBD)*
-- `our-positioning.md` — concrete language/tone decisions, sample phrases *(TBD)*
-- `meeting-notes/YYYY-MM-DD-<topic>.md` — one file per customer interaction
-
-**`01-audit/`**
-- `technical-seo-geo.md` — site audit, tech stack, SEO/GEO gaps ✅
-- `compliance.md` — §312k BGB, GoBD, DSGVO, Google Fonts risk *(TBD)*
-- `measurement-baseline.md` — PageSpeed, BuiltWith, security headers measurements *(TBD)*
-- `open-questions.md` — pending customer clarifications *(TBD)*
-
-**`02-strategy/`**
-- `three-horizons.md` — horizon narratives, transitions *(TBD)*
-- `phase-design.md` — Horizont 1 four-phase breakdown, dependencies, risks *(in progress in chat)*
-- `competitive-research.md` — 20+ product market analysis ✅ (as artifact)
-- `win-strategy.md` — closing approach, objection handling *(TBD)*
-
-**`03-proposal/`**
-- `outline-de.md` — section skeleton with descriptions ✅
-- `draft-de.md` — full German proposal *(TBD, growing)*
-- `assets/diagrams/` — process maps, timelines, positioning matrices
-- `assets/screenshots/` — current-site issue proofs
-
-**`04-internal/`**
-- `productization-notes.md` — what's extractable for future SaaS *(TBD)*
-- `decisions.md` — engagement-direction-changing decisions *(TBD)*
-- `blackbox.md` — incident/insight learnings *(TBD)*
-
----
-
-## 4. Engagement Entry Points
-
-When working on a topic, start here:
+## 6. Documentation Map (where work goes)
 
 | Concern | Location |
 |---|---|
-| Customer principals, dynamics | `00-context/customer-profile.md` |
-| What language/tone to use | `00-context/our-positioning.md` + Project Instructions |
-| What we found on the site | `01-audit/technical-seo-geo.md` |
-| Legal risk landscape | `01-audit/compliance.md` |
-| Why this sequence | `02-strategy/three-horizons.md` + `02-strategy/phase-design.md` |
-| Phase scope | `02-strategy/phase-design.md` |
-| Competitor positioning | `02-strategy/competitive-research.md` |
-| Customer-facing narrative | `03-proposal/outline-de.md` (skeleton) → `draft-de.md` (full) |
-| Section we already wrote | Search `draft-de.md` first; do not duplicate |
-| Past meeting takeaways | `00-context/meeting-notes/` |
-| Open questions for customer | `01-audit/open-questions.md` |
-| Decision rationales | `04-internal/decisions.md` |
-| What we'll productize later | `04-internal/productization-notes.md` |
-| Lessons from prior incidents | `04-internal/blackbox.md` |
+| Customer principals, dynamics | `docs/R&D/context/customer-profile.md` |
+| Language/tone decisions | `docs/R&D/context/our-positioning.md` |
+| Past meeting notes | `docs/R&D/context/meeting-notes/YYYY-MM-DD-<topic>.md` |
+| Site audit findings | merged into `docs/R&D/appendices/A-technical-audit.md` (raw in `research/`) |
+| Legal risk landscape | `docs/R&D/appendices/B-legal-details.md` (raw in `research/`) |
+| Process maps | `docs/R&D/appendices/C-process-maps.md` |
+| Global benchmarks | `docs/R&D/appendices/D-global-benchmarks.md` (raw in `research/`) |
+| Competitive software analysis | `docs/R&D/appendices/E-competitive-software.md` (raw in `research/`) |
+| Soluty references | `docs/R&D/appendices/F-soluty-references.md` |
+| Three-horizon narrative | `docs/R&D/strategy/three-horizons.md` |
+| Phase design | `docs/R&D/strategy/phase-design.md` |
+| Closing strategy | `docs/R&D/strategy/win-strategy.md` |
+| Customer-facing main deliverable | `docs/R&D/elite-strategic-roadmap.md` |
+| Diagrams (process maps, timelines, matrices) | `docs/R&D/assets/diagrams/` |
+| Site issue screenshots | `docs/R&D/assets/screenshots/` |
+| Productization opportunities | `docs/R&D/internal/productization-notes.md` |
+| Direction-changing decisions | `docs/R&D/internal/decisions.md` |
+| Post-incident lessons | `docs/R&D/internal/blackbox.md` |
 
 ---
 
-## 5. Research & Analysis Tools
+## 7. Research & Analysis Tools
 
 ### Web research
 
@@ -163,7 +187,7 @@ When access is needed, the user requests it from the customer in writing, in a c
 
 ---
 
-## 6. Workstream Workflow
+## 8. Workstream Workflow
 
 ### State transitions
 
@@ -184,7 +208,7 @@ PLANNED → ACTIVE → COMPLETED
 ### Workstream complete
 
 1. Clear workstream from memory, mark complete
-2. Update relevant strategy/proposal document with final state
+2. Update relevant strategy/roadmap document with final state
 3. Run transition checks (below)
 4. Load next workstream if ready
 
@@ -227,7 +251,7 @@ If any check fails: stop, inform the user, offer rollback.
 
 ---
 
-## 7. Engagement Gotchas
+## 9. Engagement Gotchas
 
 Operational quirks specific to this engagement, not policy.
 
@@ -237,7 +261,7 @@ When the owner proposes futuristic features (face recognition, "best in Europe",
 
 ### Operations lead is the real product user
 
-Drafting decisions should privilege the operational lead's pain over the owner's vision. Owner signs the contract; operations lead lives with the product daily. Win the operations lead in writing (their words quoted in the proposal) and the owner follows.
+Drafting decisions should privilege the operational lead's pain over the owner's vision. Owner signs the contract; operations lead lives with the product daily. Win the operations lead in writing (their words quoted in the roadmap) and the owner follows.
 
 ### Pricing is never floated casually
 
@@ -245,7 +269,7 @@ Pricing is approved by the user (Soluty side) before any number reaches a custom
 
 ### Phase 0 is the only commitment in play
 
-Until Phase 0 contract is signed, Phase 1+ scope is illustrative — not promised. Phase 1 details belong in the proposal as direction, not commitment. The proposal's "Nächste Schritte" section should commit only to Phase 0.
+Until Phase 0 contract is signed, Phase 1+ scope is illustrative — not promised. Phase 1 details belong in the roadmap as direction, not commitment. The roadmap's "Nächste Schritte" section should commit only to Phase 0.
 
 ### Legal claims age fast
 
@@ -257,11 +281,15 @@ Stating "Magicline doesn't do X" or "Eversports lacks Y" requires primary source
 
 ### Two-language drift risk
 
-Turkish working drafts and German final text must say the same thing. When a German edit is made directly in `draft-de.md`, the Turkish working note in the corresponding `02-strategy/` section should be updated, not abandoned. Periodic consistency check before customer-facing review.
+Turkish working drafts and German final text must say the same thing. When a German edit is made directly in the roadmap, the Turkish working note in the corresponding `strategy/` section should be updated, not abandoned. Periodic consistency check before customer-facing review.
+
+### Three-layer discipline
+
+When working on a topic, always be explicit about which layer is being written: raw research, appendix, or roadmap summary. Don't conflate. Raw research is frozen on creation; appendix is versioned; roadmap summary references appendix.
 
 ### Markdown table rendering in PDF export
 
-When the proposal goes to PDF, large markdown tables sometimes break across pages awkwardly. Keep critical comparisons to ≤6 columns and use page-break-friendly section dividers. For complex matrices, ship a separate landscape-orientation appendix page.
+When the roadmap goes to PDF, large markdown tables sometimes break across pages awkwardly. Keep critical comparisons to ≤6 columns and use page-break-friendly section dividers. For complex matrices, ship a separate landscape-orientation appendix page.
 
 ### One workstream at a time means it
 
@@ -269,37 +297,14 @@ Switching workstreams mid-task without an explicit pause is the fastest way to l
 
 ---
 
-## 8. Quick Reference: File Locations
-
-| Task | Location |
-|---|---|
-| Update customer principals or dynamics | `00-context/customer-profile.md` |
-| Update language/tone decisions | `00-context/our-positioning.md` |
-| Log a customer meeting | `00-context/meeting-notes/YYYY-MM-DD-<topic>.md` |
-| Add audit finding | `01-audit/technical-seo-geo.md` or `compliance.md` |
-| Log a measurement (PageSpeed, etc.) | `01-audit/measurement-baseline.md` |
-| Add open question for customer | `01-audit/open-questions.md` |
-| Define a horizon narrative | `02-strategy/three-horizons.md` |
-| Design or revise a phase | `02-strategy/phase-design.md` |
-| Add competitive intelligence | `02-strategy/competitive-research.md` |
-| Refine the closing approach | `02-strategy/win-strategy.md` |
-| Edit the proposal outline | `03-proposal/outline-de.md` |
-| Add or revise a proposal section | `03-proposal/draft-de.md` |
-| Add a process map or timeline | `03-proposal/assets/diagrams/` |
-| Add a current-site screenshot proof | `03-proposal/assets/screenshots/` |
-| Note a productization opportunity | `04-internal/productization-notes.md` |
-| Log an engagement-direction decision | `04-internal/decisions.md` |
-| Capture a post-incident lesson | `04-internal/blackbox.md` |
-
----
-
-## 9. Closing Note
+## 10. Closing Note
 
 ```
-Project Instructions    → How Claude behaves (Authoritative)
-02-strategy/            → What we propose (Source of truth for scope)
-03-proposal/draft-de.md → What the customer reads (Source of truth for messaging)
-CLAUDE.md (this file)   → How to navigate the work (Guidance)
+Project Instructions               → How Claude behaves (Authoritative)
+ARCHITECTURE.md                    → How the repo is structured (Authoritative)
+docs/R&D/strategy/                 → What we propose (Source of truth for scope)
+docs/R&D/elite-strategic-roadmap.md → What the customer reads (Source of truth for messaging)
+CLAUDE.md (this file)              → How to navigate the work (Guidance)
 ```
 
 When uncertain, consult Project Instructions, surface the decision to the user, or default to the safer no-op.
@@ -308,5 +313,5 @@ When uncertain, consult Project Instructions, surface the decision to the user, 
 
 *Operational guidance only. Authority lives in the documents above.*
 
-**Last Updated:** 2026-05-19
-**Version:** 0.1
+**Last Updated:** 2026-05-21
+**Version:** 0.2 (docs/R&D architecture, mandatory session start protocol)
