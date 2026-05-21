@@ -2,5 +2,5 @@
 
 Process map, timeline, konumlandırma matrisi gibi vektör görseller.
 
-Adlandırma: `<section>-<purpose>-v<N>.{svg,png,fig}`
+**Adlandırma:** `<bölüm>-<amaç>-v<N>.{svg,png,fig}`
 Kaynak dosyalar export'larla birlikte saklanır.
