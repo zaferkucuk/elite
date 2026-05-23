@@ -210,11 +210,428 @@ Bilinçli olarak kopyalamadığımız iki marka var. Equinox lüks lifestyle mod
 
 **Çıktı maddeleri:** 4-5 madde
 
+---.
+6.2 Horizont 1 — Vier Phasen
+Horizont 1 dört fazdan oluşuyor. Her faz kendi içinde tamamlanan, ölçülebilir bir teslimat. Sıra mantıksal: önce operasyonun çekirdeği oturuyor, sonra üyelerin cebinde taşıdığı uygulama geliyor, ardından dış dünyaya yüzünüz olan web sitesi, en sonda mali entegrasyon. Her fazın bitişinde sistem çalışır halde — sonraki faza geçmeden de kalabilirsiniz.
+
+⚖️ İkon hakkında. Bu bölümde ⚖️ işaretini gördüğünüz her özellik Almanya yasal zorunluluğu içerir. Soluty altyapıyı standarda uygun kurar; uygulama ve devreye alma kararı sizdedir.
+
+
+6.2.1 Faz 1 — Mitglieder-Operations Core (Operasyonun Çekirdeği)
+
+Ne çıkıyor? Web tabanlı yönetim paneli. Tüm üye, sözleşme, ödeme, sınıf ve sınav operasyonu tek yerden yönetiliyor. Üyeler henüz sistemi kullanmıyor — onlar Faz 2'de geliyor.
+Bu faz üç gerçek soruna eş zamanlı çözüm getiriyor: kâğıt sözleşmenin tamamen ortadan kalkması, ödemenin otomatikleşmesi, dövüş sanatlarına özel müfredat takibinin sisteme girmesi. Sistemin omurgası burada kuruluyor; sonraki üç faz bu omurganın üzerine ekleniyor.
+Sistem omurgası
+
+🔐 Kullanıcı, rol ve yetkilendirme: admin, operasyonel sorumlu, antrenör için ayrı yetki setleri
+📜 Audit Trail (değişiklik geçmişi) ⚖️ Yasal zorunluluk; Soluty standarda uygun kurar.
+🌐 Çok dilli arayüz: Almanca, İngilizce, Türkçe
+🛡️ DSGVO altyapısı ⚖️ Yasal zorunluluk; Soluty AB veri merkezi, silme/aktarma akışlarını kurar.
+💾 Otomatik yedekleme ve felaket kurtarma
+🧪 Test ve canlı ortam ayrımı: her değişiklik önce test edilir
+🔔 Bildirim merkezi: yeni fesih, başarısız ödeme, 14+ gündür gelmeyen üye, sınava hazır üye — hepsi tek görev kuyruğunda
+🏢 Çoklu lokasyon altyapısı: bugün tek lokasyon, gerektiğinde aynı uygulama birden fazla lokasyonda çalışacak şekilde tasarlanır
+
+Üye yönetimi
+
+👤 Üye CRM: profil, iletişim, fotoğraf, üyelik durumu, geçmiş
+👨‍👩‍👧 Aile hesabı hiyerarşisi: bir veli + birden fazla çocuk, ortak fatura, tek girişten yönetim
+🩺 Sağlık beyanı ve sorumluluk reddi ⚖️ Yasal zorunluluk (sağlık verileri için ayrı açık rıza); Soluty altyapıyı kurar.
+
+Sözleşme yönetimi ve yasal uyum
+
+📝 Dijital sözleşme oluşturma: tıklayarak onay, e-posta teyit, PDF arşiv
+🔄 Sözleşme yenileme ve süre yönetimi ⚖️ Yasal zorunluluk (otomatik yenileme kuralları); Soluty altyapıyı kurar. Bitime yakın üyelere otomatik bildirim, üyenin yenilemeyi durdurabileceği akış, durdurulmazsa belirsiz süreye geçiş ve yenilenmiş dönemin yazılı arşivi.
+📚 AGB versiyon yönetimi ⚖️ Yasal zorunluluk; üyenin imzaladığı sürüm arşivlenir.
+🚪 Kündigungsschaltfläche ⚖️ Yasal zorunluluk; Soluty altyapıyı kurar. Devreye alma kararı sizdedir.
+❄️ Beitragsfreistellung yönetimi: üyelik dondurma akışı (hastalık, hamilelik, yurtdışı)
+
+Ödeme ve tahsilat
+
+🏦 SEPA-Lastschrift ⚖️ Yasal zorunluluk (mandat ve ön bildirim); Soluty SEPA standartlarına uygun kurar.
+💳 Kart ödemesi (Stripe veya GoCardless)
+🔁 Otomatik aylık tahsilat
+🧾 Fatura oluşturma ⚖️ Yasal zorunluluk (sıralı numara, denetlenebilir kayıt); Soluty altyapıyı kurar.
+⚠️ Başarısız tahsilat bildirimleri: ödeme tahsil edilemediğinde üyeye e-posta + mobil bildirim (Faz 2 sonrası) ile uyarı
+🔄 Rücklastschrift süreci ⚖️ Yasal zorunluluk (ücret sınırı); Soluty yasal sınırlar içinde otomatik takip akışı kurar.
+📊 Ödeme geçmişi raporu: üye bazlı, dönemlik
+
+Sınıf yönetimi ve katılım
+
+🗓️ Sınıf programı: antrenör ataması, sınıf tipi tanımı
+🪑 Kontenjan ve bekleme listesi
+📉 Devamsızlık raporu: 14+ gün gelmeyenler otomatik listede, antrenör için "iletişime geç" görevi düşer
+📲 QR kod ile giriş (kiosk modu)
+
+Dövüş sanatlarına özel modül
+
+🥋 9 kademe kuşak ve Prüfung sistemi
+
+Her kuşak için minimum devam, minimum süre, teknik checklist
+Üye için ilerleme yüzdesi (üye kendi ilerlemesini Faz 2'de mobil uygulamadan görür)
+Çocuk programı için ayrı kuşak hiyerarşisi (renk bantları)
+Sınav (Graduierung) etkinliği: hazır üye listesi, sınav günü programı, geçme/kalma kaydı, sertifika çıktısı
+
+
+
+Etkinlik yönetimi
+
+🎯 Etkinlik, seminer ve kamp modülü
+
+Etkinlik oluşturma, tarih, kontenjan
+Katılım kaydı (üye + üye olmayan)
+Etkinliğe özel ödeme akışı
+Katılım listesi ve sertifika
+
+
+
+Antrenör operasyonu
+
+🧑‍🏫 Antrenör profili ve atanmış dersler
+📅 Antrenör ders programı görüntüleme (web — mobil tarafı Faz 2)
+✅ Antrenör görevleri: devamsız üyeye ulaşma, sınava hazır üye listesi
+
+İletişim modülü
+
+📧 E-posta gönderimi ve tetikleyici sistem: manuel, şablon, otomatik akışlar (hoş geldin, ödeme bildirimi, doğum günü, devamsızlık iletişimi, sınav daveti)
+📣 Kampanya modülü: toplu e-posta, segmentli liste, abonelik tercih yönetimi
+
+Admin paneli ve raporlama
+
+🔍 Üye listesi: gelişmiş filtre, arama
+📈 Dönemlik raporlar (günlük, haftalık, aylık, yıllık seçilebilir): gelir, aktif üye sayısı, churn, devamsızlık, tahsilat başarı oranı
+🥊 Kickboxing'e özel raporlar: kuşak dağılımı, sınava hazır olanlar listesi, antrenör başına ders ve üye
+
+Faz 1 sonunda Elite'in durumu: Kâğıt sözleşme ortadan kalkmış, üye verisi tek yerde, ödeme otomatik, sınav günü planlaması sistematik, antrenörlerin görev listesi net. Operasyonel sorumlunuz günlük 2-3 saatlik manuel iş yerine 30 dakikalık denetim moduna geçer.
+
+6.2.2 Faz 2 — Mobile App 
+Ne çıkıyor? Markalı, iOS ve Android için yerel mobil uygulama. App Store ve Play Store'da "Elite Kickboxing" adıyla yayında. Üyeler, veliler ve antrenörler bu uygulamayı kullanır. Faz 1'in admin paneli bu uygulamanın arkasında çalışıyor — aynı veri, farklı pencere.
+Mobil uygulama temeli
+
+📱 Native iOS ve Android uygulaması: Elite Kickboxing markalı, App Store + Play Store
+🔔 Push bildirim
+🌐 Çok dilli arayüz: Almanca, İngilizce, Türkçe
+
+Üye self-service
+
+⚙️ Profil yönetimi: kendi adres, iletişim, iletişim tercihleri
+💼 Üyelik durumu görüntüleme
+🧾 Ödeme geçmişi ve fatura indirme
+📤 Veri dışa aktarma ⚖️ Yasal zorunluluk (DSGVO veri portabilitesi); üye kendi verisini indirebilir.
+🔕 Bildirim tercih yönetimi: hangi bildirimlerin (ders hatırlatma, sınav daveti, etkinlik, pazarlama) açık olacağını üye kendi seçer
+🔐 Üye yetkilendirme: aktif üye, eski üye ve üye olmayan ziyaretçi farklı içerik kapsamı görür
+
+Üye takvimi
+
+📅 Kendi ders ve etkinlik rezervasyonlarının kişisel takvim görünümü
+⏰ Yaklaşan derslere hatırlatma
+
+Üye ders ve etkinlik akışı
+
+🗓️ Ders programı görüntüleme, rezervasyon ve iptal
+🪑 Bekleme listesine yazılma (yer açıldığında otomatik terfi ve bildirim)
+🎯 Etkinlik görüntüleme ve kayıt: sınav, seminer, kamp
+
+Üye sözleşme ve yasal arayüz
+
+🚪 Kündigungsschaltfläche (üye tarafı) ⚖️ Yasal zorunluluk; Faz 1'de kurulan akışın üye tarafı.
+🔄 Sözleşme yenileme bildirimi ve onay/durdurma akışı
+📄 Sözleşme arşivi: imzalı sözleşmenin PDF olarak görüntülenmesi ve indirilmesi
+
+Aile kullanımı (Familienkonto)
+
+👨‍👩‍👧 Tek veli girişiyle birden fazla aile üyesi arasında geçiş
+👶 Çocuğun kuşak ilerlemesi, devam durumu, sınav daveti
+💳 Aile faturası ve ödeme akışı (kardeşler tek faturada)
+
+Üye ilerlemesi
+
+🥋 Kendi kuşak ilerlemesi: mevcut kuşak, ilerleme yüzdesi, bir sonraki kuşağa kalan adımlar (devam + teknik kriterleri)
+📈 Antrenman geçmişi
+🏅 Kuşak sertifikası: sınavı geçen üye sertifikasını uygulamadan indirebilir
+
+Antrenör profili (üyenin görünümü)
+
+👤 Antrenör profil sayfası: özgeçmiş, derece, uzmanlık alanları, foto
+
+Antrenör tarafı
+
+📅 Kendi ders programı
+📋 Yoklama: ders sırasında katılım işaretleme
+🎯 Üye performans takibi: teknik kriter checklist'i ve değerlendirme notları
+📚 Ders planı görüntüleme ve hazırlama
+📝 Sınav öncesi değerlendirme formu: hangi üye hangi kriterde hazır
+
+Destek
+
+💬 App içi canlı chat
+
+Faz 2 sonunda Elite'in durumu: Üye artık tüm temel işlemini telefonundan yapıyor. Resepsiyondaki "kim ne istiyor" trafiği önemli ölçüde azalıyor. Aileler tek girişten çocuklarını yönetiyor. Antrenör kendi programını, yoklamasını, üye değerlendirmesini masaüstüne bağımlı olmadan yapıyor. Marka her gün üyenin telefonunda.
+
+### 6.2.3 Faz 3 — Neue Website (Dış Dünyaya Yüzünüz)
+
+**Ne çıkıyor?** Yeni elite-kickboxing.de. **Yapay zekâ çağına uyumlu, güncel web teknolojileriyle geliştirilen, sistemin diğer parçalarıyla tam entegre çalışan, markanın dış dünyaya açılan yüzü.** Site bağımsız bir tanıtım sayfası değil; Faz 1'deki yönetim altyapısının ve Faz 2'deki mobil uygulamanın doğal uzantısı — üye, antrenör ve yönetici web'den de giriş yapabilir, bazı akışlar (sözleşme yenileme, fesih, deneme dersi rezervasyonu) web'den başlayabilir.
+
+Bu fazda site bir **kazanma kanalına** dönüşüyor. Berlin'de "Kickboxing studio" arayan biri Google'da Elite'i bulup, siteye girip, deneme dersi rezerve edebiliyor; mevcut üye web tarayıcısından da hesabına erişebiliyor; antrenör ofisteki bilgisayardan ders programını yönetebiliyor. Klasik arama motorlarının yanı sıra ChatGPT, Perplexity, Google AI gibi yapay zekâ tabanlı arama deneyimlerinde de Elite'in görünür olması mimari karar olarak baştan kurgulanıyor.
+
+#### Marka ve kullanıcı deneyimi
+
+- 🎨 **Marka kimliğine uygun yeniden tasarım**
+- 📱 **Mobil öncelikli (responsive) yapı**
+- ⚡ **Hızlı yüklenme ve Core Web Vitals optimizasyonu**
+- 🌐 **Tam çok dilli içerik:** Almanca, İngilizce, Türkçe — tüm sayfalar ve blog dahil
+
+#### Sistemle entegre giriş ve akışlar
+
+- 🔑 **Web girişi:** üye, veli, antrenör, yönetici tek hesapla web'den de sisteme giriş yapar
+- ✍️ **Üye olma akışı:** siteden başlayıp Faz 1 altyapısına bağlanır, sözleşme dijital ortamda tamamlanır
+- 🚪 **Kündigungsschaltfläche** ⚖️ Yasal zorunluluk; üye fesih butonuna web'den de erişebilir.
+- 🔄 **Sözleşme yenileme akışı:** üye bildirim üzerine web'den onay veya durdurma yapabilir
+- 🥊 **Deneme dersi rezervasyonu**
+- 🎯 **Etkinlik tanıtım ve kayıt akışı:** kamp, seminer, sınav
+
+#### Yapay zekâ uyumlu yeni nesil arama (SEO + GEO + AI)
+
+Klasik Google arama optimizasyonunun ötesinde, ChatGPT, Perplexity, Google AI Overviews gibi yapay zekâ asistanlarının "Berlin'de en iyi kickboxing okulu" sorusuna Elite'i cevap olarak verebileceği bir altyapı kuruluyor.
+
+- 🤖 **AI motorları için yapısal içerik:** llms.txt, llms-full.txt — yapay zekâ asistanlarının siteyi okuyup alıntılayabilmesi için
+- 🔍 **Berlin'e özel yerel arama optimizasyonu** (klasik SEO)
+- 📍 **Google My Business entegrasyonu:** site üzerinde yorum karuseli + etkinliklerin otomatik olarak GMB'ye post edilmesi
+- 🏷️ **Schema.org yapısal veri:** Google'da zengin sonuçlar + AI motorlarının kaynak gösterebilmesi için
+- 🗂️ **robots.txt, sitemap.xml** (klasik arama motorları)
+
+#### Yasal sayfa altyapısı ⚖️
+
+- 📜 **AGB, Datenschutzerklärung, Impressum:** güncel ve uyumlu hâl
+- 🍪 **Cookie banner:** TDDDG uyumlu (Akzeptieren ve Ablehnen eşit görünürlükte)
+
+#### İletişim kanalları
+
+- 💬 **WhatsApp ile direkt bağlantı:** site üzerinden tıklayarak Elite'in WhatsApp hattına yazma
+- 📨 **İletişim formu:** site ziyaretçileri için klasik iletişim akışı
+- 🗺️ **Google Maps:** tıklanabilir konum, yol tarifi entegrasyonu
+
+#### İçerik altyapısı
+
+- 📝 **Blog veya haber bölümü altyapısı**
+- 🧑‍🏫 **Antrenör tanıtım sayfaları** (foto, kısa biyografi, dersler, kuşak/derece)
+- 🥊 **Sınıf tanıtım sayfaları**
+- 📸 **Foto/video galeri**
+- 📲 **Sosyal medya entegrasyonu:** Instagram, YouTube feed *(derin sosyal medya yönetimi Horizont 2'de ayrı ele alınır)*
+
+**Faz 3 sonunda Elite'in durumu:** Web siteniz artık bir kazanma kanalı. Google aramalarında üst sıralarda görünüyorsunuz, ziyaretçi siteden doğrudan üye olabiliyor, mevcut üye web'den de hesabına erişebiliyor, yasal sayfalarınız güncel ve uyumlu. Sitenizden gelen üye doğrudan Faz 1 sistemine kaydedilir — manuel veri girişi yok.
+
+---
+
+6.2.4 Faz 4 — Buchhaltung-Integration (Muhasebe Entegrasyonu)
+
+Ne çıkıyor? Faz 1'de zaten düzenli ve denetlenebilir kayıt tutan sisteminiz, dış muhasebe dünyasına entegre olur. Steuerberater'ınızla veri paylaşımı tek tıklama olur; B2B faturalarında e-Rechnung standartları karşılanır.
+DATEV ve e-Rechnung
+
+📤 DATEV ihracı ⚖️ Yasal/sektörel standart; Steuerberater'lar tarafından beklenir.
+📄 e-Rechnung (XRechnung, ZUGFeRD) ⚖️ B2B faturalandırmada 01.01.2025'ten itibaren alma yükümlülüğü; gönderme yükümlülüğü 2027-2028'de kademeli.
+🤝 Steuerberater paylaşım workflow'u
+
+Denetim hazır arşiv
+
+🗄️ Vergi denetimine hazır arşiv ⚖️ Yasal zorunluluk (GoBD: 10 yıl saklama, değiştirilemezlik, izlenebilirlik); Soluty altyapıyı kurar.
+
+Faz 4 sonunda Elite'in durumu: Muhasebe Steuerberater'ınızla aynı dili konuşuyor. Aylık kapama 2-3 günden 1-2 saate düşer. Vergi denetimi geldiğinde sisteminiz hazır.
+
+Horizont 1'in tamamlanmasıyla Elite'in geldiği nokta
+Dört fazın sonunda Elite Kickboxing:
+
+Kâğıt sözleşmeden ayrılmış, tüm operasyon dijital
+Üyelerin tamamı markalı bir mobil uygulama kullanıyor
+Web sitesi yeni üye kazanan, Berlin'de yerel aramalarda öne çıkan bir kanal
+Muhasebe Steuerberater ile tek elden konuşan, uyum yükü düşük bir yapıda
+Yasal yükümlülüklerin tamamı (§312k BGB, §309 Nr. 9 BGB, DSGVO, GoBD, TDDDG, e-Rechnung) altyapı seviyesinde kurulmuş; uygulama ve devreye alma kararları size ait
+Antrenörler ve operasyonel ekip günlük işin %60-70'ini sistem üzerinden yapıyor
+
+Bu, "Almanya standardı"dır. Horizont 2 buradan başlar.
+---.
+
 ### 5.2 Horizont 2 — Wachstum & Integration (Europa-Standard)
 
 **Anlatı (1 paragraf):** "Wir bauen Ihr Wachstums-System. Lifecycle-Automation, Online-Shop, Events, Win-Back — operasyonun kendi başına büyümesini sağlayan motor. Marketing, retention ve gelir çeşitlendirme tek omurgada birleşir."
 
 **Çıktı maddeleri:** 4-5 madde
+
+### Horizont 2 Faz 1 — Communication Cockpit
+
+**Bütün iletişim tek noktadan yönetilir, yapay zekâ tarafından okunur, kategorize edilir, gerektiğinde otomatik cevaplar üretilir.**
+
+---
+
+Bugün Elite'in iletişimi parçalı bir gerçeklikte yaşıyor. WhatsApp telefonda, Instagram DM Instagram'da, post yorumları post'un altında, TikTok'tan gelenler başka bir yerde, e-posta inbox'ta, telefondaki konuşma da kâğıt üzerinde veya hiçbir yerde. Hepsini takip eden insan günün sonunda yorgun, ve bazılarını kaçırıyor.
+
+Communication Cockpit bu gerçekliği değiştiriyor. Hangi kanaldan gelirse gelsin, **her mesaj tek bir ekrana düşüyor**. Sistem o mesajı okuyor, kategorize ediyor, ve gerektiğinde sizin yerinize cevaplıyor.
+
+#### 🌅 Pratik bir senaryo
+
+Sabah 11'de masaya oturuyorsunuz. Tek bir ekran:
+
+- 👤 **3 potansiyel yeni üye** size ulaşmış — biri WhatsApp, biri Instagram DM, biri iletişim formundan. Sistem üçüne de otomatik karşılama mesajı vermiş, deneme dersi linkini eklemiş.
+- ℹ️ **5 bilgi talebi** var. Sistem ikisine sizin daha önce onayladığınız cevaplarla otomatik dönmüş. Diğerlerine cevap taslakları hazırlanmış.
+- 🧾 **2 fatura sorusu** var. Yapay zekâ üyeleri tanıyor — birinin faturasını otomatik göndermiş, diğerini hazırlamış, onayınıza bırakmış.
+- 🚨 **3 destek talebi.** Birinde üye sözleşmesini dondurmak istiyor. Sistem bunu acil işaretlemiş, telefonunuza bildirim yollamış — masaya oturmadan önce zaten haberiniz vardı.
+- 💬 **Instagram yorumu:** dünkü gönderinin altına "yeriniz nerede?" diye yorum gelmiş. Sistem Google Maps linkiyle nazikçe cevaplamış.
+
+Tek ekran, 13 etkileşim, çoğu kendiliğinden hallolmuş. Bu, bugün dünyada çok az şirketin sahip olduğu bir altyapı.
+
+#### 🤖 Yapay zekânın rolü
+
+- 🧭 **Kategorize eder:** her mesajı okur, ne hakkında olduğunu anlar
+- 💬 **Otomatik cevap verir:** rutin sorulara (saat, fiyat, konum) sizin onayladığınız tonda
+- 📝 **Taslak hazırlar:** karmaşık konularda size hazır cevap sunar
+- 🎯 **Önceliklendirir:** acil olanı listenin tepesine alır
+- 🧩 **Aynı kişiyi tanır:** sabah WhatsApp yazıp öğleden sonra arayan kişiyi birleştirir
+- 🕰️ **Geçmişi hatırlar:** "Bu kişi 4 ay önce de benzer bir konuda yazmıştı" — sistem karşınızdaki kişinin sizinle olan tarihçesinin tümünü anında önünüze koyar
+
+Hassas durumlar, hukuki ifadeler, karmaşık sorular size kalır. Ama günün ortalama %40-60'ı sizin müdahaleniz olmadan akar.
+
+#### 🌐 Bütün kanallar — Tek İletişim Noktası
+
+**Tek İletişim Noktası**, "her şey için tek platform" mottomuzun en önemli parçasını oluşturuyor. Aşağıdaki tüm kanallar bu noktada birleşir.
+
+##### 💬 WhatsApp
+Mesajlar otomatik düşer, kategorize edilir, rutin sorulara otomatik cevap verilir, karmaşık olanlara taslak hazırlanır. Yıllar boyu aynı numaradan yazışılan üyelerin geçmişi her mesajda elinizin altında ve yapay zekâ tarafından analiz edilebilir.
+
+##### 📷 Instagram
+Hem DM hem post yorumları yönetilir. "Yeriniz nerede?" gibi sorulara sistem Google Maps linkiyle otomatik cevap verir, daha karmaşık olanlar için öneri sunar. Mention'lar, story etkileşimleri takip edilir.
+
+##### 👍 Facebook
+Messenger DM'leri ve sayfa yorumları Cockpit'te toplanır. Instagram ile aynı mantıkta yönetilir; sistem rutin sorulara otomatik cevap verir, karmaşık olanlara taslak hazırlar.
+
+##### 🎵 TikTok
+DM ve yorumlar Cockpit'te toplanır, sistem cevap önerir veya doğrudan cevaplar.
+
+##### ▶️ YouTube
+Video yorumları takip edilir, kategorize edilir; sistem soru tipindeki yorumlara cevap önerir veya doğrudan cevaplar. Mention'lar görünür hâlde olur.
+
+##### 📧 E-posta
+İletişim formundan ve doğrudan info@ adresine gelen tüm e-postalar Cockpit'e düşer, üyeye bağlanır, önceliklendirilir.
+
+##### 📞 Telefon
+Sektörde **neredeyse hiçbir rakibin yapmadığı** entegrasyon. Modern dijital telefon hizmetlerine geçiş yapılarak Soluty sistemiyle tam entegre bir iletişim kanalına dönüşür. Yapılan konuşmalar sadece konuşma olarak kalmaz — **metin olarak sisteme kaydedilir**, konuşma geçmişleri kayıt altında olur. Arayan kişinin profili anında ekrana gelir; geçmiş konuşmalar, son ders, açık talepleri görünür. Konuşma sonrası özet ve aksiyon notu eklenir.
+
+##### 🌐 Web sitesi iletişim formu
+Faz 3'te kurulan formdan gelen her mesaj doğrudan Cockpit'e bağlanır.
+
+#### 🎯 Tek İletişim Noktasının anlamı
+
+"Yeni potansiyel üye" kategorinizdeki kişiler bazıları WhatsApp'tan, bazıları Instagram'dan, bazıları telefondan, bazıları birden fazla kanaldan birden geliyor. Eskiden bu sekiz farklı dünya idi. Bugün Cockpit'te **tek bir liste:** "Bu hafta size ulaşan 12 kişi" — hangi kanaldan, hangi durumda, hangisi sıcak hepsi tek ekranda.
+
+Aynı şey mevcut üyeler için de geçerli. Yıllar boyu, tüm kanallardan, tek bir konuşma akışı.
+
+#### 🏁 Faz sonunda
+
+- İletişim tek bir noktadan akar
+- Rutin yük %40-60 azalır
+- Hiçbir mesaj kaçmaz
+- Yanıt hızı 24-48 saatten dakikalara düşer
+- Karşınızdaki herkesin tarihçesi her temasta yanınızda
+- İletişimi yetiştirmek değil, **yönetmek** mümkün hâle gelir
+
+Bu, sektörde sahip olmayanların farkına varmadığı bir avantaj.
+
+---
+
+![Communication Cockpit örnek arayüz](./assets/communication-cockpit-mockup.png)
+
+*Yukarıdaki ekran sadece örnek bir görüntüdür — Communication Cockpit'in son tasarımı Phase 0 sonrası birlikte şekillendirilecektir.*
+
+---
+
+### Horizont 2 Faz 3 — Dahili AI Katmanı
+
+**Elite'i tanıyan, sistemden elde edilen datalarla zaman içinde gelişen, size özel olarak şekillenmiş bir yapay zekâ katmanı.**
+
+---
+
+Bu faz ile birlikte sistemde yapay zekânın temelleri atılır. Katman hem Elite'in ihtiyaçlarıyla zaman içinde şekillenir, hem de yapay zekâ sistemlerinin hızlı gelişimi sayesinde ilerleyen dönemlerde çok daha etkili hâle gelir.
+
+Bu, sokakta gezen genel bir AI değil. Sizin tonunuzu, sizin üye yapınızı, sizin operasyonel önceliklerinizi öğrenmiş, sizin için çalışan bir AI. Başlangıç aşamasında dört temel **ajan** sisteme dahil edilir — her biri belirli bir alanda uzmanlaşmış, ama hepsi aynı zekâ katmanından besleniyor.
+
+Önemli olan şu: AI sizin yardımcınız, kararlar sizde. Sistem öneri verir, taslak hazırlar, otomatik basit işleri halleder; karmaşık veya hassas konularda söz size kalır.
+
+---
+
+#### 🤖 Sisteme dahil edilen ajanlar
+
+##### 💬 Communication Agent
+
+Önceki fazda kurulan Communication Cockpit'in **AI beyni**. Bütün kanallardan gelen mesajları analiz eder, kategorize eder, önceliklendirir; otomatik cevap verilmesi gereken durumları yönetir; konu birisine aktarılması gerektiğinde doğru kişiye yönlendirir.
+
+**Senaryo:**
+> Sabah 09:14. WhatsApp'tan bir mesaj geliyor: *"Merhaba, geçen ay sözleşmemi yenilediniz mi? Otomatik tahsilat görmedim."* Communication Agent bir saniyede üç şey yapar: gönderen kişiyi tanır (Aylin Demir, üye 2024), konuyu kategorize eder (**ödeme · acil**), önceliği yükseltir. Aynı anda Aylin'in sözleşme durumunu kontrol eder — sözleşme aktif, ama bu ay SEPA tahsilatı 2 gün ertelenmiş. Operasyonel sorumlunun ekranında bildirim: *"Aylin'in cevabını hazır taslakla bekliyorum — onaylar mısınız?"* Cevap zaten doğru bilgiyle yazılmış, sadece imza bekliyor.
+
+##### 🎯 Support Agent
+
+Web sitesinin **dış dünyaya açılan akıllı yüzü**. Sitenin köşesinde bir konuşma ikonu var; siteye gelen ziyaretçi tıklayarak Support Agent ile konuşmaya başlayabilir. Soruları cevaplar, üyelik akışında yönlendirir, takıldığı noktalarda yardımcı olur. Karmaşık veya hassas durumlarda Elite ekibine aktarır.
+
+Bu agent aynı zamanda **bir reklam yüzü**: Elite'in yapay zekâ ile çalışan profesyonel bir yer olduğunu, daha sayfayı açan birinin saniyeler içinde hissetmesini sağlar.
+
+**Senaryo:**
+> Bir potansiyel üye web sitesinden ulaşıyor. *"Merhaba, çocuğum için kayıt yaptırmak istiyorum, nasıl ilerlemem gerek?"* Support Agent adım adım anlatır: yaş aralığı sorusu, deneme dersi önerisi, online kayıt formuna yönlendirme. Kişi formu dolduruyor, e-posta onayı bekliyor — ama mail gelmemiş. *"Aktivasyon e-postası gelmedi, ne yapmalıyım?"* Support Agent kontrol ediyor, spam klasörü kontrolü öneriyor, hâlâ yoksa "e-postanızı tekrar gönderdim, lütfen 2 dakika içinde bakın" diyor ve sistemden tetikliyor. Tüm bu sürede potansiyel üye **profesyonelce karşılanmış** hissediyor.
+
+##### 📊 Yönetici Asistanı
+
+Sahip ve operasyonel sorumlunun **konuşan veri analistidir**. Sistemin neredeyse tüm verisine okuma yetkisi vardır; bir soru sorduğunuzda gerçek veriyi sorgular, **gerçek rakamla** cevap verir. Tahmin etmez, uydurmaz; sayılar nereden geldiyse oradan gelir.
+
+**Senaryo 1:**
+> Sahip masada otururken sorar: *"Geçen ay ciromuz neydi?"* Yönetici Asistanı: *"Mayıs 2026 cironuz 28.450 €. Bunun 24.890 €'su üyelik tahsilatlarından, 2.110 €'su sınav ücretlerinden, 1.450 €'su seminer kayıtlarından."*
+
+**Senaryo 2:**
+> Sahip devam ediyor: *"Önceki üç yılın mayıs ayıyla kıyaslayıp grafikle göster."* Asistan: *"Mayıs 2023: 18.100 €, Mayıs 2024: 22.300 €, Mayıs 2025: 26.150 €, Mayıs 2026: 28.450 €. Yıllık ortalama büyüme %16.5."* Sohbetin altında **otomatik üretilmiş bir çubuk grafik** beliriyor — dört çubuk, büyüme oku, kısa not.
+
+**Senaryo 3:**
+> *"Hangi antrenörümüzün dersleri en yüksek devam oranına sahip?"* Asistan: *"Son 90 günde Oğuz Övgüer'in salı/perşembe sparring derslerinde devam oranı %87. Onu Ali El-Saleh izliyor (%83), sonra Max Baumert (%79). Detaylı kırılım ister misiniz?"*
+
+##### 👤 Üye Asistanı
+
+Mobil uygulamada her üyenin yanında çalışan, **kişisel ama yetki sınırlı** asistan. Üye kendine ait konularda ve genel bilgi konularında asistanla sohbet edebilir. Önemli olan **sınırlar net**: AI sadece izin verilen ölçüde bilgi sağlar. Başka üyelerin bilgisine asla erişemez, finansal işlem başlatamaz, hukuki söz veremez.
+
+**Senaryo 1:**
+> Bir üye akşam telefonundan uygulamayı açıyor: *"Bir sonraki kuşak sınavıma ne kadar kaldı?"* Üye Asistanı: *"Şu an sarı kuşaksın (4/9). Bir sonraki sınav için 18 derse ve 6 ay süreye ihtiyacın var. Şimdiye kadar 11 ders tamamladın, son sınavdan 4 ay geçti. Yaklaşık 2-3 ay içinde sınav hakkı kazanırsın. Antrenör notu: yan tekme tekniğin gelişme alanı olarak işaretli."*
+
+**Senaryo 2:**
+> *"Yarın hangi dersler var?"* Üye Asistanı: *"Yarın 18:00 sparring (Oğuz), 19:30 kickbox-cardio (Sophie), 20:30 ileri seviye sparring (Ali). Sparring 18:00 için 3 yer kalmış. Rezerve etmek ister misin?"*
+
+**Senaryo 3:**
+> *"Üyelik ücretimi nasıl değiştirebilirim?"* Üye Asistanı: *"Üyelik tarifeni değiştirmek için Elite ekibine başvurman gerekiyor. Sözleşme değişiklikleri AI tarafından yapılmıyor. Hemen Elite'e yazmamı ister misin?"* — Asistan **kendi sınırını biliyor** ve doğru yere yönlendiriyor.
+
+---
+
+#### 🔄 Sistemin sizi tanıma süreci — geri besleme döngüsü
+
+Bu fazın en önemli kısmı belki de **görünmeyen** kısmı.
+
+Sistem ilk gün açıldığında genel bir AI. Ama her gün, her etkileşim, her onay, her düzeltme, her "bu cevabı şöyle değiştirdim" — sisteme öğretiyor.
+
+- Communication Agent bir taslak hazırlıyor → siz değiştirip gönderiyorsunuz → sistem öğreniyor
+- Support Agent bir potansiyel üyeyi yönlendiriyor → kişi üye oluyor mu olmuyor mu → sistem öğreniyor
+- Yönetici Asistanı bir grafik üretiyor → siz "bu rakam doğru değil, şu kaynaktan al" diyorsunuz → sistem öğreniyor
+- Üye Asistanı bir cevap veriyor → üye memnun mu, takip sorusu mu geliyor → sistem öğreniyor
+
+Altı ay sonra Elite'in AI'ı **kendi tonunu**, **kendi jargonunu**, **kendi müşteri davranışını** bilir. Bir yıl sonra: dışarıdan gelen herhangi bir generic AI'la kıyaslandığında çok daha doğru, çok daha hızlı, çok daha "Elite gibi" cevaplar üretir.
+
+Bu **kümülatif bir avantajdır** — zaman geçtikçe artar, başka biri için kopyalanamaz. Çünkü o AI sizin verinizle, sizin ekibinizin onaylarıyla, sizin müşterilerinizin etkileşimleriyle şekillendi.
+
+---
+
+#### 🏁 Faz sonunda
+
+- Sistem yalnız bir araç olmaktan çıkar, **size özel bir asistana** dönüşür
+- Operasyonel ekibin rutin yükü azalır — AI, basit işleri kendi başına halleder
+- Dış dünya Elite'i farklı görür: web sitesi profesyonel bir AI ile karşılayan bir yer
+- Sahip her veriye doğrudan ve hızlı erişir — rapor istemek için kimseyi beklemek gerekmez
+- Üyeler kendi sorularını ve durumlarını anında öğrenir; bekleme süresi minimum
+- En önemlisi: sistem **her geçen gün akıllanır**, bu yatırım zamanla daha değerli olur
+
+Bu, AI çağında ölçeklenebilir bir operasyonun temelidir. İlerleyen ufuklarda bu temel üzerine daha gelişmiş yetenekler (görsel zekâ, otonom karar mekanizmaları, edge teknolojiler) inşa edilir.
+
+---
 
 ### 5.3 Horizont 3 — Intelligente Operation (Welt-Spitze)
 
