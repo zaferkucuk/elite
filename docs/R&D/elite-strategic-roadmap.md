@@ -453,9 +453,9 @@ Bu, "Almanya standardı"dır. Horizont 2 buradan başlar.
 
 ### 5.2 Horizont 2 — Tek Platform & Dahili Yapay Zekâ (Europa-Standard)
 
-**Anlatı (1 paragraf):** "Wir verbinden alles zu einer Plattform — und geben Ihnen Ihre eigene KI. Horizont 2'de Elite'in operasyonu tek omurgada birleşir: iletişim, ticaret, içerik üretimi ve dahili yapay zekâ — hepsi sizin için çalışan, sizi öğrenen tek bir sisteme dönüşür."
+**Anlatı (1 paragraf):** "Wir verbinden alles zu einer Plattform — und geben Ihnen Ihre eigene KI. Horizont 2'de Elite'in operasyonu tek omurgada birleşir: iletişim, dahili yapay zekâ, medya yönetimi ve ticaret — hepsi sizin için çalışan, sizi öğrenen tek bir sisteme dönüşür."
 
-**Çıktı maddeleri:** Faz 1 Communication Cockpit · Faz 2 Dahili AI Katmanı · Faz 3 Content Engine · Faz 4 Online Shop
+**Çıktı maddeleri:** Faz 1 Communication Cockpit · Faz 2 Dahili AI Katmanı · Faz 3 Medya & Sosyal Medya Yönetimi · Faz 4 Online Shop
 
 ### Horizont 2 Faz 1 — Communication Cockpit
 
@@ -633,9 +633,120 @@ Bu, AI çağında ölçeklenebilir bir operasyonun temelidir. İlerleyen ufuklar
 
 ---
 
-### Horizont 2 Faz 3 — Content Engine
+### Horizont 2 Faz 3 — Medya & Sosyal Medya Yönetimi
 
-*Bu fazın detayı sonraki çalışma turunda işlenecek. Yüksek seviyede: marka inşası için içerik üretim motoru — blog yazıları, sosyal medya postları (Instagram, TikTok, YouTube, Facebook), e-posta kampanyaları, etkinlik tanıtımları. İçerik takvimi, görsel kanban, performans ölçümü. Önceki fazda tanıtılan AI altyapısı bu fazda içerik üretim yardımcısı olarak da çalışmaya başlar.*
+**Elite'in tüm medya birikimi tek bir adreste toplanır; sosyal medya disiplinli, izlenebilir ve algoritma farkındalığıyla yönetilir.**
+
+---
+
+Yıllar içinde Elite'in arkasında ciddi bir görsel ve metinsel birikim oluştu: videolar, fotoğraflar, antrenör portreleri, kuşak sınavı kayıtları, sunumlar, PDF dokümanlar. Belki de bu birikim bugün tek bir adreste yaşamıyor; bir kısmı telefonlarda, bir kısmı parçalı bulut depolarında, bir kısmı eski cihazlarda duruyor — hatta bir kısmı kaybolmuş bile olabilir.
+
+Aynı zamanda sosyal medya tarafı da bir disiplin arayışı içinde. Bir hafta yoğun, sonraki hafta sessiz; bir kanalda var, başka kanalda yok; bir post iyi iş çıkarıyor, neden olduğunu kimse tam ölçemiyor. İçerik yapılıyor ama **sistematik** yapılmıyor.
+
+Bu faz iki gerçek soruna eş zamanlı çözüm getiriyor.
+
+---
+
+#### 📚 Kanat A — Medya Kütüphanesi
+
+Elite'in tüm görsel ve metinsel birikiminin **tek bir adreste** yaşadığı, kolay aranabilir, etiketlenebilir, kategorize edilmiş bir kütüphane. Bu kütüphane, medya alanında uzmanlaşmış dünya standardı altyapılarla (Bunny.net, Cloudflare R2) bütünleşik biçimde, Soluty platformunun kendi arayüzünde yönetilir — Elite ekibi tek bir tutarlı ekrandan çalışır.
+
+**Pratik bir senaryo:**
+
+> Antrenör Oğuz cuma günü sparring sınıfında özel bir kombinasyon çalıştırdı, telefonundan iki video çekti. Sınıf bitiminde Elite uygulamasının "Medya Yükle" düğmesine bastı — videolar otomatik olarak sisteme aktarıldı. Sistem hemen küçük önizleme görüntülerini çıkardı, çekim tarihini ve süreyi yakaladı, antrenör adını ekledi. Operasyonel sorumlu pazartesi sabahı bu videoları görüyor, "sparring · cuma · Oğuz" etiketleriyle yerinde duruyor.
+>
+> Aynı sabah eski bir etkinlik fotoğrafı lazım oluyor. Geçen yaz Wittenbergplatz'ta yapılan açık hava etkinliği. Arama kutusuna "wittenbergplatz açık hava" yazıyor — 312 fotoğraf çıkıyor, tarih ve etkinlik bazlı gruplanmış. Üç tıklamada doğru fotoğrafa ulaşıyor.
+
+**Sistemin yapabildikleri:**
+
+- 🗂️ **Tüm medya türleri tek yerde:** video, fotoğraf, PDF, sunum, ses kayıtları, marka asset'leri
+- 🏷️ **Otomatik ve manuel etiketleme:** çekim tarihi, çekim yapan kişi, sınıf/etkinlik, kuşak seviyesi, ders tipi, kullanım durumu (yayında, taslak, arşiv)
+- 🔍 **Sıralanabilir ve filtrelenebilir görünüm:** tarihe, boyuta, türe, etikete göre — telefondaki galeri kadar sezgisel
+- 🤖 **Yapay zekâ destekli arama:** "Antrenör Sophie'nin çocuk dersinde çekilen fotoğraflar", "salonun dış cephesini gösteren videolar", "2024 yaz kampında çekilen tüm görseller" gibi doğal dilde aramalar yapılabilir. Sistem etiket, tarih, etkinlik ve içerik bilgisini birlikte değerlendirir
+- 🖼️ **Otomatik önizleme üretimi:** her video için küçük resim, ön kare seçimi, süre bilgisi
+- 🧩 **Sürüm yönetimi:** orijinal video + Reels için kesilmiş kısa versiyon + Instagram için kare versiyon — hepsi bir arada
+- 🎨 **Marka asset bölümü:** logolar, renk paleti, fontlar, kullanım rehberleri — antrenör veya operasyonel sorumlu doğru sürümü her zaman bulur
+- 📱 **Mobil ve web erişimi:** antrenör salondan çekim yükler, operasyonel sorumlu masaüstünden düzenler
+- 🔐 **Yetkilendirme:** kim ne yükleyebilir, kim ne görebilir — net çerçevede
+- 💾 **Otomatik yedekleme ve afet kurtarma:** medya tek noktada yaşıyor, ama o nokta birden fazla yedek katmanla korunuyor — yılların emeğinin kaybolma riski sıfır
+
+Bu artık dağınık dosya dünyasının sonu. Elite'in **kurumsal hafızası** bir adreste yaşar.
+
+---
+
+#### 📅 Kanat B — Sosyal Medya Yönetim Sistemi
+
+Sosyal medyayı yetiştirmek değil, **yönetmek** için kurulan disiplin altyapısı.
+
+**Pratik bir senaryo:**
+
+> Salı sabahı. Operasyonel sorumlu sistemi açıyor — bu haftanın yayın takvimi tek ekranda: 12 planlanmış post, 4 Reels, 3 Story, 5 carousel. Hangi gün hangi kanala gideceği görsel olarak görünüyor — kanban gibi sürüklenebilir.
+>
+> Cuma için yeni bir Reels eklemek istiyor. Medya Kütüphanesi'nden dünkü sparring videosunu sürüklüyor. Hangi kanallara gideceğini seçiyor: Instagram + Facebook + TikTok + YouTube Shorts. Yayın zamanını "Salı 19:30" olarak ayarlıyor ve onaylıyor — sistem o saatte tüm kanallara **otomatik olarak** yayını gerçekleştirecek. Caption taslağını yazıyor; sistem her platforma uyumlu varyasyonu öneriyor (Instagram'da uzun açıklama, TikTok'ta kısa, YouTube'da SEO odaklı başlık).
+
+**Sistemin yapabildikleri:**
+
+- 📋 **İçerik takvimi ve kanban:** taslak → onayda → planlanmış → yayında → arşiv. Aylık takvim, haftalık görünüm, sürükle-bırak
+- 🌐 **Tek post, çoklu kanal:** Instagram + Facebook + TikTok + YouTube — tek noktadan yayın, format dönüşümü otomatik
+- ⏰ **Zamanlanmış otomatik yayın:** istediğiniz saat ve gün için planlama, sistem onayladığınız zamanda tüm seçili kanallara yayını otomatik gerçekleştirir
+- 🎨 **Canva veya benzeri tasarım araçlarıyla bütünleşme:** ekibinizin alışık olduğu görsel tasarım aracı sistemin içinden çağrılır; ayrı sekme, ayrı abonelik yönetimi yok
+- ✏️ **Yapay zekâ destekli caption ve hashtag yardımı:** marka tonunda taslak, platform-uyumlu varyasyonlar
+- 👥 **Üye etkileşimi ve UGC:** üyelerin Elite'i etiketlediği postlar otomatik olarak görünür; üye onayıyla yeniden paylaşılabilir — gerçek müşteri ağzından gelen anlatı, en güçlü pazarlama
+- 📊 **Performans analitiği:** hangi post tuttu, hangi tutmadı, hangi saat dilimi en iyi engagement getiriyor, hangi format en çok izleniyor
+- 🔄 **Multi-amaçlı içerik:** uzun YouTube videosu → Reels parçaları + blog yazısı + carousel; bir çekimin beş kanaldaki ömrü
+
+---
+
+#### 🤖 Dahili AI Katmanına iki yeni eklenti
+
+Önceki fazda Elite'i tanıyan bir yapay zekâ katmanı kurmuş, dört ajan ile başlamıştık. **Bu ajanların zamanla genişleyeceğini söylemiştik** — Medya & Sosyal Medya Yönetimi fazında iki yeni ajan sisteme katılıyor.
+
+##### 🎯 Algoritma Asistanı
+
+Sosyal medya platformlarının (Instagram, TikTok, YouTube) bilinen sıralama sinyallerini ve Elite hesabının kendi geçmiş post performansını birleştiren bir danışman. Yapmak istediğiniz paylaşımı, sosyal medyada en fazla etkileşimi alabilecek şekilde değerlendirir ve analiz eder; **bir sosyal medya uzmanı gibi yanınızda durur**, önerilerde bulunur, danışmanlık yapar. Yeni bir post hazırlandığında inceler, **öneriler verir** — son kararı Elite ekibi alır.
+
+**Senaryo:**
+
+> Yeni bir sparring Reels yüklediniz. Algoritma Asistanı saniyeler içinde bakıyor:
+>
+> *"Bu video güzel bir an yakalamış. Üç küçük öneri:*
+> - *İlk 3 saniyeye bir merak unsuru eklersek — örneğin 'Sparring'de hep aynı hatayı yapıyor musunuz?' başlığı — izleyici videonun sonuna kadar kalır.*
+> - *Altyazı eklemek önemli; çünkü Reels'lerin çoğu sessiz izleniyor.*
+> - *Yayın için ideal zaman: Pazartesi 19:30 — Elite hesabınız geçmişte bu saatte en yüksek etkileşimi aldı."*
+
+##### 🌍 Trend Asistanı
+
+Dünyada dövüş sporları gündemini, sosyal medya trendlerini ve niche-uyumlu güncel olayları sürekli takip eden bir göz. Doğru anda doğru bağlamda görünmenin değerini bilir.
+
+**Senaryo:**
+
+> Pazartesi sabah brifingi:
+>
+> *"Bu Cumartesi UFC 305 maçı var; Adesanya rövanş maçı. Adesanya, sizin de referans modeliniz City Kickboxing'den. Önerim: cuma öncesi 'Adesanya tarzı sparring' temalı bir Reels hazırlayıp Cumartesi gece maçın hashtag dalgasında paylaşmak. İkinci öneri: bu hafta TikTok'ta yükselen üç ses parçasından ikisi dövüş sporları kompilasyonlarıyla uyumlu — sparring montajı için ideal."*
+
+#### 🎈 Dürüst bir not — takipçi sayısı hakkında
+
+Bu sistem **Elite'in takipçi sayısını garanti etmez** — hiçbir araç bunu dürüstçe yapamaz. Algoritma kararını platformlar veriyor; biz dışarıdan müdahale edemeyiz.
+
+Yapabildiği şu: Elite'in zaten ürettiği değeri — şampiyon antrenörleri, sınava giren üyelerinin emeği, gerçek topluluk anlarını — algoritmanın anladığı dilde, **disiplinli ve sürekli** olarak dış dünyaya taşımak. Tutarlılık, doğru zamanlama, doğru format, ölçülen sonuçlar.
+
+Takipçi büyümesi bunların doğal sonucudur. Sistem yardımcıdır — kararlar Elite ekibinde.
+
+---
+
+#### 🏁 Faz sonunda
+
+- Elite'in tüm medya birikimi tek adreste, aranabilir ve kullanılabilir hâlde
+- Yapay zekâ destekli arama sayesinde "şu antrenörün şu derste çektiği fotoğraflar" gibi doğal sorular cevap bulur
+- Sosyal medya yönetimi rastgele değil sistematik — kim, ne, ne zaman, hangi kanalda görülebilir
+- Zamanlanmış yayınlar otomatik gerçekleşir; ekip tek tek post atmak yerine stratejiyle ilgilenir
+- Dahili AI katmanı altı ajana çıktı; algoritma ve trend takibi yardımcı sistem olarak ekipte
+- Üyelerin ürettiği içerik (UGC) görünür hâlde — Elite'in gerçek anlatıcıları üyeleri
+- Medya tek noktada toplu, ama yedekli — yılların emeği korunuyor
+- İçerik üretimi günlük "ne paylaşsak" stresinden çıkar, **stratejik bir akışa** dönüşür
+- Marka yıllar içinde birikecek ölçülebilir bir dijital varlığa dönüşür
+
+Bu faz, Elite'in salon içindeki gerçek değerinin dış dünyaya **disiplinli biçimde** taşınmasının altyapısıdır.
 
 ---
 
@@ -786,10 +897,10 @@ Bu, AI çağında ölçeklenebilir bir operasyonun temelidir. İlerleyen ufuklar
 **Fazlar (4 faz):**
 - **Faz 1 — Communication Cockpit:** Tüm iletişim kanallarının tek noktada yönetimi, AI destekli kategorize/cevap/önceliklendirme
 - **Faz 2 — Dahili AI Katmanı:** Elite'i tanıyan, datalarla gelişen AI; başlangıçta 4 ajan (Communication / Support / Yönetici / Üye)
-- **Faz 3 — Content Engine:** Marka inşası için içerik üretim motoru; sosyal medya, blog, e-posta kampanyalarının yönetimi
+- **Faz 3 — Medya & Sosyal Medya Yönetimi:** Elite'in tüm medya birikiminin tek bir adreste toplanması; sosyal medya yönetiminin disiplinli ve algoritma farkındalığıyla yürütülmesi; AI katmanına Algoritma Asistanı + Trend Asistanı eklenir
 - **Faz 4 — Online Shop:** Ticaret tarafının da tek platforma entegrasyonu; üye yaşam döngüsüyle bağlantılı satış akışları
 
-**Çalışma notu:** Faz 1 ve Faz 2'nin detayı bu dokümanda işlendi. Faz 3 ve Faz 4 sonraki çalışma turlarında detaylandırılır. Detay tasarımı Horizont 1 ortasında müşteriyle birlikte revize edilebilir.
+**Çalışma notu:** Faz 1, Faz 2 ve Faz 3'ün detayı bu dokümanda işlendi. Faz 4 sonraki çalışma turlarında detaylandırılır. Detay tasarımı Horizont 1 ortasında müşteriyle birlikte revize edilebilir.
 
 ### 6.4 Horizont 3 — Intelligente Operation
 
