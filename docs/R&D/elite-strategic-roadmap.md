@@ -451,11 +451,11 @@ Antrenörler ve operasyonel ekip günlük işin %60-70'ini sistem üzerinden yap
 Bu, "Almanya standardı"dır. Horizont 2 buradan başlar.
 ---.
 
-### 5.2 Horizont 2 — Wachstum & Integration (Europa-Standard)
+### 5.2 Horizont 2 — Tek Platform & Dahili Yapay Zekâ (Europa-Standard)
 
-**Anlatı (1 paragraf):** "Wir bauen Ihr Wachstums-System. Lifecycle-Automation, Online-Shop, Events, Win-Back — operasyonun kendi başına büyümesini sağlayan motor. Marketing, retention ve gelir çeşitlendirme tek omurgada birleşir."
+**Anlatı (1 paragraf):** "Wir verbinden alles zu einer Plattform — und geben Ihnen Ihre eigene KI. Horizont 2'de Elite'in operasyonu tek omurgada birleşir: iletişim, ticaret, içerik üretimi ve dahili yapay zekâ — hepsi sizin için çalışan, sizi öğrenen tek bir sisteme dönüşür."
 
-**Çıktı maddeleri:** 4-5 madde
+**Çıktı maddeleri:** Faz 1 Communication Cockpit · Faz 2 Dahili AI Katmanı · Faz 3 Content Engine · Faz 4 Online Shop
 
 ### Horizont 2 Faz 1 — Communication Cockpit
 
@@ -543,7 +543,7 @@ Bu, sektörde sahip olmayanların farkına varmadığı bir avantaj.
 
 ---
 
-### Horizont 2 Faz 3 — Dahili AI Katmanı
+### Horizont 2 Faz 2 — Dahili AI Katmanı
 
 **Elite'i tanıyan, sistemden elde edilen datalarla zaman içinde gelişen, size özel olarak şekillenmiş bir yapay zekâ katmanı.**
 
@@ -577,13 +577,13 @@ Bu agent aynı zamanda **bir reklam yüzü**: Elite'in yapay zekâ ile çalışa
 
 ##### 📊 Yönetici Asistanı
 
-Sahip ve operasyonel sorumlunun **konuşan veri analistidir**. Sistemin neredeyse tüm verisine okuma yetkisi vardır; bir soru sorduğunuzda gerçek veriyi sorgular, **gerçek rakamla** cevap verir. Tahmin etmez, uydurmaz; sayılar nereden geldiyse oradan gelir.
+Yöneticilerin **konuşan veri analistidir**. Sistemin neredeyse tüm verisine okuma yetkisi vardır; bir soru sorduğunuzda gerçek veriyi sorgular, **gerçek rakamla** cevap verir. Tahmin etmez, uydurmaz; sayılar nereden geldiyse oradan gelir.
 
 **Senaryo 1:**
-> Sahip masada otururken sorar: *"Geçen ay ciromuz neydi?"* Yönetici Asistanı: *"Mayıs 2026 cironuz 28.450 €. Bunun 24.890 €'su üyelik tahsilatlarından, 2.110 €'su sınav ücretlerinden, 1.450 €'su seminer kayıtlarından."*
+> Yönetici masada otururken sorar: *"Geçen ay ciromuz neydi?"* Yönetici Asistanı: *"Mayıs 2026 cironuz 28.450 €. Bunun 24.890 €'su üyelik tahsilatlarından, 2.110 €'su sınav ücretlerinden, 1.450 €'su seminer kayıtlarından."*
 
 **Senaryo 2:**
-> Sahip devam ediyor: *"Önceki üç yılın mayıs ayıyla kıyaslayıp grafikle göster."* Asistan: *"Mayıs 2023: 18.100 €, Mayıs 2024: 22.300 €, Mayıs 2025: 26.150 €, Mayıs 2026: 28.450 €. Yıllık ortalama büyüme %16.5."* Sohbetin altında **otomatik üretilmiş bir çubuk grafik** beliriyor — dört çubuk, büyüme oku, kısa not.
+> Yönetici devam ediyor: *"Önceki üç yılın mayıs ayıyla kıyaslayıp grafikle göster."* Asistan: *"Mayıs 2023: 18.100 €, Mayıs 2024: 22.300 €, Mayıs 2025: 26.150 €, Mayıs 2026: 28.450 €. Yıllık ortalama büyüme %16.5."* Sohbetin altında **otomatik üretilmiş bir çubuk grafik** beliriyor — dört çubuk, büyüme oku, kısa not.
 
 **Senaryo 3:**
 > *"Hangi antrenörümüzün dersleri en yüksek devam oranına sahip?"* Asistan: *"Son 90 günde Oğuz Övgüer'in salı/perşembe sparring derslerinde devam oranı %87. Onu Ali El-Saleh izliyor (%83), sonra Max Baumert (%79). Detaylı kırılım ister misiniz?"*
@@ -625,11 +625,23 @@ Bu **kümülatif bir avantajdır** — zaman geçtikçe artar, başka biri için
 - Sistem yalnız bir araç olmaktan çıkar, **size özel bir asistana** dönüşür
 - Operasyonel ekibin rutin yükü azalır — AI, basit işleri kendi başına halleder
 - Dış dünya Elite'i farklı görür: web sitesi profesyonel bir AI ile karşılayan bir yer
-- Sahip her veriye doğrudan ve hızlı erişir — rapor istemek için kimseyi beklemek gerekmez
+- Yöneticiler her veriye doğrudan ve hızlı erişir — rapor istemek için kimseyi beklemek gerekmez
 - Üyeler kendi sorularını ve durumlarını anında öğrenir; bekleme süresi minimum
 - En önemlisi: sistem **her geçen gün akıllanır**, bu yatırım zamanla daha değerli olur
 
 Bu, AI çağında ölçeklenebilir bir operasyonun temelidir. İlerleyen ufuklarda bu temel üzerine daha gelişmiş yetenekler (görsel zekâ, otonom karar mekanizmaları, edge teknolojiler) inşa edilir.
+
+---
+
+### Horizont 2 Faz 3 — Content Engine
+
+*Bu fazın detayı sonraki çalışma turunda işlenecek. Yüksek seviyede: marka inşası için içerik üretim motoru — blog yazıları, sosyal medya postları (Instagram, TikTok, YouTube, Facebook), e-posta kampanyaları, etkinlik tanıtımları. İçerik takvimi, görsel kanban, performans ölçümü. Önceki fazda tanıtılan AI altyapısı bu fazda içerik üretim yardımcısı olarak da çalışmaya başlar.*
+
+---
+
+### Horizont 2 Faz 4 — Online Shop
+
+*Bu fazın detayı sonraki çalışma turunda işlenecek. Yüksek seviyede: Elite markasının ticaret tarafının da tek platformda yaşaması. Ekipman, gear, paket satışı; üye yaşam döngüsüne entegre öneriler (kuşak sınavı sonrası yeni renk eldiven, hediye çekleri, doğum günü kuponları). Tek platform mottosunun ticari ayağı.*
 
 ---
 
@@ -767,17 +779,17 @@ Bu, AI çağında ölçeklenebilir bir operasyonun temelidir. İlerleyen ufuklar
 **→ Horizont 1 toplam: 28-38 hafta (~7-9 ay)**
 **→ Karar noktası: Horizont 1 sonunda Horizont 2'ye geçiş**
 
-### 6.3 Horizont 2 — Wachstum & Integration
+### 6.3 Horizont 2 — Tek Platform & Dahili Yapay Zekâ
 
-**Pozisyon:** Operasyonun kendi başına büyümesini sağlayan motor.
+**Pozisyon:** Operasyonun tek omurgada birleşmesi ve Elite'i tanıyan dahili yapay zekâ katmanının kurulması.
 
-**Tasarlanacak fazlar (TBD, 3-4 faz tahmini):**
-- Lifecycle Automation (welcome, milestone, attendance, win-back)
-- Online Shop + Event/Seminer Modülü
-- Trainer Operations (scheduling, attendance, payroll)
-- Lead Funnel Analytics + Operations Dashboard
+**Fazlar (4 faz):**
+- **Faz 1 — Communication Cockpit:** Tüm iletişim kanallarının tek noktada yönetimi, AI destekli kategorize/cevap/önceliklendirme
+- **Faz 2 — Dahili AI Katmanı:** Elite'i tanıyan, datalarla gelişen AI; başlangıçta 4 ajan (Communication / Support / Yönetici / Üye)
+- **Faz 3 — Content Engine:** Marka inşası için içerik üretim motoru; sosyal medya, blog, e-posta kampanyalarının yönetimi
+- **Faz 4 — Online Shop:** Ticaret tarafının da tek platforma entegrasyonu; üye yaşam döngüsüyle bağlantılı satış akışları
 
-**Çalışma notu:** Bu bölümün detayı W2 sırasında tasarlanır. Şu an proposal'da başlık + amaç + olası fazlar listelenir; detay Horizont 1 ortasında müşteriyle birlikte revize edilir.
+**Çalışma notu:** Faz 1 ve Faz 2'nin detayı bu dokümanda işlendi. Faz 3 ve Faz 4 sonraki çalışma turlarında detaylandırılır. Detay tasarımı Horizont 1 ortasında müşteriyle birlikte revize edilebilir.
 
 ### 6.4 Horizont 3 — Intelligente Operation
 
@@ -789,6 +801,7 @@ Bu, AI çağında ölçeklenebilir bir operasyonun temelidir. İlerleyen ufuklar
 - IoT-Integration (heavy bag sensors, wearables)
 - Multi-Standort-Bereitschaft (şube açıldığında plug-and-play)
 - Churn Prediction + Intervention Automation
+- **Akademi:** Tristar / Coach Zahabi modelinden esinli ayrı faz — stratejik atılım, uzun vadeli ürün geliştirme, ayrı bir iş modeli. Multi-Studio Federation fazıyla doğal eş; online akademi multi-lokasyonlu büyümenin organik aracı.
 
 **Çalışma notu:** Bu bölüm proposal'da yüksek seviyede kalır. Detay tasarımı Horizont 1-2 deneyimine dayanır.
 
@@ -918,3 +931,63 @@ E�er açık referans verilirse: detaylı vakalar.
 - Müşteriye sunum formatı: PDF mi, interaktif web mi, ikisi mi?
 - Görsellerin tasarım sorumlusu: Soluty içi mi dış mı?
 - Phase 0 fiyatlandırması
+
+---
+
+## Önemli — Sonraya Ertelenenler
+
+*Bu bölüm; konuşulmuş, müşteri için değerli görülmüş, ama mevcut faz yapısında yer almamış konuları biriktirir. İlerleyen turlarda gerçek bir faza taşınabilir veya ayrı bir paket olarak ele alınabilir.*
+
+### Win-Back Kampanyası (Kündigung sonrası)
+
+Üye sözleşmeyi feshettikten sonra hayat boyu yasaklanmaz. Sistematik bir geri dönüş akışı:
+- Fesih anında: nazik "kapımız açık" mesajı
+- 30 gün sonra: "nasıl gidiyor?" temas
+- 60 gün sonra: küçük geri dönüş teklifi
+- 90 gün sonra: özel kampanya
+- 6 ay sonra: yeni başlayanlar grubu çağrısı
+
+**Beklenen değer:** Sektör ortalaması %15-25 geri dönüş oranı. Elite ölçeğinde yıllık 30-50 üye geri kazanım potansiyeli.
+
+**Sonraya ertelenme gerekçesi:** Mevcut Horizont 2 faz yapısında doğrudan eşi yok. Communication Cockpit + Dahili AI altyapısı kurulduktan sonra otomasyon katmanı olarak doğal şekilde eklenebilir.
+
+### Üye Referral Programı
+
+"Üye getiren üyeye ödül" sistemi:
+- Üye arkadaşını davet etti → kişisel link
+- Arkadaş deneme dersine geldi → üyeye teşekkür
+- Arkadaş üye oldu → somut ödül (1 ay indirim, ekipman, marka tişört)
+
+**Beklenen değer:** Üye-getirilen-üye en yüksek dönüşüm oranlı kazanım kanalı; mevcut güven aktarımıyla geliyor.
+
+**Sonraya ertelenme gerekçesi:** Win-back ile benzer çerçevede — Communication ve AI katmanı kurulduktan sonra otomatik akış olarak en doğal yerini alır. Online Shop fazıyla da bağlanabilir (ödül mekanizması).
+
+---
+
+## Vazgeçilen Konular
+
+*Bu bölüm; çalışma sürecinde değerlendirilmiş ama mevcut roadmap'ten çıkarılmış konuları biriktirir. Kayıt amaçlı tutulur; ihtiyaç doğarsa geri açılabilir.*
+
+### Lifecycle Automation (faz olarak)
+
+Bir önceki tur tasarımında Horizont 2'de "Lifecycle Automation" diye bağımsız bir faz konumlandırılmıştı. Ancak Horizont 2 vurgusu **tek platform + dahili AI**'a kaydığında bu fazın kendi başına anlam taşımadığına karar verildi. İçeriğinin bir kısmı Communication Cockpit ve Dahili AI fazlarına dağıldı; aşağıdaki dört konu açıkça vazgeçildi (Win-back ve Üye Referral ayrıca "Önemli" başlığına taşındı):
+
+**1. Yeni üye onboarding (ilk 30 gün otomatik akış)**
+Hoş geldin e-postası + WhatsApp, ilk ders öncesi hatırlatma, 1. ders sonrası anket, 7. gün/14. gün/30. gün milestone iletişimleri.
+
+*Vazgeçilme gerekçesi:* Faz 1'in "otomatik e-posta tetikleyicileri" zaten temel onboarding'i kapsıyor; tam lifecycle akışı için ayrı faz fazla.
+
+**2. Milestone tetikleyicileri**
+Doğum günü, üyelik yıldönümü, kuşak sınavı geçişi sosyal medya post + sertifika, 100/250/500. ders, 3 ay düzenli devam streak.
+
+*Vazgeçilme gerekçesi:* Faz 1'deki tetikleyici sistem temel milestone'ları zaten karşılıyor.
+
+**3. Devamsızlık intervention otomasyonu**
+7. gün "seni özledik", 14. gün antrenör görevi, 21. gün özel teklif, 30. gün win-back tetikleyici.
+
+*Vazgeçilme gerekçesi:* Faz 1'deki devamsızlık raporu ve Communication Cockpit + Dahili AI akışları temel müdahaleyi yapıyor; otomatik kampanya zinciri ekstra katman olarak gerekli görülmedi.
+
+**4. Segmentli kampanyalar**
+Yaş grubu, kuşak seviyesi, ders tipi, ödeme durumu, üyelik tipine göre özel mesajlar.
+
+*Vazgeçilme gerekçesi:* Faz 1'deki kampanya modülü ve Communication Cockpit altyapısı temel segmentasyonu zaten sunuyor; özel lifecycle motoru fazla geldi.
