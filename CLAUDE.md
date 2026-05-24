@@ -65,13 +65,29 @@ elite/
     ├── research/                          ◀ raw research (Soluty internal, archived)
     ├── context/                           ◀ customer profile, positioning, meetings
     ├── strategy/                          ◀ internal strategy notes
-    ├── internal/                          ◀ productization, decisions, blackbox
+    ├── internal/                          ◀ productization, decisions, integrations, blackbox
     └── assets/                            ◀ diagrams, screenshots
 ```
 
 ---
 
-## 4. Three-Layer Information Model
+## 4. Dış Sistem Entegrasyonları
+
+Engagement boyunca birden fazla fazda (mobil app, web sitesi, Communication Cockpit, Content Engine vb.) kullanılan dış sistem entegrasyonları tek bir iç referans dokümanında biriktirilir: [`docs/R&D/internal/integrations.md`](docs/R&D/internal/integrations.md).
+
+**Kısa özet:**
+
+- **Onaylananlar** — Canva; Meta Business API; TikTok for Business API; YouTube Data API; Bunny.net + Cloudflare R2; Google Maps; Google My Business; Google Analytics 4
+- **Değerlendirmede** — Google Calendar; Google Drive; Google Workspace SSO
+- **Vazgeçilenler** — Buffer/SocialBee aracı katman (doğrudan platform API yolu seçildi); Bynder/Frontify kurumsal DAM (ölçek uyuşmazlığı); Hootsuite/Sprout Social (overkill, Soluty sistemi aynı işi yapar)
+
+Karar gerekçeleri, müşteri-yüzü söylem, alternatif değerlendirmeleri ve karar geçmişi `integrations.md` dokümanında detaylı tutulur. Yeni entegrasyon kararı verildiğinde önce o doküman güncellenir; bu özet kısa kalır.
+
+**Müşteri-yüzü söylem ayrımı:** `integrations.md` iç doküman olduğu için vendor adlarını açıkça kullanır. Müşteriye giden hiçbir metinde (roadmap, appendix, sunum) vendor adı geçmez — her entegrasyonun "müşteri-yüzü söylem" satırı, vendor adı kullanmadan, "Soluty sistemi + dünya standardı araçlar bir bütün hâlinde çalışır" çerçevesinde yazılmıştır.
+
+---
+
+## 5. Three-Layer Information Model
 
 Every topic produces three artifacts at three different layers. This is the core working pattern.
 
@@ -87,7 +103,7 @@ Every topic produces three artifacts at three different layers. This is the core
 
 ---
 
-## 5. Customer & Engagement Reference
+## 6. Customer & Engagement Reference
 
 ### Customer
 
@@ -122,7 +138,7 @@ Detailed personal context lives in `docs/R&D/context/customer-profile.md`.
 
 ---
 
-## 6. Documentation Map (where work goes)
+## 7. Documentation Map (where work goes)
 
 | Concern | Location |
 |---|---|
@@ -143,11 +159,12 @@ Detailed personal context lives in `docs/R&D/context/customer-profile.md`.
 | Site issue screenshots | `docs/R&D/assets/screenshots/` |
 | Productization opportunities | `docs/R&D/internal/productization-notes.md` |
 | Direction-changing decisions | `docs/R&D/internal/decisions.md` |
+| External system integrations (internal reference) | `docs/R&D/internal/integrations.md` |
 | Post-incident lessons | `docs/R&D/internal/blackbox.md` |
 
 ---
 
-## 7. Research & Analysis Tools
+## 8. Research & Analysis Tools
 
 ### Web research
 
@@ -187,7 +204,7 @@ When access is needed, the user requests it from the customer in writing, in a c
 
 ---
 
-## 8. Workstream Workflow
+## 9. Workstream Workflow
 
 ### State transitions
 
@@ -251,7 +268,7 @@ If any check fails: stop, inform the user, offer rollback.
 
 ---
 
-## 9. Engagement Gotchas
+## 10. Engagement Gotchas
 
 Operational quirks specific to this engagement, not policy.
 
@@ -287,6 +304,10 @@ Turkish working drafts and German final text must say the same thing. When a Ger
 
 When working on a topic, always be explicit about which layer is being written: raw research, appendix, or roadmap summary. Don't conflate. Raw research is frozen on creation; appendix is versioned; roadmap summary references appendix.
 
+### Vendor names stay internal
+
+Vendor adları (Canva, Meta, TikTok, Bunny.net, Cloudflare vb.) yalnızca `docs/R&D/internal/integrations.md` ve diğer iç dokümanlarda kullanılır. Müşteriye giden hiçbir metinde (roadmap, appendix, sunum, e-posta) vendor adı geçmez. Müşteri-yüzü söylem her entegrasyon için `integrations.md` içindeki ilgili satırda yazılıdır — oradan alınarak müşteri metnine işlenir.
+
 ### Markdown table rendering in PDF export
 
 When the roadmap goes to PDF, large markdown tables sometimes break across pages awkwardly. Keep critical comparisons to ≤6 columns and use page-break-friendly section dividers. For complex matrices, ship a separate landscape-orientation appendix page.
@@ -297,7 +318,7 @@ Switching workstreams mid-task without an explicit pause is the fastest way to l
 
 ---
 
-## 10. Closing Note
+## 11. Closing Note
 
 ```
 Project Instructions               → How Claude behaves (Authoritative)
@@ -313,5 +334,5 @@ When uncertain, consult Project Instructions, surface the decision to the user, 
 
 *Operational guidance only. Authority lives in the documents above.*
 
-**Last Updated:** 2026-05-21
-**Version:** 0.2 (docs/R&D architecture, mandatory session start protocol)
+**Last Updated:** 2026-05-24
+**Version:** 0.3 (external-system integrations reference added; section 4 inserted, sections 4-10 renumbered to 5-11)
