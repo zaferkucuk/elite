@@ -52,8 +52,11 @@ Her faz sonunda durulabilir, öncelikler değiştirilebilir veya sonraki adımla
 
 ---
 
-> **[Görsel 1 — Timeline]**
-> Üç Horizont, sekiz faz ve dört inovasyon alanı tek bir zaman çizgisinde gösterilir.
+<p align="center">
+  <img src="./assets/horizont-timeline.png" alt="Strategische Roadmap — Horizont Timeline" width="90%" style="max-width:1200px;"/>
+</p>
+
+*Üç Horizont, sekiz faz ve dört inovasyon alanı tek bir zaman çizgisinde.*
 
 ---
 
