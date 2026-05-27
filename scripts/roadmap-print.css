@@ -1,0 +1,41 @@
+/* scripts/roadmap-print.css
+ *
+ * Print stylesheet for elite-strategic-roadmap.pdf.
+ * Used by scripts/build-pdf.sh via Pandoc's --css flag.
+ * Targets Chrome headless --print-to-pdf at A4 portrait.
+ */
+
+@page { size: A4; margin: 0; }
+
+/* Pandoc'un standalone template'i bir <header id="title-block-header"> ekler;
+ * kapak HTML'i kendi h1'ini iceriyor, bu yuzden Pandoc title bandi gizlenir. */
+#title-block-header { display: none; }
+
+body {
+  font-family: "Segoe UI", Inter, Arial, sans-serif;
+  line-height: 1.55;
+  color: #1e293b;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sayfa kenar bosluklari: govde icerigine 56px yatay padding ver, ama
+ * kapaktaki .cover-page kendi padding'ini kullansin (body > selectoru
+ * sadece dogrudan cocuk elemanlari hedef alir). */
+body > h1, body > h2, body > h3, body > p, body > ul, body > ol,
+body > blockquote, body > hr, body > pre, body > table {
+  padding-left: 56px;
+  padding-right: 56px;
+}
+body > h2 { padding-top: 36px; }
+
+/* Govde basliklari (kapak h1 hariç — onun rengi .cover-page'den inherit). */
+h2, h3, h4, h5 { color: #0f172a; line-height: 1.25; }
+h2 { font-size: 26px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px; }
+h3 { font-size: 20px; }
+h4 { font-size: 17px; }
+h5 { font-size: 15px; }
+
+img { max-width: 100%; height: auto; }
+blockquote { border-left: 3px solid #cbd5e1; color: #475569; padding-left: 14px; }

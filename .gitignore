@@ -1,0 +1,9 @@
+# Build artifacts — PDF/HTML, scripts/build-pdf.sh tarafindan uretilir
+docs/R&D/elite-strategic-roadmap.html
+docs/R&D/elite-strategic-roadmap.pdf
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

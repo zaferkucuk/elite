@@ -1,5 +1,6 @@
 <style>
 .cover-page {
+  box-sizing: border-box;
   page-break-after: always;
   min-height: 100vh;
   padding: 56px;
@@ -10,24 +11,20 @@
   justify-content: space-between;
   font-family: Inter, Arial, sans-serif;
 }
-
 .cover-logos {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .cover-logo {
   max-height: 52px;
   max-width: 180px;
   object-fit: contain;
 }
-
 .cover-content {
   max-width: 760px;
   margin-top: 120px;
 }
-
 .cover-kicker {
   font-size: 15px;
   letter-spacing: 0.08em;
@@ -35,20 +32,17 @@
   color: #86efac;
   margin-bottom: 24px;
 }
-
 .cover-content h1 {
   font-size: 52px;
   line-height: 1.08;
   font-weight: 700;
   margin: 0 0 28px 0;
 }
-
 .cover-subtitle {
   font-size: 20px;
   line-height: 1.5;
   color: #cbd5e1;
 }
-
 .cover-footer {
   display: flex;
   justify-content: space-between;
@@ -58,30 +52,19 @@
 </style>
 
 <div class="cover-page">
-
-  <div class="cover-logos">
-    <img src="./assets/soluty-logo.png" class="cover-logo" alt="Soluty GmbH Logo">
-    <img src="./assets/elite-logo.png" class="cover-logo" alt="Elite Kickboxing Logo">
-  </div>
-
-  <div class="cover-content">
-    <p class="cover-kicker">Stratejik Yol Haritası</p>
-
-    <h1>
-      Elite Kickboxing'in<br>
-      Dijital Operasyon Dönüşümü
-    </h1>
-
-    <p class="cover-subtitle">
-      Digital Business · Intelligent Ecosystem · Innovation & Exploration
-    </p>
-  </div>
-
-  <div class="cover-footer">
-    <p>Hazırlayan: Soluty GmbH</p>
-    <p>Berlin · 2026</p>
-  </div>
-
+<div class="cover-logos">
+<img src="./assets/soluty-logo.png" class="cover-logo" alt="Soluty GmbH Logo">
+<img src="./assets/elite-logo.png" class="cover-logo" alt="Elite Kickboxing Logo">
+</div>
+<div class="cover-content">
+<p class="cover-kicker">Stratejik Yol Haritası</p>
+<h1>Elite Kickboxing'in<br>Dijital Operasyon Dönüşümü</h1>
+<p class="cover-subtitle">Digital Business · Intelligent Ecosystem · Innovation &amp; Exploration</p>
+</div>
+<div class="cover-footer">
+<p>Hazırlayan: Soluty GmbH</p>
+<p>Berlin · 2026</p>
+</div>
 </div>
 
 ## 1. Yönetici Özeti
@@ -273,6 +256,8 @@ Dokümanın devamında her faz ve inovasyon alanı daha detaylı şekilde açık
 Bu yol haritası, tek seferde tamamlanması gereken sabit bir proje planı olarak değil; Elite’in önceliklerine göre şekillenebilecek yaşayan bir gelişim çerçevesi olarak düşünülmelidir.
 
 
+
+<div style="page-break-before: always;"></div>
 
 ## 2. Üç Horizont — Elite İçin Vizyonumuz
 
