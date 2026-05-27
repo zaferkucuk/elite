@@ -275,9 +275,6 @@ Bu yol haritası, tek seferde tamamlanması gereken sabit bir proje planı olara
 
 
 ## 2. Drei Horizonte — Unsere Vision für Elite
-**Hedef sayfa:** 2
-
-**Amaç:** Üç ufku müşterinin gözünde bir hikaye haline getirmek. Almanca isimlendirme kararı bu bölümde finalize edilir.
 
 ### 2.1 Horizont 1 — Digital Business
 Horizont 1 dört fazdan oluşuyor. Her faz kendi içinde tamamlanan, ölçülebilir bir teslimat. Sıra mantıksal: önce operasyonun çekirdeği oturuyor, sonra üyelerin kullanacagi uygulama geliyor, ardından dış dünyaya yüzünüz olan web sitesi, en sonda mali entegrasyon. Her fazın bitişinde sistem çalışır halde ve kullanmaya baslayabilirsiniz.
