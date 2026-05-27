@@ -65,7 +65,7 @@
   </div>
 
   <div class="cover-content">
-    <p class="cover-kicker">Strategic Roadmap</p>
+    <p class="cover-kicker">Stratejik Yol Haritası</p>
 
     <h1>
       Elite Kickboxing'in<br>
@@ -78,13 +78,13 @@
   </div>
 
   <div class="cover-footer">
-    <p>Prepared by Soluty GmbH</p>
+    <p>Hazırlayan: Soluty GmbH</p>
     <p>Berlin · 2026</p>
   </div>
 
 </div>
 
-## 1. Executive Summary
+## 1. Yönetici Özeti
 
 İlk görüşmemizde bizim için en dikkat çekici noktalardan biri, ekibinizden gelen şu istekti:
 
@@ -137,14 +137,14 @@ Her faz sonunda durulabilir, öncelikler değiştirilebilir veya sonraki adımla
 ---
 
 <p align="center">
-  <img src="./assets/horizont-timeline.png" alt="Strategische Roadmap — Horizont Timeline" width="90%" style="max-width:1200px;"/>
+  <img src="./assets/horizont-timeline.png" alt="Stratejik Yol Haritası — Horizont Zaman Çizelgesi" width="90%" style="max-width:1200px;"/>
 </p>
 
 *Üç Horizont, sekiz faz ve dört inovasyon alanı tek bir zaman çizgisinde.*
 
 ---
 
-### Horizont 1 — Digital Business
+### Horizont 1 — Dijital İşletme (Digital Business)
 
 Bu aşamada Elite’in temel iş süreçleri dijital bir omurgaya taşınır.
 
@@ -156,7 +156,7 @@ Bu aşamanın sonunda Elite, günlük operasyonunu sistem üzerinden yöneten mo
 
 ---
 
-### Horizont 2 — Intelligent Ecosystem
+### Horizont 2 — Akıllı Ekosistem (Intelligent Ecosystem)
 
 Horizont 1’de kurulan temel, bu aşamada daha bağlı ve daha akıllı hâle gelir.
 
@@ -166,7 +166,7 @@ Bu aşamada sistem yalnızca kayıt tutan bir yapı olmaktan çıkar; tekrar ede
 
 ---
 
-### Horizont 3 — Innovation & Exploration Layer
+### Horizont 3 — İnovasyon ve Keşif Katmanı (Innovation & Exploration Layer)
 
 Horizont 3, önceki iki Horizont’tan farklıdır.
 
@@ -178,7 +178,7 @@ Dijital akademi, antrenör bilgisinin dijitalleşmesi, hibrit antrenman deneyimi
 
 ## Fazlar ve İnovasyon Alanları
 
-### Horizont 1 — Digital Business
+### Horizont 1 — Dijital İşletme (Digital Business)
 
 #### Faz 1 — Web tabanlı yönetim uygulaması
 
@@ -210,7 +210,7 @@ Fatura, ödeme ve kayıt süreçleri Steuerberater ile paylaşılabilir hâle ge
 
 ---
 
-### Horizont 2 — Intelligent Ecosystem
+### Horizont 2 — Akıllı Ekosistem (Intelligent Ecosystem)
 
 #### Faz 5 — Communication Cockpit
 
@@ -238,7 +238,7 @@ Böylece ürün satışı, üyelik, etkinlik, iletişim ve kampanya akışları 
 
 ---
 
-### Horizont 3 — Innovation & Exploration Layer
+### Horizont 3 — İnovasyon ve Keşif Katmanı (Innovation & Exploration Layer)
 
 #### İnovasyon Alanı 1 — Dijital Akademi ve Antrenör Bilgisinin Dijitalleşmesi
 
@@ -274,9 +274,9 @@ Bu yol haritası, tek seferde tamamlanması gereken sabit bir proje planı olara
 
 
 
-## 2. Drei Horizonte — Unsere Vision für Elite
+## 2. Üç Horizont — Elite İçin Vizyonumuz
 
-### 2.1 Horizont 1 — Digital Business
+### 2.1 Horizont 1 — Dijital İşletme (Digital Business)
 Horizont 1 dört fazdan oluşuyor. Her faz kendi içinde tamamlanan, ölçülebilir bir teslimat. Sıra mantıksal: önce operasyonun çekirdeği oturuyor, sonra üyelerin kullanacagi uygulama geliyor, ardından dış dünyaya yüzünüz olan web sitesi, en sonda mali entegrasyon. Her fazın bitişinde sistem çalışır halde ve kullanmaya baslayabilirsiniz.
 
 Bu bölümde ⚖️ işaretini gördüğünüz her özellik Almanya yasal zorunluluğu içerir. Soluty altyapıyı standarda uygun kurar.
@@ -885,7 +885,7 @@ Elite’in gelecekteki tüm dijital adımlarını taşıyabilecek operasyonel te
 
 Horizont 2 bu temel üzerine kurulacaktır.
 
-### 2.2 Horizont 2 — Tek Platform & Dahili Yapay Zekâ
+### 2.2 Horizont 2 — Akıllı Ekosistem (Intelligent Ecosystem)
 
 Horizont 1'de Elite'in dijital operasyon temeli kurulmuş olur.
 Horizont 2'de ise bu temel daha bağlı ve daha akıllı bir yapıya dönüşür.
@@ -1505,7 +1505,7 @@ Elite'in üyelik, etkinlik ve iletişim ekosistemine bağlı bir ilişki kanalı
 
 ---
 
-### 2.3 Horizont 3 — Innovation & Exploration
+### 2.3 Horizont 3 — İnovasyon ve Keşif (Innovation & Exploration)
 
 Bugün bütün sektörlerde olduğu gibi dövüş sanatları sektörü de çok büyük bir kırılımın eşiğinde duruyor. Son yıllardaki yapay zekâ devrimi, son 35 yılın "dijital + entegre" altyapısı üzerine yeni bir katmanı koymak üzere. Önümüzdeki beş yılda "bugün erken görünen ama yarın normal sayılacak" bircok yenilik Elite'in kapısını çalacak gibi gorunuyor. Belki de bulundugunuz sektorde tarihte gorulmemis degisiklikler, buna bagli "yeni is modelleri" ortaya cikabilir.
 Bu katmandaki önerilerimiz, mevcut teknolojik gelismelerin sektore olabilecek olasi yansimalaridir. Teknolojinin yönü ve sektörün geleceği değerlendirilerek takip edilen stratejik gelişim alanlarıdır. Bazıları bugünden dünyada uygulanmaya başlayan ve gelişip standartlaşması beklenen teknolojilerdir. Bazıları ise zaten olgun, uygulanabilir teknolojilerdir. 
