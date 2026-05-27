@@ -171,8 +171,11 @@ Salon kullanımı, sınıf yoğunluğu, ekipman takibi ve operasyonel akışlar 
 
 ---
 
-> **[Görsel 2 — Tek Omurga]**
-> Elite’in üyeleri, antrenörleri, iletişim kanalları, web sitesi, mobil uygulaması, medya yapısı ve ticaret tarafı tek sistem mantığında gösterilir.
+<p align="center">
+  <img src="./assets/tek-omurga-bugun-vs-yarin.png" alt="Tek Omurga — Bugün vs Yarın" width="85%" style="max-width:1000px;"/>
+</p>
+
+*Elite'in tüm paydaşları ve araçları tek bir omurgada birleşir.*
 
 ---
 
@@ -859,6 +862,14 @@ gibi başlıklar sistem tarafından ayrılabilir.
 
 ---
 
+<p align="center">
+  <img src="./assets/communication-cockpit.png" alt="Communication Cockpit arayüzü" width="85%" style="max-width:1000px;"/>
+</p>
+
+*Communication Cockpit — tüm kanallar tek ekranda, yapay zekâ ile kategorize ve önceliklendirilmiş.*
+
+---
+
 ##### 🤖 Yapay zekânın rolü
 
 Yapay zekâ burada ana karar verici değil, operasyonu düzenleyen yardımcı katmandır.
@@ -1049,6 +1060,14 @@ AI tahmin yürütmek yerine, sistemde bulunan gerçek veriye dayanmalıdır.
 
 ---
 
+<p align="center">
+  <img src="./assets/yonetici-asistani.png" alt="Yönetici Asistanı — Manager-Assistent" width="85%" style="max-width:1000px;"/>
+</p>
+
+*Yönetici Asistanı — gerçek veriye anında erişim, otomatik üretilen grafiklerle anlamlı cevap.*
+
+---
+
 ##### 👤 Üye Asistanı
 
 Üye Asistanı, mobil uygulama içinde üyeye kendi bilgileriyle ilgili yardımcı olabilir.
@@ -1170,6 +1189,14 @@ Bu kütüphane, ekibin kolayca arama yapabileceği, dosyaları etiketleyebilece�
 Aynı şekilde geçmişteki bir kamp fotoğrafı gerektiğinde, klasör klasör aramak yerine sistemden aranabilir.
 
 Bu yapı zamanla Elite'in dijital hafızası hâline gelir.
+
+---
+
+<p align="center">
+  <img src="./assets/medya-kutuphanesi.png" alt="Medya Kütüphanesi" width="85%" style="max-width:1000px;"/>
+</p>
+
+*Medya Kütüphanesi — yapay zekâ destekli arama, tarih ve etkinlik bazlı filtreleme.*
 
 ---
 
