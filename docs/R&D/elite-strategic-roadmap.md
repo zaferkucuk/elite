@@ -274,12 +274,12 @@ Bu yol haritası, tek seferde tamamlanması gereken sabit bir proje planı olara
 
 
 
-## 5. Drei Horizonte — Unsere Vision für Elite
+## 2. Drei Horizonte — Unsere Vision für Elite
 **Hedef sayfa:** 2
 
 **Amaç:** Üç ufku müşterinin gözünde bir hikaye haline getirmek. Almanca isimlendirme kararı bu bölümde finalize edilir.
 
-### 5.1 Horizont 1 — Digital Business
+### 2.1 Horizont 1 — Digital Business
 Horizont 1 dört fazdan oluşuyor. Her faz kendi içinde tamamlanan, ölçülebilir bir teslimat. Sıra mantıksal: önce operasyonun çekirdeği oturuyor, sonra üyelerin kullanacagi uygulama geliyor, ardından dış dünyaya yüzünüz olan web sitesi, en sonda mali entegrasyon. Her fazın bitişinde sistem çalışır halde ve kullanmaya baslayabilirsiniz.
 
 Bu bölümde ⚖️ işaretini gördüğünüz her özellik Almanya yasal zorunluluğu içerir. Soluty altyapıyı standarda uygun kurar.
@@ -888,7 +888,7 @@ Elite’in gelecekteki tüm dijital adımlarını taşıyabilecek operasyonel te
 
 Horizont 2 bu temel üzerine kurulacaktır.
 
-### 5.2 Horizont 2 — Tek Platform & Dahili Yapay Zekâ
+### 2.2 Horizont 2 — Tek Platform & Dahili Yapay Zekâ
 
 Horizont 1'de Elite'in dijital operasyon temeli kurulmuş olur.
 Horizont 2'de ise bu temel daha bağlı ve daha akıllı bir yapıya dönüşür.
@@ -1508,7 +1508,7 @@ Elite'in üyelik, etkinlik ve iletişim ekosistemine bağlı bir ilişki kanalı
 
 ---
 
-### 5.3 Horizont 3 — Innovation & Exploration
+### 2.3 Horizont 3 — Innovation & Exploration
 
 Bugün bütün sektörlerde olduğu gibi dövüş sanatları sektörü de çok büyük bir kırılımın eşiğinde duruyor. Son yıllardaki yapay zekâ devrimi, son 35 yılın "dijital + entegre" altyapısı üzerine yeni bir katmanı koymak üzere. Önümüzdeki beş yılda "bugün erken görünen ama yarın normal sayılacak" bircok yenilik Elite'in kapısını çalacak gibi gorunuyor. Belki de bulundugunuz sektorde tarihte gorulmemis degisiklikler, buna bagli "yeni is modelleri" ortaya cikabilir.
 Bu katmandaki önerilerimiz, mevcut teknolojik gelismelerin sektore olabilecek olasi yansimalaridir. Teknolojinin yönü ve sektörün geleceği değerlendirilerek takip edilen stratejik gelişim alanlarıdır. Bazıları bugünden dünyada uygulanmaya başlayan ve gelişip standartlaşması beklenen teknolojilerdir. Bazıları ise zaten olgun, uygulanabilir teknolojilerdir. 
