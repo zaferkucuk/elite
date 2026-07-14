@@ -1,6 +1,6 @@
 # Elite Kickboxing — Stratejik Yol Haritası
 
-**Sürüm:** 2.0 — **ÇALIŞMA DRAFT (Türkçe)**
+**Sürüm:** 2.1 — **ÇALIŞMA DRAFT (Türkçe)**
 **Tarih:** 14 Temmuz 2026
 **Hazırlayan:** Soluty GmbH
 **Durum:** İç çalışma sürümü. Müşteri sürümü Almanca (formal *Sie*) olarak ayrıca hazırlanacaktır.
@@ -9,6 +9,8 @@
 > V2, iki gelişme sonrası yeniden kurulmuştur:
 > 1. Elite'in mevcut sistemi **CenterCom**'un keşfedilmesi,
 > 2. Elite'ten gelen **üye uygulaması talep listesi** (14 başlık).
+>
+> **v2.1 değişiklikleri:** Rezerve edilebilir hizmet akışı (§5.1), ödeme görünürlüğü (§5.1), mevcut sisteme bağlı yetenekler ayrı başlık (§5.6), birlikte netleştirilecek konular ayrı başlık (§11).
 >
 > Belgedeki *Açık Konular* bölümü yalnızca çalışma sürümüne aittir; müşteri sürümünde yer almaz.
 
@@ -148,7 +150,7 @@ Elite'in en önemli önceliği. Üyenin cebindeki Elite.
 #### Antrenör Profilleri
 - Antrenör tanıtımları ve uzmanlık alanları
 
-*(Talep listesindeki "opsiyonel yapay zekâ sohbet botu" Faz 3'e aittir.)*
+> **Yapay zekâ asistanı hakkında:** Talep listesindeki *"opsiyonel yapay zekâ sohbet botu"* Faz 3'e aittir. Gerekçe: bir asistan, ancak sisteminizin verisiyle konuştuğunda değerlidir. Faz 1 o veriyi üretir. Boş bir kafayla konuşan bir asistan, yapay zekânın değerini göstermez — zayıflatır. **Faz 1'de asistanın bağlanacağı yer hazırlanır; asistanın kendisi Faz 3'te gelir.**
 
 #### Çocuk ve Ebeveyn Alanı
 - Veli hesabı altında birden çok çocuk profili
@@ -157,11 +159,22 @@ Elite'in en önemli önceliği. Üyenin cebindeki Elite.
 - Sınav tarihleri
 - Velilere yönelik bilgilendirme
 
-> **Not:** Ödeme yapan veli, antrenman yapan çocuk. Bu alan yalnızca bir kolaylık değil; Elite ile velinin arasındaki tek doğrudan dijital kanaldır.
+> **Not:** Bu alan bir ek kolaylık değil, **sistemin kimlik mimarisinin bir parçasıdır.** "Tek giriş → birden çok üye profili" yapısı sonradan eklenemez; kök seviyede kurulur. Ayrıca ödeme yapan veli, antrenman yapan çocuktur — bu, Elite ile veli arasındaki tek doğrudan dijital kanaldır.
 
-#### Kişisel Antrenman ve Ek Hizmetler
-- Kişisel antrenman rezervasyonu
+#### Kişisel Antrenman ve Rezerve Edilebilir Hizmetler
+- Kişisel antrenman (PT) rezervasyonu
 - Bireysel randevu oluşturma
+- **Rezerve edilebilir hizmet akışı** — Elite yönetim panelinden hizmet tanımlar (ad, süre, kapasite, antrenör, ücret); üye uygulamadan rezerve eder
+
+> **Yaklaşım:** Elite'in ne satacağına biz karar vermeyiz. Motoru kurarız, içeriği Elite doldurur. Yeni bir hizmet türü eklemek yeni bir inşa işi değil, yeni bir kayıttır.
+>
+> **Kapsam sınırı:** Sağlık verisi içeren hizmetler (fizyoterapi, beslenme danışmanlığı, sakatlık takibi) Faz 1 kapsamı dışındadır. Bunlar özel nitelikli kişisel veri kategorisine girer ve ayrı bir hukuki/teknik çerçeve gerektirir.
+
+#### Ödeme ve Aidat Görünürlüğü
+- Aidat durumu
+- Fatura ve ödeme geçmişi
+
+> **Not:** Bu yetenek talep listesinde yer almıyor; ancak üyenin uygulamada aidat durumunu görememesi kaçınılmaz olarak bir eksiklik olarak geri döner. Kapsama alınmıştır — **gerçekleşme koşulu için bkz. §5.6.**
 
 #### Dijital Belgeler
 - Rıza ve muvafakat beyanları
@@ -198,7 +211,7 @@ Elite'i dışarıdan arayan insanın ilk temas noktası. Bugün statik bir tanı
 
 ### 5.3 Yönetim Paneli
 
-Talep listesinde yer almaz — ama listedeki her başlığın bir yöneteni olmak zorundadır. Haberi kim girer? Sınav takvimini kim açar? Kuşak terfisini kim işler? Semineri kim tanımlar?
+Talep listesinde yer almaz — ama listedeki her başlığın bir yöneteni olmak zorundadır. Haberi kim girer? Sınav takvimini kim açar? Kuşak terfisini kim işler? Semineri kim tanımlar? Hizmeti kim tanımlar?
 
 Panel ayrı bir ürün değildir. **Uygulamanın kumanda odasıdır.**
 
@@ -206,6 +219,7 @@ Panel ayrı bir ürün değildir. **Uygulamanın kumanda odasıdır.**
 - Ders programı ve doluluk yönetimi
 - Kuşak ve sınav yönetimi
 - Seminer ve etkinlik tanımlama
+- **Rezerve edilebilir hizmet tanımlama**
 - Duyuru ve bildirim gönderimi
 - Dijital sözleşme ve belge akışı takibi
 - Üye gelişim görünümü
@@ -243,7 +257,35 @@ Bu katman uygulamanın, panelin ve web sitesinin içinden geçer. Ayrı bir ekra
 - Bitiş yaklaşırken uyarı
 - Yenileme ve iptal akışları
 
-> **Çalışma notu (müşteri sürümünde yer almayacak):** Bu akışın tahsilat tarafıyla nasıl buluşacağı, mevcut sistemin veri erişim koşullarına bağlıdır. Yerinde keşifte netleşecek. Üç senaryo: (a) veri yazma imkânı → tam dijital akış, (b) yalnızca aktarım → yarı dijital, toplu aktarım, (c) erişim yok → dijital toplama + manuel giriş. Her üçünde de bugünkü kâğıt süreçten ileridir.
+**Sözleşme bizim tarafımızda oluşur ve yönetilir.** Üyelik başvurusu Elite'in dijital yüzünden — web sitesinden veya stüdyodaki tabletten — başlar. Veri oradan mevcut sisteme akar. Yön tek yönlüdür: **bizden mevcut sisteme.**
+
+*(Bu akışın teknik gerçekleşme koşulu için bkz. §5.6.)*
+
+---
+
+### 5.6 Mevcut Sisteme Bağlı Yetenekler
+
+Dürüst olmak gerekirse: Faz 1'in bazı yetenekleri, mevcut sistemin **veri paylaşım koşullarına** bağlıdır. Bunu şimdiden açıkça söylüyoruz.
+
+**Bu koşula bağlı yetenekler:**
+
+| Yetenek | Neden bağlı |
+|---|---|
+| Dijital sözleşme akışının tahsilatla buluşması | Yeni üye verisi mevcut sisteme yazılmalı |
+| Ödeme ve aidat görünürlüğü | Aidat verisi mevcut sistemde yaşıyor |
+| Üyelik durumu senkronizasyonu | Üye kaydı mevcut sistemde tutuluyor |
+
+**Üç senaryo, üç sonuç:**
+
+| Senaryo | Sonuç |
+|---|---|
+| **A — Karşılıklı veri akışı mümkün** | Tam dijital akış. Üye kesintisiz deneyim yaşar; veri arka planda yerine ulaşır. *Hedeflenen.* |
+| **B — Yalnızca toplu aktarım mümkün** | Yarı dijital. Veri toplanır, düzenli aralıklarla aktarılır. Gerçek zamanlı değil, ama kâğıttan ileri. |
+| **C — Veri paylaşımı mümkün değil** | Dijital toplama + elle giriş. Üye yine dijital deneyim yaşar; aktarım Elite ekibince yapılır. Yine de bugünkü kâğıt süreçten ileridir. |
+
+**Her üç senaryoda da Faz 1 teslim edilir.** Değişen, akışın ne kadarının otomatik olacağıdır — üyenin gördüğü deneyim değil.
+
+> **Yerinde keşif konusu.** Bu, Faz 1'in en kritik açık sorusudur ve teklif öncesi netleşmelidir.
 
 ---
 
@@ -336,33 +378,59 @@ Teklifimiz **yalnızca Faz 1** içindir.
 
 ---
 
+## 11. Birlikte Netleştireceğimiz Konular
+
+Aşağıdaki başlıklar Faz 1 kapsamına **henüz alınmamıştır.** Bunları Elite ile birlikte konuşup karara bağlayacağız.
+
+### 11.1 Topluluk ve Antrenman Partneri (Talep 9)
+
+Talep üç parça içeriyor: antrenman partneri bulma, üyeler arası açık grup sohbeti, topluluk işlevi.
+
+**Antrenman partneri bulma** üzerinde hemfikiriz — bunu yapılandırılmış bir eşleştirme olarak kurabiliriz: kuşak seviyesi, kilo sınıfı, antrenman saatleri.
+
+**Açık grup sohbeti** konusunda bir çekincemiz var ve bunu açıkça paylaşmak istiyoruz:
+
+Elite'in uygulamasında çocuk üyeler var. Serbest ve açık bir grup sohbeti, Elite'i hukuken bir *barındırma sağlayıcısı* konumuna taşır ve üç yük getirir:
+
+- **Sorumluluk:** Kullanıcı içeriğinden doğan hukuki sorumluluk Elite'e geçer.
+- **Moderasyon:** Çocukların bulunduğu bir sohbet ortamı sürekli gözetim gerektirir. Bu, antrenörlerin işi olamaz.
+- **Risk:** Yetişkinlerin ve çocukların serbestçe iletişim kurabildiği bir alan, taşınması gereken en ağır risktir.
+
+**Önerimiz:** Sohbeti uygulamanın içine değil, üyelerin zaten kullandığı yere bırakalım. Uygulamadan mevcut gruplara bağlantı verelim. Topluluk hissini ise başka yollarla kuralım — kuşak terfilerinin görünürlüğü, başarımlar, etkinlik katılımcı listeleri, derse kayıtlı kişi sayısı.
+
+**Bu bir ret değil, bir koruma önerisidir.** Karar Elite'e aittir; birlikte konuşacağız.
+
+---
+
 ---
 
 # EK — AÇIK KONULAR
 
 > **Bu bölüm çalışma sürümüne aittir. Müşteri sürümünde yer almaz.**
 
-## A. Karara bağlanacak kapsam konuları
+## A. Kapsam kararları
 
-| # | Konu | Durum | Not |
+| # | Konu | Durum | Karar |
 |---|---|---|---|
-| A1 | **Topluluk / açık grup sohbeti** (Talep 9) | ⛔ Faz 1'e alınmadı | Çocuk üyeler var → moderasyon, DSGVO/DSA yükümlülüğü, taciz riski. Öneri: açık sohbet yerine **yapılandırılmış antrenman partneri eşleştirme** (seviye/kuşak/saat bazlı, serbest sohbet yok). Müşteriyle konuşulacak. |
-| A2 | **Antrenman partneri arama** (Talep 9) | ⏸️ Bekliyor | A1 ile birlikte karara bağlanacak. |
-| A3 | **"Ek hizmetler" ne demek?** (Talep 11) | ❓ Tanımsız | Müşteriye sorulacak. Kapsam kapısı riski. |
-| A4 | **Ödeme / fatura görüntüleme** | ❓ Listede yok | Üye uygulamada aidat durumunu göremezse eksiklik olarak geri döner. Mevcut sistemde olduğu için mi atlandı, unutuldu mu? Sorulacak. |
-| A5 | **Çocuk üye oranı** | ❓ Bilinmiyor | Çocuk/ebeveyn alanının Faz 1 çekirdeği mi opsiyon mu olduğunu bu belirler. |
-| A6 | **AI sohbet botu Faz 1'e küçük bir SSS botu olarak girsin mi?** | ⏸️ Bekliyor | Müşteri "opsiyonel" demiş. Şu an Faz 3'te. |
+| A1 | **Topluluk / açık grup sohbeti** (Talep 9) | 🔄 **Müzakerede** | Faz 1'e alınmadı. Pozisyonumuz §11.1'de yazılı. Müşteriyle görüşülüp karara bağlanacak. |
+| A2 | **Antrenman partneri arama** (Talep 9) | 🔄 **Müzakerede** | A1 ile birlikte masaya konacak. Riski yok; teknik olarak Faz 1'e girebilir. |
+| A3 | **"Ek hizmetler"** (Talep 11) | ✅ **KAPANDI** | Jenerik **rezerve edilebilir hizmet akışı** kuruldu (§5.1, §5.3). Elite hizmeti tanımlar, üye rezerve eder. **Sağlık verisi içeren hizmetler kapsam dışı.** |
+| A4 | **Ödeme / aidat görünürlüğü** | ✅ **KAPANDI** | Kapsama alındı, **koşullu** (§5.6). Ayrıca müşteriye "listede olmaması bilinçli miydi?" sorulacak. |
+| A5 | **Çocuk / ebeveyn alanı** | ✅ **KAPANDI** | **Faz 1 çekirdeği** — orandan bağımsız. Kimlik mimarisi kararı; sonradan eklenemez. 16 yaş altı için veli onayı yasal gereklilik olabilir (hukukçuya doğrulatılacak). Oran yine de sorulacak (ROI + uyum). |
+| A6 | **AI sohbet botu** | ✅ **KAPANDI** | **Faz 3'te kalır.** Faz 1'de yalnızca bağlantı noktası hazırlanır. Gerekçe §5.1'de yazılı. |
 
 ## B. Yerinde keşifte doğrulanacaklar
 
 | # | Konu | Neden önemli |
 |---|---|---|
-| B1 | **Mevcut sistemin veri erişim / API politikası** | Dijital sözleşme akışının, üye verisi senkronizasyonunun ve gelecekteki AI katmanının tamamı buna bağlı. **En kritik açık soru.** |
+| B1 | **Mevcut sistemin veri erişim / API politikası** | §5.6'nın tamamı buna bağlı. **En kritik açık soru.** Teklif öncesi netleşmeli. |
 | B2 | Muhasebe aktarımı gerçekten aktif mi? | Mevcut sistemde bu yetenek var; Elite habersiz görünüyor. Ayrı iş olarak satılmaz — **birlikte aktive edilir** (güven hamlesi). |
 | B3 | Ders/kurs yönetimi gerçekten zayıf mı, yoksa kullanılmıyor mu? | Kapsamı doğrudan etkiler. |
 | B4 | Mevcut uygulamanın gerçekte hangi yetenekleri açık? | Talep listesinin bir kısmı zaten mevcut olabilir. |
 | B5 | Aile hesabı mevcut sistemde var mı? | Çocuk/ebeveyn alanının mimarisini etkiler. |
 | B6 | Sözleşme sürelerinin bugün nasıl takip edildiği | Dijital sözleşme akışının tasarımını etkiler. |
+| B7 | **Çocuk üye oranı ve yaş dağılımı** | ROI hikayesi + 16 yaş altı uyum yükümlülüğü. |
+| B8 | **Ödeme görünürlüğü listede neden yok?** | Bilinçli mi, unutuldu mu? |
 
 ## C. Talep listesi izlenebilirlik
 
@@ -375,11 +443,11 @@ Teklifimiz **yalnızca Faz 1** içindir.
 | 5 | Seminerler ve etkinlikler | Faz 1 — 5.1 |
 | 6 | Sınav sistemi ve gelişim | Faz 1 — 5.1 / 5.4 |
 | 7 | Antrenör profilleri | Faz 1 — 5.1 |
-| 7b | *Opsiyonel AI sohbet botu* | **Faz 3** |
-| 8 | Çocuk ve ebeveyn alanı | Faz 1 — 5.1 |
-| 9 | Topluluk / grup sohbeti | **⛔ Açık — A1** |
+| 7b | *Opsiyonel AI sohbet botu* | **Faz 3** ✅ |
+| 8 | Çocuk ve ebeveyn alanı | Faz 1 — 5.1 ✅ **çekirdek** |
+| 9 | Topluluk / grup sohbeti | **§11.1 — müzakerede** 🔄 |
 | 10 | *(Teknik ve öğrenme alanı)* | **Faz 5** |
-| 11 | Kişisel antrenman | Faz 1 — 5.1 (ek hizmetler: A3) |
+| 11 | Kişisel antrenman + ek hizmetler | Faz 1 — 5.1 ✅ **rezerve edilebilir hizmet akışı** |
 | 12 | Dijital doküman yönetimi | Faz 1 — 5.1 / 5.5 |
 | 13 | Shop bağlantısı | **Faz 2** |
 | 14 | Motivasyon / başarımlar | Faz 1 — 5.1 |
@@ -392,6 +460,7 @@ Teklifimiz **yalnızca Faz 1** içindir.
 | **Modern web sitesi** | Müşteri sözlü olarak "can alıcı" dedi. Kazanım kanalı. |
 | **Deneme dersi akışı** | Bugünkü en zayıf nokta. |
 | **Dijital sözleşme (kazanım tarafı)** | Kâğıt süreç bitiyor. |
+| **Ödeme / aidat görünürlüğü** | Listede yok ama eksikliği geri döner. Koşullu. |
 
 ## E. Dil ve terminoloji kontrol listesi (Almanca sürüm öncesi)
 
@@ -400,8 +469,10 @@ Teklifimiz **yalnızca Faz 1** içindir.
 - ❌ "Sahip" **hiçbir yerde kullanılmaz** → *yönetici* / *Geschäftsführer* / *Leitung*
 - ❌ Süre ve maliyet bilgisi müşteri sürümünde **yer almaz**
 - ⚠️ Mevcut sistemin adının müşteri belgesinde nasıl anılacağı **onaya tabidir** (Project Instructions: rakip adı geçirmek iki aşamalı onay gerektirir)
+- ⚠️ §11.1'deki hukuki çerçeve (barındırma sağlayıcısı sorumluluğu, DSGVO/DSA) müşteri sürümünden önce **hukukçuya doğrulatılmalıdır**
+- ⚠️ §5.1'deki 16 yaş altı veli onayı iddiası da **hukukçuya doğrulatılmalıdır**
 - ✅ Yapay zekâ her zaman "asistan"; nihai karar insanda
 
 ---
 
-*Belge sonu — v2.0 ÇALIŞMA DRAFT*
+*Belge sonu — v2.1 ÇALIŞMA DRAFT*
