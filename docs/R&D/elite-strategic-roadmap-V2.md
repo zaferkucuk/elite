@@ -1,41 +1,37 @@
 # Elite Kickboxing — Stratejik Yol Haritası
 
-**Sürüm:** 2.3 — **ÇALIŞMA DRAFT (Türkçe)**
+**Sürüm:** 2.4 — **ÇALIŞMA DRAFT (Türkçe)**
 **Tarih:** 14 Temmuz 2026
 **Hazırlayan:** Soluty GmbH
 **Durum:** İç çalışma sürümü. Müşteri sürümü Almanca (formal *Sie*) olarak ayrıca hazırlanacaktır.
 
-> **Çalışma notu:** Bu belge v1 yol haritasının yerini alır. v1 (`elite-strategic-roadmap.md`) arşiv olarak korunur.
-> **v2.1:** Rezerve edilebilir hizmet akışı, ödeme görünürlüğü, mevcut sisteme bağlı yetenekler (§5.6), netleştirilecek konular (§11).
-> **v2.2:** Teknik videoları — Faz 1'e *tüketim*, Faz 5'e *yönetim* (§5.4, §9).
-> **v2.3:** **Ödeme ve ticari akışlar Faz 1'e eklendi (§5.7). Süre/kapsam savunması EK-F'ye işlendi.**
+> v1 (`elite-strategic-roadmap.md`) arşiv olarak korunur.
+> **v2.1:** Rezerve edilebilir hizmet, ödeme görünürlüğü, §5.6, §11.
+> **v2.2:** Teknik videoları — Faz 1 *tüketim*, Faz 5 *yönetim*.
+> **v2.3:** Ödeme ve ticari akışlar (§5.7); süre/kapsam savunması (EK-F).
+> **v2.4:** **Devreye alma ve veri aktarımı (§5.8).**
 >
-> *Açık Konular* bölümü yalnızca çalışma sürümüne aittir; müşteri sürümünde yer almaz.
+> *EK* bölümü yalnızca çalışma sürümüne aittir; müşteri sürümünde yer almaz.
 
 ---
 
 ## 1. Yönetici Özeti
 
-Elite bugün çalışan bir operasyonel omurgaya sahip. Üyelik kayıtları, aidat tahsilatı, giriş kontrolü, dolap sistemi ve kasa süreçleri mevcut sistem üzerinde yürüyor — ve yürümeye devam edecek.
+Elite bugün çalışan bir operasyonel omurgaya sahip. Üyelik, aidat tahsilatı, giriş kontrolü, dolap ve kasa süreçleri mevcut sistem üzerinde yürüyor — ve yürümeye devam edecek.
 
 Eksik olan omurga değil. Eksik olan **üyenin gördüğü yüz** — ve o yüz üzerinden akabilecek gelir.
 
-Bugün Elite'in üyesi, Elite'i telefonundan yaşayamıyor. Elite'i dışarıdan arayan bir insan, web sitesinden içeri giremiyor. Elite'in seminerine katılmak isteyen biri, bunu online yapamıyor. Ve Elite'i Elite yapan şey — kuşak, sınav, teknik gelişim — hiçbir sistemde yaşamıyor.
+Bugün Elite'in üyesi, Elite'i telefonundan yaşayamıyor. Elite'i dışarıdan arayan biri, web sitesinden içeri giremiyor. Seminerine katılmak isteyen biri, bunu online yapamıyor. Ve Elite'i Elite yapan şey — kuşak, sınav, teknik gelişim — hiçbir sistemde yaşamıyor.
 
-Kurmayı önerdiğimiz şey budur: **üye ile Elite arasındaki dijital köprü**, o köprünün üzerinde dövüş sporunun kendi dili, ve köprünün üzerinden akabilen **gelir.**
+Kurmayı önerdiğimiz şey budur: **üye ile Elite arasındaki dijital köprü**, üzerinde dövüş sporunun kendi dili, ve köprüden akabilen **gelir.**
 
 ---
 
-## 2. Başlangıç Noktası — Bugünün Resmi
+## 2. Başlangıç Noktası
 
 ### Çalışan taraf
 
-- Üye kayıtları ve üyelik durumu
-- Aidat tahsilatı (SEPA) ve otomatik hatırlatma/ihtar akışı
-- Turnike ile giriş kontrolü, kart ile dolap kilitleme
-- Kasa, ürün ve stok yönetimi
-- Yasal iptal butonu yükümlülüğü
-- Muhasebe verisi aktarımı
+Üye kayıtları ve üyelik durumu · Aidat tahsilatı (SEPA) ve ihtar akışı · Turnike ile giriş kontrolü, kart ile dolap kilitleme · Kasa, ürün ve stok · Yasal iptal butonu · Muhasebe verisi aktarımı
 
 Bunlar çalışıyor. **Bunlara dokunmuyoruz.**
 
@@ -57,7 +53,7 @@ Bir yol haritasının değeri, ne yapacağı kadar **ne yapmayacağıyla** ölç
 
 Mevcut sisteminizde çalışan hiçbir süreci yeniden kurmuyoruz. Çalışan bir omurganın üzerine ikinci bir omurga koymak size maliyet ve risk getirir; değer getirmez.
 
-**Mevcut sistemde kalır:** Üye kayıtları ve durum yönetimi · Aidat tahsilatı, SEPA, ihtar süreçleri · Turnike, kapı ve dolap donanımı · Kasa, ürün, stok · Yasal iptal butonu · Muhasebe verisi aktarımı
+**Mevcut sistemde kalır:** Üye kayıtları ve durum yönetimi · Aidat tahsilatı, SEPA, ihtar · Turnike, kapı, dolap donanımı · Kasa, ürün, stok · Yasal iptal butonu · Muhasebe aktarımı
 
 **Biz kurarız:** Üyenin yüzü (mobil uygulama) · Dış dünyanın yüzü (web sitesi) · Elite'i Elite yapan katman (kuşak, sınav, gelişim) · Dijital sözleşme akışı · **Aidat dışı gelirin aktığı ticari akış** · Bunları yöneten kumanda odası
 
@@ -65,25 +61,25 @@ Mevcut sisteminizde çalışan hiçbir süreci yeniden kurmuyoruz. Çalışan bi
 
 ---
 
-## 4. Yol Haritası — Genel Bakış
+## 4. Yol Haritası
 
 | Faz | Ad | Odak |
 |---|---|---|
 | **Faz 1** | **Dijital Üye Deneyimi Omurgası** | Mobil uygulama + web sitesi + yönetim paneli + dövüş sporu katmanı + ticari akış |
 | Faz 2 | Online Shop | Ürün satışının platforma bağlanması |
 | Faz 3 | Elite AI | Yapay zekâ destekli asistanlar |
-| Faz 4 | İletişim Merkezi | Tüm iletişim kanallarının tek noktada toplanması |
-| Faz 5 | Medya Kütüphanesi ve Sosyal Medya | Video arşivi yönetimi + sosyal medya operasyonu |
+| Faz 4 | İletişim Merkezi | Tüm kanalların tek noktada toplanması |
+| Faz 5 | Medya Kütüphanesi ve Sosyal Medya | Video arşivi + sosyal medya operasyonu |
 
-**Faz 1 temeldir.** Bu belgede yalnızca Faz 1 ayrıntılı tanımlanmıştır; Faz 2–5 yönü gösterir, taahhüt oluşturmaz.
+**Faz 1 temeldir.** Faz 2–5 yönü gösterir, taahhüt oluşturmaz.
 
 ---
 
 ## 5. FAZ 1 — Dijital Üye Deneyimi Omurgası
 
-Faz 1, **tek bir sistemin üç yüzüdür.** Üç ayrı ürün değil; aynı omurganın üç farklı ekranda görünen hâlidir. Ders programı bir yerde değişir — her yerde değişir.
+Faz 1, **tek bir sistemin üç yüzüdür.** Üç ayrı ürün değil; aynı omurganın üç ekranda görünen hâli. Ders programı bir yerde değişir — her yerde değişir.
 
-Bu üç yüzün içinden geçen bir katman vardır: **dövüş sporu katmanı.**
+Üç yüzün içinden geçen bir katman vardır: **dövüş sporu katmanı.**
 
 ---
 
@@ -91,103 +87,71 @@ Bu üç yüzün içinden geçen bir katman vardır: **dövüş sporu katmanı.**
 
 Elite'in en önemli önceliği. Üyenin cebindeki Elite.
 
-#### Profil ve Gelişim
-- Kişisel bilgiler ve üyelik durumu
-- **Kuşak derecesi ve antrenman seviyesi**
-- Üyelik başlangıcı · Kişisel gelişim çizgisi
+**Profil ve Gelişim** — Kişisel bilgiler · Üyelik durumu · **Kuşak derecesi** · Üyelik başlangıcı · Gelişim çizgisi
 
-#### Antrenman Planı ve Ders Kaydı
-- Güncel ders programı · Derse kayıt · Doluluk göstergesi · Otomatik hatırlatmalar
+**Antrenman Planı ve Ders Kaydı** — Ders programı · Derse kayıt · Doluluk göstergesi · Otomatik hatırlatmalar
 
-#### Katılım ve Antrenman Geçmişi
-- **QR kod ile antrenman check-in'i**
-- Katılınan antrenmanların geçmişi · Antrenman istatistiği ve ilerleme
+**Katılım ve Geçmiş** — **QR ile antrenman check-in** · Katılım geçmişi · Antrenman istatistiği
 
-> **Neden QR, turnike varken?**
-> Turnike *binaya girişi* kaydeder. QR check-in *hangi antrenmana katıldığını* kaydeder. İkisi farklı bilgidir — ve kuşak sisteminin ihtiyaç duyduğu ikincisidir. QR, turnikenin yerine geçmez; onun üzerine bir katman ekler.
+> **Neden QR, turnike varken?** Turnike *binaya girişi* kaydeder. QR *hangi antrenmana katıldığını* kaydeder. Kuşak sisteminin ihtiyaç duyduğu ikincisidir. QR, turnikenin yerine geçmez; üzerine bir katman ekler.
 
-#### Haberler ve Bildirimler
-- Kapalı günler · İptal edilen dersler · Duyurular · Son dakika değişiklikleri · **Anlık bildirim (push)**
+**Haberler ve Bildirimler** — Kapalı günler · İptal edilen dersler · Duyurular · **Push**
 
-#### Seminerler ve Etkinlikler
-- Seminer ve etkinlik listesi · Antrenör ve içerik bilgisi
-- **Kayıt ve bilet satışı** *(bkz. §5.7)* · Etkinlik takvimi
+**Seminerler ve Etkinlikler** — Liste · Antrenör ve içerik bilgisi · **Kayıt ve bilet satışı** *(§5.7)* · Takvim
 
-#### Sınav Sistemi ve Teknikler
-- Sınav takvimi · Sınava kayıt · Kuşak / seviye ilerlemesi · Sınav bilgilendirmeleri
-- **Kuşak seviyesine bağlı teknik listesi — her tekniğe iliştirilebilen video** *(bkz. §5.4)*
+**Sınav Sistemi ve Teknikler** — Sınav takvimi · Sınava kayıt · Kuşak ilerlemesi · **Kuşağa bağlı teknik listesi + video** *(§5.4)*
 
-#### Antrenör Profilleri
-- Antrenör tanıtımları ve uzmanlık alanları
+**Antrenör Profilleri** — Tanıtımlar ve uzmanlık alanları
 
-> **Yapay zekâ asistanı hakkında:** Talep listesindeki *"opsiyonel yapay zekâ sohbet botu"* Faz 3'e aittir. Bir asistan, ancak sisteminizin verisiyle konuştuğunda değerlidir. Faz 1 o veriyi üretir. **Faz 1'de asistanın bağlanacağı yer hazırlanır; asistanın kendisi Faz 3'te gelir.**
+> **Yapay zekâ asistanı:** Talep listesindeki *"opsiyonel yapay zekâ sohbet botu"* Faz 3'e aittir. Bir asistan ancak sisteminizin verisiyle konuştuğunda değerlidir. **Faz 1'de bağlanacağı yer hazırlanır; asistan Faz 3'te gelir.**
 
-#### Çocuk ve Ebeveyn Alanı
-- Veli hesabı altında birden çok çocuk profili
-- Çocuğun katılım durumu · Antrenman gelişimi · Sınav tarihleri · Veli bilgilendirmesi
+**Çocuk ve Ebeveyn Alanı** — Veli hesabı + çoklu çocuk profili · Çocuğun katılımı · Gelişimi · Sınav tarihleri
 
-> **Not:** Bu alan bir ek kolaylık değil, **sistemin kimlik mimarisinin bir parçasıdır.** "Tek giriş → birden çok üye profili" yapısı sonradan eklenemez; kök seviyede kurulur. Ayrıca ödeme yapan veli, antrenman yapan çocuktur — Elite ile veli arasındaki tek doğrudan dijital kanal budur.
+> Bu alan bir kolaylık değil, **kimlik mimarisinin parçasıdır.** "Tek giriş → birden çok profil" sonradan eklenemez. Ayrıca ödeme yapan veli, antrenman yapan çocuktur.
 
-#### Kişisel Antrenman ve Rezerve Edilebilir Hizmetler
-- Kişisel antrenman (PT) rezervasyonu · Bireysel randevu
-- **Rezerve edilebilir hizmet akışı** — Elite panelden hizmet tanımlar (ad, süre, kapasite, antrenör, ücret); üye uygulamadan rezerve eder ve **öder** *(bkz. §5.7)*
+**Kişisel Antrenman ve Rezerve Edilebilir Hizmetler** — PT rezervasyonu · Bireysel randevu · **Hizmet rezervasyon ve ödeme akışı** *(§5.7)*
 
-> **Yaklaşım:** Elite'in ne satacağına biz karar vermeyiz. Motoru kurarız, içeriği Elite doldurur. Yeni bir hizmet türü eklemek yeni bir inşa işi değil, yeni bir kayıttır.
->
-> **Kapsam sınırı:** Sağlık verisi içeren hizmetler (fizyoterapi, beslenme danışmanlığı, sakatlık takibi) Faz 1 dışındadır — özel nitelikli kişisel veri kategorisine girer.
+> Elite'in ne satacağına biz karar vermeyiz. Motoru kurarız, içeriği Elite doldurur.
+> **Kapsam sınırı:** Sağlık verisi içeren hizmetler (fizyoterapi, beslenme) Faz 1 dışıdır.
 
-#### Ödeme ve Aidat Görünürlüğü
-- Aidat durumu · Fatura ve ödeme geçmişi
+**Ödeme ve Aidat Görünürlüğü** — Aidat durumu · Fatura ve ödeme geçmişi *(koşullu — §5.6)*
 
-> Bu yetenek talep listesinde yer almıyor; ancak üyenin aidat durumunu görememesi eksiklik olarak geri döner. Kapsama alınmıştır — **gerçekleşme koşulu için bkz. §5.6.**
+**Dijital Belgeler** — Rıza beyanları · Feragatnameler · Formlar · Dijital imza
 
-#### Dijital Belgeler
-- Rıza ve muvafakat beyanları · Feragatnameler · Formlar · Dijital imza
-
-#### Motivasyon
-- 50 / 100 antrenman · Elite'te 1 yıl · İlk sınav geçildi · İlk seminere katılım · Doğum günü
+**Motivasyon** — 50/100 antrenman · 1 yıl · İlk sınav · İlk seminer · Doğum günü
 
 ---
 
 ### 5.2 Modern Web Sitesi
 
-Elite'i dışarıdan arayan insanın ilk temas noktası. Bugün statik bir tanıtım sayfası; yarın **çalışan bir kapı.**
+Bugün statik bir tanıtım sayfası; yarın **çalışan bir kapı.**
 
-- **Deneme dersi akışı** — online kayıt, takvimden yer seçimi
-- **Canlı ders programı** — mobil uygulamayla aynı kaynaktan beslenir
+- **Deneme dersi akışı** — online kayıt
+- **Canlı ders programı** — uygulamayla aynı kaynaktan
 - **Üyelik başvurusu ve dijital sözleşme**
-- **Seminer ve etkinlik kaydı — online ödeme dahil** *(bkz. §5.7)*
-- Antrenör ve stüdyo tanıtımı · İçerik alanı (blog / haberler)
+- **Seminer ve etkinlik kaydı — online ödeme dahil** *(§5.7)*
+- Antrenör ve stüdyo tanıtımı · Blog / haberler
 - Almanca / İngilizce / Türkçe
 
-> İnsanlar Elite'i internetten buluyor. Bulduktan sonra ne yapacaklarını bilmiyorlarsa, o ziyaret kaybolur. Web sitesi bir broşür değil, **kazanım kanalıdır.**
+> İnsanlar Elite'i internetten buluyor. Ne yapacaklarını bilmiyorlarsa o ziyaret kaybolur. Web sitesi bir broşür değil, **kazanım kanalıdır.**
 
 ---
 
 ### 5.3 Yönetim Paneli
 
-Listedeki her başlığın bir yöneteni olmak zorundadır. Haberi kim girer? Sınav takvimini kim açar? Kuşak terfisini kim işler? Semineri kim tanımlar? Bileti kim satar?
+Her başlığın bir yöneteni olmak zorundadır. Haberi kim girer? Sınav takvimini kim açar? Kuşak terfisini kim işler? Bileti kim satar?
 
 Panel ayrı bir ürün değildir. **Uygulamanın kumanda odasıdır.**
 
-- İçerik yönetimi (web + uygulama)
-- Ders programı ve doluluk yönetimi
-- Kuşak ve sınav yönetimi
-- Teknik tanımlama ve tekniğe video bağlantısı iliştirme
-- Seminer, etkinlik ve **bilet** tanımlama
-- Rezerve edilebilir hizmet tanımlama
-- **Satış, ödeme ve iade takibi** *(bkz. §5.7)*
-- Duyuru ve bildirim gönderimi
-- Dijital sözleşme ve belge akışı takibi
-- Üye gelişim görünümü
+İçerik yönetimi (web + app) · Ders programı ve doluluk · Kuşak ve sınav yönetimi · Teknik tanımlama ve video bağlantısı · Seminer, etkinlik ve **bilet** tanımlama · Rezerve edilebilir hizmet tanımlama · **Satış, ödeme ve iade takibi** *(§5.7)* · Duyuru ve bildirim · Dijital sözleşme takibi · Üye gelişim görünümü
 
-**Panel, mevcut sistemin işini tekrar etmez.** Üye aidatı, turnike, kasa mevcut sistemde kalır. Panel yalnızca bizim kurduğumuz katmanı yönetir.
+**Panel, mevcut sistemin işini tekrar etmez.**
 
 ---
 
 ### 5.4 Dövüş Sporu Katmanı
 
-Bu katman, sistemi standart bir spor salonu yazılımından ayıran şeydir.
+Sistemi standart bir spor salonu yazılımından ayıran katman.
 
 - **Kuşak sistemi** (Graduierung) ve seviye hiyerarşisi
 - **Teknik listeleri** — kuşak seviyesine bağlı
@@ -197,55 +161,47 @@ Bu katman, sistemi standart bir spor salonu yazılımından ayıran şeydir.
 - **Kuşak başına asgari antrenman kuralı**
 - Sertifika
 
-> Bugün bu bilgi hiçbir sistemde yaşamıyor. Antrenörlerin hafızasında ve kâğıt üzerinde duruyor. Bir üye kuşak atlamaya hazır mı — bu soru bugün sezgiyle cevaplanıyor. Yarın veriyle cevaplanacak.
+> Bugün bu bilgi hiçbir sistemde yaşamıyor. Antrenörlerin hafızasında ve kâğıtta duruyor. Bir üye kuşak atlamaya hazır mı — bugün sezgiyle cevaplanıyor. Yarın veriyle.
 
-#### Teknik videoları — Faz 1'in sınırı
+**Teknik videoları — Faz 1'in sınırı:** Panelden bir tekniğe **video bağlantısı iliştirilir**; üye tekniğe dokunur, video oynar.
+Faz 1'de **yok** (Faz 5'e ait): video yükleme/işleme/barındırma · medya kütüphanesi · izlenme analitiği · evde antrenman **programları** *(müfredat, video değil)*
 
-**Video, tekniğin bir niteliğidir.** Video olmadan bir teknik listesi yalnızca bir isim listesidir.
-
-Faz 1'de: panelden bir tekniğe **video bağlantısı iliştirilir**; üye teknik listesinde o tekniğe dokunur, video oynar.
-
-Faz 1'de **yer almayanlar** (Faz 5'e aittir): video yükleme, işleme ve barındırma · merkezî medya kütüphanesi · izlenme analitiği · evde antrenman **programları** *(bunlar video değil, müfredattır)*
-
-> **Tasarım ilkesi — zarif bozulma:** Video, tekniğin **opsiyonel** bir niteliğidir. Elite on video çekerse on teknikte video görünür; kalanında yalnızca metin durur. **"Yakında" ekranı yoktur, boş bölüm yoktur.**
+> **Zarif bozulma:** Video, tekniğin **opsiyonel** niteliğidir. Elite on video çekerse on teknikte video görünür; kalanında yalnızca metin. **"Yakında" ekranı yok, boş bölüm yok.**
 
 ---
 
 ### 5.5 Dijital Sözleşme Akışı
 
-**Bugün:** Kâğıt sözleşme → elle doldurma → imza → tarama → sisteme yükleme.
-**Yarın:** Web sitesinden veya stüdyodaki tabletten dijital giriş → dijital imza → sisteme akış.
+**Bugün:** Kâğıt → elle doldurma → imza → tarama → yükleme.
+**Yarın:** Web veya tabletten dijital giriş → dijital imza → sisteme akış.
 
-- Üyelik başvurusu (web + tablet) · Dijital imza
-- Sözleşme süresi takibi · Bitiş yaklaşırken uyarı · Yenileme akışı
+Üyelik başvurusu (web + tablet) · Dijital imza · Sözleşme süresi takibi · Bitiş uyarısı · Yenileme akışı
 
 **Sözleşme bizim tarafımızda oluşur ve yönetilir.** Veri oradan mevcut sisteme akar. Yön tek yönlüdür: **bizden mevcut sisteme.**
 
 > Bu yalnızca kâğıdı dijitale taşımak değildir. Üyelik kararı çoğu zaman salonda değil, akşam evde verilir. O anda kâğıt form doldurmaya gelmesi gereken kişi, çoğu zaman hiç gelmez. **Dijital sözleşme bir kâğıt işi değil, bir dönüşüm adımıdır.**
 
-*(Teknik gerçekleşme koşulu için bkz. §5.6.)*
-
 ---
 
 ### 5.6 Mevcut Sisteme Bağlı Yetenekler
 
-Faz 1'in bazı yetenekleri, mevcut sistemin **veri paylaşım koşullarına** bağlıdır. Bunu şimdiden açıkça söylüyoruz.
+Faz 1'in bazı yetenekleri mevcut sistemin **veri paylaşım koşullarına** bağlıdır.
 
 | Yetenek | Neden bağlı |
 |---|---|
-| Dijital sözleşme akışının tahsilatla buluşması | Yeni üye verisi mevcut sisteme yazılmalı |
-| Ödeme ve aidat görünürlüğü | Aidat verisi mevcut sistemde yaşıyor |
-| Üyelik durumu senkronizasyonu | Üye kaydı mevcut sistemde tutuluyor |
+| Dijital sözleşmenin tahsilatla buluşması | Yeni üye verisi mevcut sisteme yazılmalı |
+| Ödeme ve aidat görünürlüğü | Aidat verisi mevcut sistemde |
+| Üyelik durumu senkronizasyonu | Üye kaydı mevcut sistemde |
 
 | Senaryo | Sonuç |
 |---|---|
-| **A — Karşılıklı veri akışı mümkün** | Tam dijital akış. *Hedeflenen.* |
-| **B — Yalnızca toplu aktarım mümkün** | Yarı dijital. Düzenli aralıklarla aktarım. Kâğıttan ileri. |
-| **C — Veri paylaşımı mümkün değil** | Dijital toplama + elle giriş. Üye yine dijital deneyim yaşar. Yine de bugünkü süreçten ileridir. |
+| **A — Karşılıklı veri akışı** | Tam dijital akış. *Hedeflenen.* |
+| **B — Toplu aktarım** | Yarı dijital. Düzenli aralıklarla aktarım. |
+| **C — Veri paylaşımı yok** | Dijital toplama + elle giriş. Üye yine dijital deneyim yaşar. |
 
-**Her üç senaryoda da Faz 1 teslim edilir.** Değişen, akışın ne kadarının otomatik olacağıdır — üyenin gördüğü deneyim değil.
+**Her üç senaryoda da Faz 1 teslim edilir.** Değişen, akışın ne kadarının otomatik olacağıdır.
 
-> **Not:** §5.7'deki ticari akış bu bağımlılığın **dışındadır.** Bilet, kişisel antrenman ve hizmet satışı, mevcut sistemin yapabileceği bir şey değildir ve tamamen yeni platform üzerinde çalışır.
+> **Not:** §5.7'deki ticari akış bu bağımlılığın **dışındadır** — mevcut sistemin yapabileceği bir şey değildir.
 
 ---
 
@@ -253,53 +209,67 @@ Faz 1'in bazı yetenekleri, mevcut sistemin **veri paylaşım koşullarına** ba
 
 Aidat tahsilatı mevcut sistemde kalır — orada iyi çalışıyor.
 
-Ama Elite'in geliri yalnızca aidattan ibaret değil. Seminer, etkinlik, kişisel antrenman, ek hizmetler — ve ileride ürün satışı. **Bunlar mevcut sistemin yapabileceği şeyler değil.** Bunun için ayrı bir ticari akış gerekir.
+Ama Elite'in geliri yalnızca aidattan ibaret değil: seminer, etkinlik, kişisel antrenman, ek hizmetler — ve ileride ürün. **Bunlar mevcut sistemin yapabileceği şeyler değil.**
 
 **Faz 1'de kurulur:**
-
 - Kart ile online ödeme
 - **Üye ve üye olmayan (misafir) katılımcı** ödemesi
 - Seminer ve etkinlik bileti
-- Kişisel antrenman ve rezerve edilebilir hizmet ödemesi
+- Kişisel antrenman ve hizmet ödemesi
 - Fatura ve makbuz *(GoBD uyumlu)* ⚖️
 - İptal ve iade akışı
 - Satış ve gelir raporlaması
 
-#### İki tüzel yapı — baştan kurulur
+**İki tüzel yapı — baştan kurulur.** Elite'in **hizmet gelirleri** ile **ürün gelirleri** farklı tüzel yapılar üzerinden yürüyecek. Üye tek bir uygulama görür; gelir arka planda doğru yapıya yazılır, doğru fatura kesilir.
+**Bu sonradan eklenebilecek bir düzenleme değildir.** Faz 1'de tek yapı kullanılsa bile mimari iki yapıyı taşımaya hazır kurulur.
 
-Elite'in **hizmet gelirleri** (seminer, kişisel antrenman) ile **ürün gelirleri** farklı tüzel yapılar üzerinden yürüyecek.
+**Para akışı.** Ödeme altyapısı **Elite'in kendi adına** kurulur. Para doğrudan Elite'e akar. **Soluty akışı yönetir, paraya dokunmaz.**
 
-Sistem bunu **baştan taşıyacak şekilde** kurulur: üye tek bir uygulama görür; gelir arka planda doğru tüzel yapıya yazılır, doğru fatura kesilir, doğru muhasebeye akar.
+> Ödeme altyapısı sözleşmesi Elite tarafından imzalanır; kurulum (kimlik doğrulama ve onay) sağlayıcının takvimine bağlıdır.
 
-**Bu, sonradan eklenebilecek bir düzenleme değildir.** Faz 1'de tek yapı kullanılsa bile, mimari iki yapıyı taşımaya hazır kurulur. Aksi hâlde Faz 2'de sistem yeniden yazılır.
+**Elite ile temas eden herkes.** Bir kişi üye olmadan da temas edebilir — seminere katılır, ürün alır. Bu kişiler tek seferlik işlem olarak görülmez; sistemde tanınır ve zamanla üyeliğe dönüşebilir. **Seminer katılımcısı, yarının üyesidir.**
 
-#### Para akışı
+---
 
-Ödeme altyapısı **Elite'in kendi adına** kurulur. Para doğrudan Elite'e (ve ilgili tüzel yapıya) akar.
+### 5.8 Devreye Alma — Mevcut Üyelerin Sisteme Taşınması
 
-**Soluty akışı yönetir, paraya dokunmaz.**
+Yeni bir sistem kurmak yetmez. **Mevcut ~900 üyenin o sisteme taşınması gerekir.**
 
-> Bu bir tercih değil, doğru mimaridir. Ödeme altyapısı sözleşmesi Elite tarafından imzalanır; kurulum süreci (kimlik doğrulama ve onay) sağlayıcının takvimine bağlıdır.
+Bu, projelerin en çok hafife alınan parçasıdır — ve Faz 1'in iş sonucu buna bağlıdır. Uygulama ne kadar iyi olursa olsun, **üyenin telefonunda değilse değer üretmez.**
 
-#### Elite ile temas eden herkes
+**1. Veri aktarımı**
+Mevcut sistemdeki üye kayıtları yeni platforma taşınır: kişi bilgileri, üyelik durumu, başlangıç tarihleri, sözleşme arşivi.
+Aktarım öncesi **veri temizliği** yapılır — yıllar içinde biriken tekrar kayıtlar, eksik bilgiler, güncel olmayan adresler.
+**Veli–çocuk ilişkileri yeniden kurulur.**
 
-Bir kişi Elite'e üye olmadan da temas edebilir: bir seminere katılabilir, bir ürün alabilir, bir etkinliğe gelebilir.
+**2. Kuşak verisinin oluşturulması**
+Kuşak bilgisi bugün **hiçbir sistemde yok** — antrenörlerin bilgisinde ve kâğıtta.
+Bu veri **sıfırdan üretilir.** Soluty toplu giriş aracını hazırlar; kuşak bilgisini Elite'in antrenörleri girer.
+Ortak bir çalışmadır ve devreye alma takviminin parçasıdır.
 
-Bu kişiler tek seferlik işlem olarak görülmez. Sistem içinde tanınır, ulaşılabilir kalır ve zamanla üyeliğe dönüşebilir. **Seminer katılımcısı, yarının üyesidir.**
+**3. Üyelerin uygulamaya alınması**
+900 üyenin uygulamayı indirmesi, hesabını doğrulaması ve kullanmaya başlaması gerekir.
+- Davet ve aktivasyon akışı
+- **Kimlik doğrulama** — hesabın doğru kişiye gitmesi
+- **Veli hesaplarının çocuk profilleriyle eşleştirilmesi**
+- Devreye alma kampanyası ve üye desteği
+
+> **Bu son madde projenin iş sonucunu doğrudan belirler.** Uygulamadan ürün satışı, seminer bileti ve üye iletişimi — hepsi kaç üyenin uygulamada olduğuna bağlıdır.
+> **Devreye alma teknik bir adım değil, ticari bir adımdır.** Birlikte yürütülür.
 
 ---
 
 ### Faz 1 — İş Sonucu
 
-- Üye Elite'i **telefonundan yaşar** — programı görür, derse kaydolur, gelişimini takip eder
-- Yeni üye adayı **web sitesinden içeri girer** — deneme dersine kaydolur, üye olur
+- Üye Elite'i **telefonundan yaşar**
+- Yeni üye adayı **web sitesinden içeri girer**
 - Kuşak ve sınav sistemi **ilk kez bir sistemde yaşar**
 - **Kâğıt sözleşme süreci biter**
 - **Veli, çocuğunun gelişimini görür**
-- **Elite aidat dışında da gelir toplayabilir** — seminer, etkinlik, kişisel antrenman
+- **Elite aidat dışında da gelir toplayabilir**
 - Elite, üyesine **her gün ulaşabilecek bir kanala** sahip olur
 
-Son iki madde, Faz 2'nin de ön koşuludur.
+Son iki madde Faz 2'nin de ön koşuludur.
 
 ---
 
@@ -307,26 +277,19 @@ Son iki madde, Faz 2'nin de ön koşuludur.
 
 Faz 1'de kurulan ticari akışın **ürün** tarafına açılması.
 
-Elite'in yaklaşık 900 aktif üyesi var. Faz 1'de kurulan uygulama, bu üyelere ulaşan kanalı yaratır. Faz 2 o kanaldan ürün akıtır.
+Ürün kataloğu · Uygulama içinden satın alma · Stok, sipariş, teslimat takibi · **İkinci tüzel yapının gelir ve muhasebe akışı** *(mimari Faz 1'de hazırlanır — §5.7)*
 
-- Ürün kataloğu (merchandise, ekipman) · Uygulama içinden satın alma
-- Stok, sipariş ve teslimat takibi
-- **İkinci tüzel yapının gelir ve muhasebe akışı** *(mimari Faz 1'de hazırlanır — §5.7)*
-
-**Durum:** Bu faz şu an belirsizdir. Mevcut bir dış çalışma sürüyor. Sonucu görüldükten sonra iki yol vardır: mevcut çalışma platforma bağlanır, ya da tek omurga üzerinde yeniden kurulur. Karar Elite'e aittir; her iki yolu da destekleriz.
+**Durum:** Belirsiz. Mevcut bir dış çalışma sürüyor. İki yol: mevcut çalışma platforma bağlanır, ya da tek omurga üzerinde yeniden kurulur. Karar Elite'e aittir.
 
 ---
 
 ## 7. FAZ 3 — Elite AI
 
-- **Üye Asistanı** — uygulamada, sınırlı yetkiyle
-- **Destek Asistanı** — web sitesinde, ziyaretçiye
-- **Yönetici Asistanı** — analiz ve içgörü
-- **İletişim Asistanı** — gelen mesajlarda ilk temas
+**Üye Asistanı** (uygulamada, sınırlı yetkiyle) · **Destek Asistanı** (web, ziyaretçiye) · **Yönetici Asistanı** (analiz) · **İletişim Asistanı**
 
 > Yapay zekâ her zaman **asistandır.** Nihai kararı insan verir.
 
-Bu faz Faz 1'e bağlıdır: yapay zekânın konuşacağı bir üye, okuyacağı bir veri olmadan anlamı yoktur.
+Faz 1'e bağlıdır: yapay zekânın konuşacağı bir üye, okuyacağı bir veri olmadan anlamı yoktur.
 
 ---
 
@@ -334,7 +297,7 @@ Bu faz Faz 1'e bağlıdır: yapay zekânın konuşacağı bir üye, okuyacağı 
 
 WhatsApp, Instagram, Facebook, TikTok, YouTube, e-posta, telefon, web formu — bugün her biri ayrı yerde, ayrı kişide, ayrı hafızada.
 
-**Tek iletişim noktası:** hangi kanaldan gelirse gelsin, mesaj aynı yere düşer; cevap aynı yerden çıkar; geçmiş tek yerde durur.
+**Tek iletişim noktası:** hangi kanaldan gelirse gelsin mesaj aynı yere düşer; cevap aynı yerden çıkar; geçmiş tek yerde durur.
 
 ---
 
@@ -342,9 +305,9 @@ WhatsApp, Instagram, Facebook, TikTok, YouTube, e-posta, telefon, web formu — 
 
 Faz 1'de teknik videoları **gösterilir.** Faz 5'te video **bir varlık olarak yönetilir.**
 
-**Medya kütüphanesi:** Video yükleme, işleme, barındırma · Merkezî arşiv, etiketleme, arama · İzlenme analitiği
-**Öğrenme alanı:** Kombinasyonlar · **Evde antrenman programları** *(müfredat)*
-**Sosyal medya:** İçerik planlama ve yayınlama · Çok platformlu yönetim · Performans takibi
+**Medya kütüphanesi:** Yükleme, işleme, barındırma · Merkezî arşiv, etiketleme, arama · İzlenme analitiği
+**Öğrenme alanı:** Kombinasyonlar · **Evde antrenman programları**
+**Sosyal medya:** İçerik planlama · Çok platformlu yönetim · Performans takibi
 
 ---
 
@@ -355,7 +318,7 @@ Faz 1'de teknik videoları **gösterilir.** Faz 5'te video **bir varlık olarak 
 - **Uygulama olmadan**, medya kütüphanesinin izleyicisi yoktur.
 - **Uygulama olmadan**, iletişim merkezinin bağlanacağı bir üye kaydı yoktur.
 
-Faz 2–5 birer **yön**dür, taahhüt değil. Teklifimiz **yalnızca Faz 1** içindir.
+Teklifimiz **yalnızca Faz 1** içindir.
 
 ---
 
@@ -363,58 +326,57 @@ Faz 2–5 birer **yön**dür, taahhüt değil. Teklifimiz **yalnızca Faz 1** i�
 
 ### 11.1 Topluluk ve Antrenman Partneri (Talep 9)
 
-Talep üç parça içeriyor: antrenman partneri bulma, üyeler arası açık grup sohbeti, topluluk işlevi.
-
 **Antrenman partneri bulma** üzerinde hemfikiriz — yapılandırılmış eşleştirme: kuşak seviyesi, kilo sınıfı, antrenman saatleri.
 
-**Açık grup sohbeti** konusunda bir çekincemiz var:
-
-Elite'in uygulamasında çocuk üyeler var. Serbest ve açık bir grup sohbeti, Elite'i hukuken bir *barındırma sağlayıcısı* konumuna taşır ve üç yük getirir:
+**Açık grup sohbeti** konusunda çekincemiz var. Elite'in uygulamasında çocuk üyeler var. Serbest ve açık bir grup sohbeti, Elite'i hukuken bir *barındırma sağlayıcısı* konumuna taşır:
 
 - **Sorumluluk:** Kullanıcı içeriğinden doğan hukuki sorumluluk Elite'e geçer.
-- **Moderasyon:** Çocukların bulunduğu bir sohbet ortamı sürekli gözetim gerektirir. Bu, antrenörlerin işi olamaz.
-- **Risk:** Yetişkinlerin ve çocukların serbestçe iletişim kurabildiği bir alan, taşınması gereken en ağır risktir.
+- **Moderasyon:** Çocukların bulunduğu sohbet ortamı sürekli gözetim gerektirir. Bu antrenörlerin işi olamaz.
+- **Risk:** Yetişkinlerin ve çocukların serbestçe iletişim kurabildiği alan, taşınması gereken en ağır risktir.
 
-**Önerimiz:** Sohbeti uygulamanın içine değil, üyelerin zaten kullandığı yere bırakalım. Topluluk hissini başka yollarla kuralım — kuşak terfilerinin görünürlüğü, başarımlar, etkinlik katılımcı listeleri.
+**Önerimiz:** Sohbeti üyelerin zaten kullandığı yere bırakalım. Topluluk hissini başka yollarla kuralım — kuşak terfilerinin görünürlüğü, başarımlar, etkinlik katılımcı listeleri.
 
-**Bu bir ret değil, bir koruma önerisidir.** Karar Elite'e aittir.
-
----
+**Bu bir ret değil, bir koruma önerisidir.**
 
 ---
 
-# EK — AÇIK KONULAR
+---
 
-> **Bu bölüm çalışma sürümüne aittir. Müşteri sürümünde yer almaz.**
+# EK — AÇIK KONULAR (İÇ)
+
+> **Müşteri sürümünde yer almaz.**
 
 ## A. Kapsam kararları
 
 | # | Konu | Durum | Karar |
 |---|---|---|---|
 | A1 | Topluluk / açık grup sohbeti | 🔄 Müzakerede | Faz 1'e alınmadı. Pozisyon §11.1'de. |
-| A2 | Antrenman partneri arama | 🔄 Müzakerede | A1 ile birlikte masaya konacak. Riski yok. |
-| A3 | "Ek hizmetler" | ✅ KAPANDI | Jenerik **rezerve edilebilir hizmet akışı**. Sağlık verisi kapsam dışı. |
+| A2 | Antrenman partneri arama | 🔄 Müzakerede | A1 ile masaya konacak. Riski yok. |
+| A3 | "Ek hizmetler" | ✅ KAPANDI | Jenerik rezerve edilebilir hizmet akışı. Sağlık verisi kapsam dışı. |
 | A4 | Ödeme / aidat görünürlüğü | ✅ KAPANDI | Kapsama alındı, **koşullu** (§5.6). |
-| A5 | Çocuk / ebeveyn alanı | ✅ KAPANDI | **Faz 1 çekirdeği** — kimlik mimarisi kararı. |
-| A6 | AI sohbet botu | ✅ KAPANDI | **Faz 3'te kalır.** Faz 1'de bağlantı noktası. |
-| A7 | Mobil uygulamada video | ✅ KAPANDI | **Faz 1 = tüketim, Faz 5 = yönetim.** Barındırma üstlenilmez. Zarif bozulma. |
-| **A8** | **Ticari ödeme rayı** | ✅ **KAPANDI** | **Faz 1'e alındı (§5.7).** Kart + misafir + bilet + iade + GoBD. **İki tüzel yapı baştan kurulur.** PSP Elite adına — **para Soluty'den geçmez** (ZAG/BaFin riski). |
+| A5 | Çocuk / ebeveyn alanı | ✅ KAPANDI | **Faz 1 çekirdeği** — kimlik mimarisi. |
+| A6 | AI sohbet botu | ✅ KAPANDI | **Faz 3'te.** Faz 1'de bağlantı noktası. |
+| A7 | Mobil uygulamada video | ✅ KAPANDI | **Faz 1 = tüketim, Faz 5 = yönetim.** Zarif bozulma. |
+| A8 | Ticari ödeme rayı | ✅ KAPANDI | **Faz 1'e alındı (§5.7).** İki tüzel yapı baştan. **Para Soluty'den geçmez** (ZAG/BaFin). |
+| **A9** | **Devreye alma / veri aktarımı** | ✅ **KAPANDI** | **Faz 1'e alındı (§5.8).** Üç iş: veri aktarımı + kuşak verisi üretimi + **900 üyenin app'e alınması.** V1'de **hiç yoktu.** |
 
 ## B. Yerinde keşifte doğrulanacaklar
 
 | # | Konu |
 |---|---|
-| B1 | **Mevcut sistemin veri erişim / API politikası** — *en kritik*. Bkz. `internal/centercom-integration.md` |
-| B2 | Muhasebe aktarımı aktif mi? → **birlikte aktive edilir** (güven hamlesi), ayrı iş olarak satılmaz |
+| B1 | **Mevcut sistemin veri erişim / API politikası** — *en kritik.* Bkz. `internal/centercom-integration.md` |
+| B2 | Muhasebe aktarımı aktif mi? → **birlikte aktive edilir** (güven hamlesi) |
 | B3 | Ders/kurs yönetimi zayıf mı, kullanılmıyor mu? |
 | B4 | Mevcut uygulamanın hangi yetenekleri açık? |
-| B5 | Aile hesabı mevcut sistemde var mı? |
+| B5 | **Aile hesabı mevcut sistemde var mı?** → yoksa veli–çocuk ilişkisi **yeniden kurulacak** |
 | B6 | Sözleşme süreleri bugün nasıl takip ediliyor? |
 | B7 | **Çocuk üye oranı ve yaş dağılımı** |
 | B8 | Ödeme görünürlüğü listede neden yok? |
-| B9 | **Elite'in mevcut teknik video arşivi var mı?** |
-| **B10** | **Bugün seminer/etkinlik ücreti nasıl tahsil ediliyor?** |
-| **B11** | **İkinci tüzel yapı kuruldu mu? Vergi/KDV durumu ne?** |
+| B9 | Elite'in mevcut teknik video arşivi var mı? |
+| B10 | **Bugün seminer/etkinlik ücreti nasıl tahsil ediliyor?** |
+| B11 | **İkinci tüzel yapı kuruldu mu? Vergi/KDV durumu?** |
+| **B12** | **Üyelerin e-posta / telefon bilgisi güncel mi?** → app davet kampanyası buna bağlı. Yarısı bayatsa devreye alma çöker. |
+| **B13** | **Kaç antrenör kuşak verisi girecek? Kuşak yapısı yazılı bir yerde var mı?** |
 
 ## C. Talep listesi izlenebilirlik
 
@@ -424,38 +386,38 @@ Elite'in uygulamasında çocuk üyeler var. Serbest ve açık bir grup sohbeti, 
 | 2 | Antrenman planı ve ders kaydı | Faz 1 — 5.1 |
 | 3 | Katılım ve antrenman geçmişi | Faz 1 — 5.1 |
 | 4 | Haberler ve push | Faz 1 — 5.1 |
-| 5 | Seminerler ve etkinlikler + **bilet** | Faz 1 — 5.1 / **5.7** |
+| 5 | Seminerler + **bilet** | Faz 1 — 5.1 / **5.7** |
 | 6 | Sınav sistemi ve gelişim | Faz 1 — 5.1 / 5.4 |
 | 7 | Antrenör profilleri | Faz 1 — 5.1 |
 | 7b | *AI sohbet botu* | **Faz 3** ✅ |
-| 8 | Çocuk ve ebeveyn alanı | Faz 1 — 5.1 ✅ çekirdek |
+| 8 | Çocuk ve ebeveyn alanı | Faz 1 — 5.1 ✅ |
 | 9 | Topluluk / grup sohbeti | **§11.1 — müzakerede** 🔄 |
 | 10a | *Teknik videoları (gösterim)* | **Faz 1 — 5.4** ✅ |
-| 10b | *Video arşivi, evde antrenman programları* | **Faz 5** ✅ |
+| 10b | *Video arşivi, evde antrenman programı* | **Faz 5** ✅ |
 | 11 | Kişisel antrenman + ek hizmetler | Faz 1 — 5.1 / **5.7** ✅ |
 | 12 | Dijital doküman yönetimi | Faz 1 — 5.1 / 5.5 |
-| 13 | Shop bağlantısı | **Faz 2** *(ray Faz 1'de — §5.7)* |
+| 13 | Shop bağlantısı | **Faz 2** *(ray Faz 1'de)* |
 | 14 | Motivasyon / başarımlar | Faz 1 — 5.1 |
 
-## D. Soluty'nin eklediği, talep listesinde olmayan
+## D. Soluty'nin eklediği (talep listesinde yok)
 
 | Kapsam | Gerekçe |
 |---|---|
-| **Yönetim paneli** | 14 maddenin hepsinin bir yöneteni olmalı. Zorunlu. |
+| **Yönetim paneli** | Her maddenin bir yöneteni olmalı. Zorunlu. |
 | **Modern web sitesi** | Müşteri "can alıcı" dedi. **V1'de teklif dışıydı (Faz 3).** |
 | **Deneme dersi akışı** | Bugünkü en zayıf nokta. |
-| **Dijital sözleşme (kazanım tarafı)** | Kâğıt süreç bitiyor + dönüşüm adımı. |
-| **Ödeme / aidat görünürlüğü** | Listede yok ama eksikliği geri döner. Koşullu. |
-| **Ticari ödeme rayı** | Listede *dolaylı* var (bilet, PT, shop). Ama rayın kendisi yazılı değildi. |
-| **CenterCom entegrasyon katmanı** | **V1'de hiç yoktu.** Yeni iş. |
-| **Başlangıç veri aktarımı + kuşak verisi** | **V1'de hiç yoktu.** Yeni iş. |
+| **Dijital sözleşme** | Kâğıt biter + dönüşüm adımı. |
+| **Ödeme / aidat görünürlüğü** | Eksikliği geri döner. Koşullu. |
+| **Ticari ödeme rayı** | Listede *dolaylı* var; rayın kendisi yazılı değildi. |
+| **CenterCom entegrasyon katmanı** | **V1'de hiç yoktu.** |
+| **Devreye alma + veri aktarımı** | **V1'de hiç yoktu.** |
 
 ---
 
 ## F. ⚠️ SÜRE VE KAPSAM SAVUNMASI (İÇ — KRİTİK)
 
 > **Bunu unutma.** Müşteri "CenterCom çoğu şeyi yapıyor, siz tasarruf edeceksiniz" bekliyor.
-> **Gerçek: süre kısalmıyor.** Aşağısı bu pozisyonun savunmasıdır.
+> **Gerçek: süre kısalmıyor.**
 
 ### F.1 Bağlam
 
@@ -467,23 +429,28 @@ Elite'in uygulamasında çocuk üyeler var. Serbest ve açık bir grup sohbeti, 
 | Kapsam | Tasarruf |
 |---|---|
 | SEPA tahsilat motoru (mandate, tekrarlayan tahsilat, XML, banka dosyası) | ✅ Gerçek |
-| Mahnwesen / kademeli ihtar akışı | ✅ Gerçek |
-| **Turnike / RFID / dolap donanım entegrasyonu** | ✅✅ **Büyük** — marka tespiti, API araştırması, fiziksel test, saha riski |
+| Mahnwesen / kademeli ihtar | ✅ Gerçek |
+| **Turnike / RFID / dolap donanım entegrasyonu** | ✅✅ **Büyük** — marka tespiti, API araştırması, saha testi, risk |
 | POS / kasa / stok | ✅ Gerçek |
-| §312k iptal butonu (hukuki iş) | ✅ Küçük |
+| §312k iptal butonu | ✅ Küçük |
 | Muhasebe / DATEV (V1 Faz 4) | ✅ Zaten teklif dışıydı |
 
 ### F.3 Girenler — yeni iş
 
 | Kapsam | Etki |
 |---|---|
-| **Yeni web sitesi** — V1'de Faz 3, **teklif dışı**; V2'de Faz 1'in içinde | 🔴 **Büyük** |
-| **Mobil app zenginleşti** — 14 madde: veli alanı (kimlik mimarisi!), rozet, teknik video, rezerve edilebilir hizmet, sınav sistemi | 🔴 Orta-büyük |
+| **Yeni web sitesi** — V1'de Faz 3, **teklif dışı** | 🔴 **Büyük** |
+| **Mobil app zenginleşti** — 14 madde: veli alanı (kimlik mimarisi), rozet, teknik video, hizmet rezervasyonu, sınav | 🔴 Orta-büyük |
 | **Ticari ödeme rayı** — kart, misafir, iade, KDV, GoBD, **iki tüzel kişilik yönlendirmesi** | 🔴 Orta-büyük |
 | **CenterCom entegrasyon/senkron katmanı** — V1'de yoktu | 🔴 Orta |
 | **Mutabakat / drift tespiti** — V1'de yoktu | 🔴 Küçük-orta |
-| **Başlangıç veri aktarımı** — 900 üye — V1'de yoktu | 🔴 Orta |
-| **900 üyenin kuşak verisi girişi** — hiçbir yerde yok, sıfırdan üretilecek | 🔴 **Gizli, orta-büyük** |
+| **⚠️ DEVREYE ALMA — V1'de hiç yoktu** | 🔴🔴 **Büyük, üç parça:** |
+| ↳ *Veri aktarımı* — 900 kayıt, **veri temizliği**, tekrar kayıtlar, ölü üyeler, bayat adresler | 🔴 Orta |
+| ↳ *Veli–çocuk ilişkilerinin yeniden kurulması* — CenterCom'da aile hesabı yoksa **dedektiflik işi** (soyad/adres/IBAN eşleştirme) | 🔴 Orta |
+| ↳ *Kuşak verisinin sıfırdan üretilmesi* — 900 üye, hiçbir yerde yok. **Toplu giriş aracı da yapılacak.** | 🔴 Orta-büyük |
+| ↳ *900 üyenin uygulamaya alınması* — davet, **kimlik doğrulama**, aktivasyon, **veli–çocuk eşleştirme**, kampanya, destek | 🔴🔴 **Gizli canavar** |
+
+> **Devreye alma teknik değil ticari bir adımdır.** 900 üyeye ürün satma hikayesi, 900 üyenin uygulamada olmasına bağlıdır. **Adoption = iş modeli.**
 
 ### F.4 Savunma argümanları
 
@@ -492,22 +459,17 @@ Elite'in uygulamasında çocuk üyeler var. Serbest ve açık bir grup sohbeti, 
 - CenterCom'a verdiğimiz: **SEPA rayı** (mandate, XML, dunning)
 - Geri aldığımız: **Kart rayı** (PSP, misafir ödeme, iade, KDV, **iki tüzel kişilik yönlendirmesi**)
 
-**Kart rayı SEPA rayından daha basit değildir.** Misafir kimliği, iade akışı, tüketici hukuku ve iki-şirket yönlendirmesi SEPA'da yoktu.
+**Kart rayı SEPA rayından daha basit değildir.**
 
-**2 — Web sitesi teklife girdi**
-V1'de Faz 3'tü ve 8 aylık teklifin dışındaydı. Tek başına ciddi bir ekleme.
+**2 — Web sitesi teklife girdi.** V1'de Faz 3'tü, 8 aylık teklifin dışındaydı.
 
-**3 — Mobil app büyüdü**
-V1'de app "üye self-servis" seviyesindeydi. Şimdi 14 maddelik zengin bir ürün. Veli alanı tek başına kimlik mimarisini değiştiriyor.
+**3 — Mobil app büyüdü.** V1'de "üye self-servis" seviyesindeydi. Şimdi 14 maddelik zengin ürün.
 
-**4 — Entegrasyon işi V1'de hiç yoktu**
-CenterCom V1'de yoktu. Şimdi: senkron katmanı, mutabakat, drift tespiti, aktarım kuyruğu. **Bu tamamen yeni iş.**
+**4 — Entegrasyon işi V1'de hiç yoktu.** CenterCom V1'de yoktu. Senkron, mutabakat, drift tespiti, aktarım kuyruğu — **tamamen yeni.**
 
-**5 — Veri göçü + kuşak verisi V1'de yoktu**
-V1 sıfırdan sistem varsayıyordu. Şimdi 900 üye aktarımı **+ 900 üyenin kuşak verisinin sıfırdan üretilmesi** var.
+**5 — Devreye alma V1'de hiç yoktu.** V1 sıfırdan sistem varsayıyordu. Şimdi 900 üye taşınacak, kuşak verisi üretilecek, **900 kişi uygulamaya alınacak.**
 
-**6 — Üye master bizde kaldı (D3)**
-CenterCom'a giden **tahsilat**tı, **üye yönetimi değil.** Üye kaydı, profil, aile yapısı, sözleşme yaşam döngüsü hâlâ bizde.
+**6 — Üye master bizde kaldı (D3).** CenterCom'a giden **tahsilat**tı, **üye yönetimi değil.**
 *Müşteri "CenterCom üye tutuyor, siz tutmayın" derse:* app CenterCom paylaşsa da paylaşmasa da çalışmalı · üye kendi profilini düzenleyebilmeli · kuşak/sınav verisinin asılacağı bir üye kaydı gerekli, CenterCom onu asla tutmayacak.
 
 ### F.5 Müşteriye anlatım — kazanan çerçeve
@@ -515,33 +477,30 @@ CenterCom'a giden **tahsilat**tı, **üye yönetimi değil.** Üye kaydı, profi
 > ❌ "Tasarruf yok."
 > ✅ **"Tasarruf var — ama cebimize koymadık. Sizin daha çok istediğiniz şeye yatırdık."**
 
-Çıkan: donanım entegrasyonu, SEPA motoru, kasa, ihtar akışı
-Giren: **web sitesi** (istediniz) · **zengin mobil app** (istediniz) · **ticari ödeme rayı** (para kazanmanız için) · shop hazırlığı
+**Çıkan:** donanım entegrasyonu, SEPA motoru, kasa, ihtar akışı
+**Giren:** **web sitesi** (istediniz) · **zengin mobil app** (istediniz) · **ticari ödeme rayı** (para kazanmanız için) · **devreye alma** (olmadan hiçbiri işe yaramaz)
 
-**Aynı süreye daha fazla değer.** Dürüst ve satılabilir.
+**Aynı süreye daha fazla değer.**
 
 ### F.6 Yeni tahmin
 
-⚠️ **Yeni süre/maliyet tahmini yapılmadı.** Yapılırken F.2 ve F.3 tablolarına bakılacak.
-**Beklenti: 8 ay civarı veya biraz üstü. Kısaltma savunulamaz.**
+⚠️ **Henüz yapılmadı.** Yapılırken F.2 ve F.3'e bakılacak.
+**Beklenti: 8 ay civarı veya üstü. Kısaltma savunulamaz.**
 
 ---
 
-## G. Dil ve terminoloji kontrolü (Almanca sürüm öncesi)
+## G. Dil kontrolü (Almanca sürüm öncesi)
 
-- ❌ Yasaklı: *Code, Programmierung, Entwickler, Feature, Modul, "App entwickeln"*
-- ✅ Tercih: *Plattform, System, Katman, Bileşen, Akış, Yetenek, Aufbauen, Verbinden*
-- ❌ **"Sahip" hiçbir yerde kullanılmaz** → *yönetici* / *Geschäftsführer* / *Leitung*
-- ❌ Süre ve maliyet bilgisi müşteri sürümünde **yer almaz**
+- ❌ Yasaklı: *Code, Programmierung, Entwickler, Feature, Modul*
+- ✅ Tercih: *Plattform, System, Katman, Bileşen, Akış, Yetenek*
+- ❌ **"Sahip" hiçbir yerde kullanılmaz** → *yönetici / Geschäftsführer / Leitung*
+- ❌ Süre ve maliyet müşteri sürümünde **yer almaz**
 - ⚠️ Mevcut sistemin adı müşteri belgesinde nasıl anılacak — **onaya tabi**
-- ⚠️ §11.1 hukuki çerçevesi (barındırma sağlayıcısı, DSGVO/DSA) — **hukukçuya**
-- ⚠️ 16 yaş altı veli onayı iddiası — **hukukçuya**
-- ⚠️ §5.7'deki GoBD/fatura iddiaları — **hukukçuya**
-- ⚠️ PSP/ödeme sağlayıcı adı müşteri metninde **anılmaz**
-- ⚠️ Video platformu adı (YouTube/Vimeo) **anılmaz** — "harici video platformu"
-- ✅ Yapay zekâ her zaman "asistan"; nihai karar insanda
+- ⚠️ §11.1 hukuki çerçevesi, 16 yaş altı veli onayı, §5.7 GoBD iddiaları — **hukukçuya**
+- ⚠️ PSP ve video platformu adları **anılmaz**
+- ✅ Yapay zekâ her zaman "asistan"
 - ✅ **Gelir vaadi verilmez.** Kaldıraç gösterilir, rakam uydurulmaz.
 
 ---
 
-*Belge sonu — v2.3 ÇALIŞMA DRAFT*
+*Belge sonu — v2.4 ÇALIŞMA DRAFT*
