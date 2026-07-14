@@ -1,6 +1,6 @@
 # Elite Kickboxing — Stratejik Yol Haritası
 
-**Sürüm:** 2.1 — **ÇALIŞMA DRAFT (Türkçe)**
+**Sürüm:** 2.2 — **ÇALIŞMA DRAFT (Türkçe)**
 **Tarih:** 14 Temmuz 2026
 **Hazırlayan:** Soluty GmbH
 **Durum:** İç çalışma sürümü. Müşteri sürümü Almanca (formal *Sie*) olarak ayrıca hazırlanacaktır.
@@ -10,7 +10,8 @@
 > 1. Elite'in mevcut sistemi **CenterCom**'un keşfedilmesi,
 > 2. Elite'ten gelen **üye uygulaması talep listesi** (14 başlık).
 >
-> **v2.1 değişiklikleri:** Rezerve edilebilir hizmet akışı (§5.1), ödeme görünürlüğü (§5.1), mevcut sisteme bağlı yetenekler ayrı başlık (§5.6), birlikte netleştirilecek konular ayrı başlık (§11).
+> **v2.1:** Rezerve edilebilir hizmet akışı (§5.1), ödeme görünürlüğü (§5.1), mevcut sisteme bağlı yetenekler (§5.6), birlikte netleştirilecek konular (§11).
+> **v2.2:** Teknik videoları — Faz 1'e *tüketim*, Faz 5'e *yönetim* olarak ayrıldı (§5.3, §5.4, §9).
 >
 > Belgedeki *Açık Konular* bölümü yalnızca çalışma sürümüne aittir; müşteri sürümünde yer almaz.
 
@@ -90,7 +91,7 @@ Mevcut sisteminizde çalışan hiçbir süreci yeniden kurmuyoruz. Bu bilinçli 
 | Faz 2 | Online Shop | Mobil uygulamanın ticari kanala dönüşmesi |
 | Faz 3 | Elite AI | Yapay zekâ destekli asistanlar |
 | Faz 4 | İletişim Merkezi | Tüm iletişim kanallarının tek noktada toplanması |
-| Faz 5 | Medya Kütüphanesi ve Sosyal Medya | Teknik video arşivi + sosyal medya yönetimi |
+| Faz 5 | Medya Kütüphanesi ve Sosyal Medya | Video arşivi yönetimi + sosyal medya operasyonu |
 
 **Faz 1 temeldir.** Diğer her şey onun üzerinde durur. Bu belgede yalnızca Faz 1 ayrıntılı olarak tanımlanmıştır; Faz 2–5 yönü gösterir, taahhüt oluşturmaz.
 
@@ -141,11 +142,12 @@ Elite'in en önemli önceliği. Üyenin cebindeki Elite.
 - Kayıt ve bilet
 - Etkinlik takvimi
 
-#### Sınav Sistemi
+#### Sınav Sistemi ve Teknikler
 - Sınav takvimi
 - Sınava kayıt
 - Kuşak / seviye ilerlemesi
 - Sınav bilgilendirmeleri
+- **Kuşak seviyesine bağlı teknik listesi — her tekniğe iliştirilebilen video** *(bkz. §5.4)*
 
 #### Antrenör Profilleri
 - Antrenör tanıtımları ve uzmanlık alanları
@@ -218,8 +220,9 @@ Panel ayrı bir ürün değildir. **Uygulamanın kumanda odasıdır.**
 - İçerik yönetimi (web + uygulama)
 - Ders programı ve doluluk yönetimi
 - Kuşak ve sınav yönetimi
+- **Teknik tanımlama ve tekniğe video bağlantısı iliştirme**
 - Seminer ve etkinlik tanımlama
-- **Rezerve edilebilir hizmet tanımlama**
+- Rezerve edilebilir hizmet tanımlama
 - Duyuru ve bildirim gönderimi
 - Dijital sözleşme ve belge akışı takibi
 - Üye gelişim görünümü
@@ -234,6 +237,7 @@ Bu katman, sistemi standart bir spor salonu yazılımından ayıran şeydir.
 
 - **Kuşak sistemi** (Graduierung) ve seviye hiyerarşisi
 - **Teknik listeleri** — kuşak seviyesine bağlı
+- **Teknik videoları** — her tekniğe bir video bağlantısı iliştirilebilir
 - **Sınav planlaması** ve sınav günü akışı
 - **Geçti / kaldı kaydı** ve kuşak geçmişi
 - **Kuşak başına asgari antrenman kuralı**
@@ -241,7 +245,21 @@ Bu katman, sistemi standart bir spor salonu yazılımından ayıran şeydir.
 
 > Bugün bu bilgi hiçbir sistemde yaşamıyor. Antrenörlerin hafızasında ve kâğıt üzerinde duruyor. Bir üye kuşak atlamaya hazır mı — bu soru bugün sezgiyle cevaplanıyor. Yarın veriyle cevaplanacak.
 
-Bu katman uygulamanın, panelin ve web sitesinin içinden geçer. Ayrı bir ekran değil, **sistemin omurgasına işlenmiş bir dildir.**
+#### Teknik videoları — Faz 1'in sınırı
+
+**Video, tekniğin bir niteliğidir.** Video olmadan bir teknik listesi yalnızca bir isim listesidir: *"Dönerek tekme"* — nasıl görünüyor?
+
+Faz 1'de:
+- Yönetim panelinden bir tekniğe **video bağlantısı iliştirilir**
+- Üye, teknik listesinde o tekniğe dokunur; video oynar
+
+Faz 1'de **yer almayanlar** — bunlar Faz 5'e aittir:
+- Video yükleme, işleme ve barındırma
+- Merkezî medya kütüphanesi (arşiv, etiketleme, organizasyon)
+- İzlenme analitiği
+- Evde antrenman **programları** *(bunlar video değil, müfredattır — ayrı bir yetenektir)*
+
+> **Tasarım ilkesi — zarif bozulma:** Video, tekniğin **opsiyonel** bir niteliğidir, zorunlu bir bölümü değil. Elite on video çekerse on teknikte video görünür; kalanında yalnızca metin durur. **"Yakında" ekranı yoktur, boş bölüm yoktur.** Sistem eksik içerikle de düzgün görünür.
 
 ---
 
@@ -348,18 +366,24 @@ WhatsApp, Instagram, Facebook, TikTok, YouTube, e-posta, telefon, web formu — 
 
 ## 9. FAZ 5 — Medya Kütüphanesi ve Sosyal Medya
 
-Talep listesindeki *"Teknik ve Öğrenme Alanı"* bu fazın parçasıdır.
+Faz 1'de teknik videoları **gösterilir.** Faz 5'te video **bir varlık olarak yönetilir.**
 
-**Medya kütüphanesi:**
-- Teknik videoları ve açıklamaları
+**Medya kütüphanesi (DAM):**
+- Video yükleme, işleme, barındırma
+- Merkezî arşiv: etiketleme, arama, organizasyon
+- Sürüm ve hak yönetimi
+- İzlenme analitiği
+
+**Öğrenme alanı:**
 - Kombinasyonlar
-- Evde antrenman içerikleri
-- Merkezî video arşivi
+- **Evde antrenman programları** *(video değil, müfredat — ayrı bir yetenek)*
 
 **Sosyal medya:**
 - İçerik planlama ve yayınlama
 - Çok platformlu yönetim
 - Performans takibi
+
+> Faz 5, bir içerik **operasyonudur.** Faz 1'deki video gösterimi, o operasyonun ilk müşterisidir.
 
 ---
 
@@ -414,23 +438,25 @@ Elite'in uygulamasında çocuk üyeler var. Serbest ve açık bir grup sohbeti, 
 |---|---|---|---|
 | A1 | **Topluluk / açık grup sohbeti** (Talep 9) | 🔄 **Müzakerede** | Faz 1'e alınmadı. Pozisyonumuz §11.1'de yazılı. Müşteriyle görüşülüp karara bağlanacak. |
 | A2 | **Antrenman partneri arama** (Talep 9) | 🔄 **Müzakerede** | A1 ile birlikte masaya konacak. Riski yok; teknik olarak Faz 1'e girebilir. |
-| A3 | **"Ek hizmetler"** (Talep 11) | ✅ **KAPANDI** | Jenerik **rezerve edilebilir hizmet akışı** kuruldu (§5.1, §5.3). Elite hizmeti tanımlar, üye rezerve eder. **Sağlık verisi içeren hizmetler kapsam dışı.** |
-| A4 | **Ödeme / aidat görünürlüğü** | ✅ **KAPANDI** | Kapsama alındı, **koşullu** (§5.6). Ayrıca müşteriye "listede olmaması bilinçli miydi?" sorulacak. |
-| A5 | **Çocuk / ebeveyn alanı** | ✅ **KAPANDI** | **Faz 1 çekirdeği** — orandan bağımsız. Kimlik mimarisi kararı; sonradan eklenemez. 16 yaş altı için veli onayı yasal gereklilik olabilir (hukukçuya doğrulatılacak). Oran yine de sorulacak (ROI + uyum). |
-| A6 | **AI sohbet botu** | ✅ **KAPANDI** | **Faz 3'te kalır.** Faz 1'de yalnızca bağlantı noktası hazırlanır. Gerekçe §5.1'de yazılı. |
+| A3 | **"Ek hizmetler"** (Talep 11) | ✅ **KAPANDI** | Jenerik **rezerve edilebilir hizmet akışı** kuruldu (§5.1, §5.3). **Sağlık verisi içeren hizmetler kapsam dışı.** |
+| A4 | **Ödeme / aidat görünürlüğü** | ✅ **KAPANDI** | Kapsama alındı, **koşullu** (§5.6). Müşteriye "listede olmaması bilinçli miydi?" sorulacak. |
+| A5 | **Çocuk / ebeveyn alanı** | ✅ **KAPANDI** | **Faz 1 çekirdeği** — orandan bağımsız. Kimlik mimarisi kararı. Oran yine de sorulacak (ROI + uyum). |
+| A6 | **AI sohbet botu** | ✅ **KAPANDI** | **Faz 3'te kalır.** Faz 1'de yalnızca bağlantı noktası hazırlanır. |
+| **A7** | **Mobil uygulamada video** (Talep 10) | ✅ **KAPANDI** | **Faz 1 = video tüketimi** (tekniğe iliştirilmiş bağlantı, §5.4). **Faz 5 = video yönetimi** (yükleme, barındırma, DAM, analitik). **Barındırma Faz 1'de üstlenilmez** — URL kabul edilir (YouTube liste dışı / Vimeo). **Evde antrenman programları Faz 1 dışı** (müfredat, video değil). Tasarım ilkesi: **zarif bozulma** — video opsiyonel nitelik, boş bölüm yok. |
 
 ## B. Yerinde keşifte doğrulanacaklar
 
 | # | Konu | Neden önemli |
 |---|---|---|
-| B1 | **Mevcut sistemin veri erişim / API politikası** | §5.6'nın tamamı buna bağlı. **En kritik açık soru.** Teklif öncesi netleşmeli. |
-| B2 | Muhasebe aktarımı gerçekten aktif mi? | Mevcut sistemde bu yetenek var; Elite habersiz görünüyor. Ayrı iş olarak satılmaz — **birlikte aktive edilir** (güven hamlesi). |
+| B1 | **Mevcut sistemin veri erişim / API politikası** | §5.6'nın tamamı buna bağlı. **En kritik açık soru.** Bkz. `internal/centercom-integration.md` |
+| B2 | Muhasebe aktarımı gerçekten aktif mi? | Mevcut sistemde bu yetenek var; Elite habersiz görünüyor. **Birlikte aktive edilir** (güven hamlesi). |
 | B3 | Ders/kurs yönetimi gerçekten zayıf mı, yoksa kullanılmıyor mu? | Kapsamı doğrudan etkiler. |
 | B4 | Mevcut uygulamanın gerçekte hangi yetenekleri açık? | Talep listesinin bir kısmı zaten mevcut olabilir. |
 | B5 | Aile hesabı mevcut sistemde var mı? | Çocuk/ebeveyn alanının mimarisini etkiler. |
 | B6 | Sözleşme sürelerinin bugün nasıl takip edildiği | Dijital sözleşme akışının tasarımını etkiler. |
 | B7 | **Çocuk üye oranı ve yaş dağılımı** | ROI hikayesi + 16 yaş altı uyum yükümlülüğü. |
 | B8 | **Ödeme görünürlüğü listede neden yok?** | Bilinçli mi, unutuldu mu? |
+| **B9** | **Elite'in mevcut teknik video arşivi var mı?** | Yoksa çekilmesi gerekir — Elite'in işi, bizim değil. Zarif bozulma bu yüzden zorunlu. |
 
 ## C. Talep listesi izlenebilirlik
 
@@ -446,7 +472,8 @@ Elite'in uygulamasında çocuk üyeler var. Serbest ve açık bir grup sohbeti, 
 | 7b | *Opsiyonel AI sohbet botu* | **Faz 3** ✅ |
 | 8 | Çocuk ve ebeveyn alanı | Faz 1 — 5.1 ✅ **çekirdek** |
 | 9 | Topluluk / grup sohbeti | **§11.1 — müzakerede** 🔄 |
-| 10 | *(Teknik ve öğrenme alanı)* | **Faz 5** |
+| 10a | *Teknik videoları (gösterim)* | **Faz 1 — 5.4** ✅ **(A7)** |
+| 10b | *Video arşivi, evde antrenman programları* | **Faz 5** ✅ **(A7)** |
 | 11 | Kişisel antrenman + ek hizmetler | Faz 1 — 5.1 ✅ **rezerve edilebilir hizmet akışı** |
 | 12 | Dijital doküman yönetimi | Faz 1 — 5.1 / 5.5 |
 | 13 | Shop bağlantısı | **Faz 2** |
@@ -468,11 +495,12 @@ Elite'in uygulamasında çocuk üyeler var. Serbest ve açık bir grup sohbeti, 
 - ✅ Tercih: *Plattform, System, Katman, Bileşen, Akış, Yetenek, Aufbauen, Verbinden*
 - ❌ "Sahip" **hiçbir yerde kullanılmaz** → *yönetici* / *Geschäftsführer* / *Leitung*
 - ❌ Süre ve maliyet bilgisi müşteri sürümünde **yer almaz**
-- ⚠️ Mevcut sistemin adının müşteri belgesinde nasıl anılacağı **onaya tabidir** (Project Instructions: rakip adı geçirmek iki aşamalı onay gerektirir)
-- ⚠️ §11.1'deki hukuki çerçeve (barındırma sağlayıcısı sorumluluğu, DSGVO/DSA) müşteri sürümünden önce **hukukçuya doğrulatılmalıdır**
-- ⚠️ §5.1'deki 16 yaş altı veli onayı iddiası da **hukukçuya doğrulatılmalıdır**
+- ⚠️ Mevcut sistemin adının müşteri belgesinde nasıl anılacağı **onaya tabidir**
+- ⚠️ §11.1'deki hukuki çerçeve (barındırma sağlayıcısı sorumluluğu, DSGVO/DSA) **hukukçuya doğrulatılmalıdır**
+- ⚠️ §5.1'deki 16 yaş altı veli onayı iddiası **hukukçuya doğrulatılmalıdır**
 - ✅ Yapay zekâ her zaman "asistan"; nihai karar insanda
+- ⚠️ Video barındırma için üçüncü taraf platform adı (YouTube/Vimeo) müşteri metninde **anılmaz** — "harici video platformu" denir
 
 ---
 
-*Belge sonu — v2.1 ÇALIŞMA DRAFT*
+*Belge sonu — v2.2 ÇALIŞMA DRAFT*
