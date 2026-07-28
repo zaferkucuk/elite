@@ -1,6 +1,6 @@
 # Elite Kickboxing — Stratejik Yol Haritası
 
-**Sürüm:** 2.9 — **ÇALIŞMA DRAFT (Türkçe)**
+**Sürüm:** 2.10 — **ÇALIŞMA DRAFT (Türkçe)**
 **Tarih:** 28 Temmuz 2026
 **Hazırlayan:** Soluty GmbH
 **Durum:** İç çalışma sürümü. Müşteri sürümü Almanca (formal *Sie*) olarak ayrıca hazırlanacaktır.
@@ -11,6 +11,7 @@
 > **v2.7:** Talep listesi madde madde karşılandı. Belge iki seviyeli hâle getirildi: **net kapsam** ve **tartışma konuları** (§11). Açık grup sohbeti, basit video, basit yapay zekâ asistanı ve online shop tartışma listesine alındı.
 > **v2.8:** EK-H eklendi — özellik dışı iş kalemleri (17 kategori). Kaynak: docs/R&D/research/non-feature-workload-research-raw.md
 > **v2.9:** §5.2 web sitesi kapsamı mevcut site incelemesi ve güncel standartlarla (yerel görünürlük, yapay zekâ destekli aramalar, doğrudan iletişim kanalları) yeniden tanımlandı. İç iş listesi EK-I olarak eklendi. Tasarım ayrı iş kolu olarak genişletildi. B21–B24 soruları eklendi.
+> **v2.10:** Uygulama çok rollü hâle geldi — antrenör ve yönetici görünümleri eklendi (§5.1). Tanımlanabilir rol ve yetki modeli tanımlandı (§5.3, A18). Etkinlik bileti e-posta ile teslim + tek kullanımlık QR doğrulamasıyla netleşti (§5.1, §5.7, A19). EK-H "Altyapı" olarak adlandırıldı.
 >
 > *EK* bölümü yalnızca çalışma sürümüne aittir; müşteri sürümünde yer almaz.
 
@@ -99,7 +100,9 @@ Elite'in en önemli önceliği. Üyenin cebindeki Elite.
 
 **Haberler ve Bildirimler** — Kapalı günler · İptal edilen dersler · Duyurular · **Push** · **Doğum günü ve özel gün kutlamaları**
 
-**Seminerler ve Etkinlikler** — Liste · Antrenör ve içerik bilgisi · **Kayıt ve bilet satışı** *(§5.7)* · Takvim
+**Seminerler ve Etkinlikler** — Liste · Antrenör ve içerik bilgisi · **Kayıt ve bilet satışı** *(§5.7)* · Takvim · **E-posta bilet ve tek kullanımlık QR doğrulama**
+
+> Bilet e-posta ile gönderilir; içindeki QR etkinlik girişinde okutularak doğrulanır (tek kullanımlık). Etkinlik girişinde bilet doğrulama ekranı geçerli / geçersiz / kullanılmış durumunu gösterir. Doğrulama bir yetkidir, sabit bir role bağlı değildir.
 
 **Sınav Sistemi ve Teknikler** — Sınav takvimi · Sınava kayıt · Kuşak ilerlemesi · **Kuşağa bağlı teknik listesi** *(§5.4)*
 
@@ -125,6 +128,13 @@ Elite'in en önemli önceliği. Üyenin cebindeki Elite.
 **Dijital Belgeler** — Rıza beyanları · Feragatnameler · Formlar · Dijital imza
 
 **Motivasyon** — 50/100 antrenman · 1 yıl · İlk sınav · İlk seminer · Doğum günü
+
+**Antrenör Görünümü** — Uygulama yalnızca üyenin değil, antrenörün de aracıdır. Kapsam: rol geçişi · bugünkü derslerim ve kendi ders programım · ders detayında katılımcı listesi ve üyeye hızlı bakış (kuşak, katılım durumu) · ders sonu katılım işaretlemesi · ders notları ve ders sonu bilgilendirmesi.
+
+> Bu, ders bazlı katılım kaydı kararının (§11.A madde 3) doğal sonucudur. Antrenör ders bitiminde salonun ortasındadır; masaüstü panel bu iş için pratik değildir.
+> **Kapsam sınırı:** Sınav günü geçti/kaldı girişi antrenör görünümünde değildir — panelde kalır.
+
+**Yönetici Görünümü** — Bilinçli olarak dar tutulur: kritik bildirimler (yeni üyelik, fesih talebi, ödeme başarısızlığı) ve salt-okunur günlük özet. Yönetimin asıl yeri paneldir; kapsamlı analiz ve yorumlama Faz 3'e aittir. Panelin mobilde tekrarı yapılmaz.
 
 ---
 
@@ -192,7 +202,9 @@ Her başlığın bir yöneteni olmak zorundadır. Haberi kim girer? Sınav takvi
 
 Panel ayrı bir ürün değildir. **Uygulamanın kumanda odasıdır.**
 
-İçerik yönetimi (web + app) · Ders programı ve doluluk · Kuşak ve sınav yönetimi · Teknik tanımlama · Seminer, etkinlik ve **bilet** tanımlama · Rezerve edilebilir hizmet tanımlama · **Satış, ödeme ve iade takibi** *(§5.7)* · Duyuru ve bildirim · **Dijital sözleşme, yenileme ve fesih takibi** · Üye gelişim görünümü
+İçerik yönetimi (web + app) · Ders programı ve doluluk · Kuşak ve sınav yönetimi · Teknik tanımlama · Seminer, etkinlik ve **bilet** tanımlama · Rezerve edilebilir hizmet tanımlama · **Satış, ödeme ve iade takibi** *(§5.7)* · Duyuru ve bildirim · **Dijital sözleşme, yenileme ve fesih takibi** · **Rol ve yetki tanımlama** · Üye gelişim görünümü
+
+> Roller ve yetkiler tanımlanabilir; mobil uygulama ve panel aynı rol yapısını ve aynı izin modelini paylaşır.
 
 **Panel, mevcut sistemin işini tekrar etmez.**
 
@@ -281,7 +293,7 @@ Ama Elite'in geliri yalnızca aidattan ibaret değil: seminer, etkinlik, kişise
 **Faz 1'de kurulur:**
 - Kart ile online ödeme
 - **Üye ve üye olmayan (misafir) katılımcı** ödemesi
-- Seminer ve etkinlik bileti
+- Seminer ve etkinlik bileti — üretim, e-posta ile teslim, tek kullanımlık doğrulama
 - Kişisel antrenman ve hizmet ödemesi
 - Fatura ve makbuz *(GoBD uyumlu)* ⚖️
 - İptal ve iade akışı
@@ -469,7 +481,7 @@ Elite'in ilettiği talep listesinin madde madde karşılığıdır. İki seviyel
 | 2 | Ders programı ve kurs kaydı | Tam karşılanıyor — §5.1 |
 | 3 | Katılım ve antrenman geçmişi | Karşılanıyor — §5.1 *(yöntem: aşağıdaki not)* |
 | 4 | Haberler ve bildirimler | Tam karşılanıyor + doğum günü ve özel gün kutlamaları — §5.1 |
-| 5 | Seminerler ve etkinlikler | Tam karşılanıyor — bilet ve ödeme dahil — §5.1 / §5.7 |
+| 5 | Seminerler ve etkinlikler | Tam karşılanıyor — bilet, ödeme, e-posta ile teslim ve tek kullanımlık QR doğrulama dahil — §5.1 / §5.7 |
 | 6 | Sınav sistemi ve gelişim | Tam karşılanıyor + kuşağa bağlı teknik listeleri — §5.1 / §5.4 |
 | 7 | Antrenör profilleri | Tam karşılanıyor — §5.1 |
 | 8 | Çocuk ve ebeveyn alanı | Tam karşılanıyor — kimlik mimarisinin çekirdeği — §5.1 |
@@ -478,7 +490,7 @@ Elite'in ilettiği talep listesinin madde madde karşılığıdır. İki seviyel
 | 12 | Dijital doküman yönetimi | Tam karşılanıyor — §5.1 / §5.5 |
 | 14 | Motivasyon ve dijital başarımlar | Tam karşılanıyor — §5.1 |
 
-**Madde 3 — katılım kaydı yöntemi.** Katılım iki yoldan işaretlenir: **antrenör ders sonunda katılımcıları işaretler**, ya da **üye uygulamadan bildirir.** Fiziksel giriş kaydı mevcut sisteminizde kalır; kuşak sisteminin ihtiyaç duyduğu bilgi *hangi antrenmana katıldığıdır* — bu ikisi farklı bilgilerdir ve birbirinin yerine geçmez.
+**Madde 3 — katılım kaydı yöntemi.** Katılım iki yoldan işaretlenir: **antrenör ders sonunda, mobil uygulamadaki antrenör görünümünden katılımcıları işaretler**, ya da **üye uygulamadan bildirir.** Fiziksel giriş kaydı mevcut sisteminizde kalır; kuşak sisteminin ihtiyaç duyduğu bilgi *hangi antrenmana katıldığıdır* — bu ikisi farklı bilgilerdir ve birbirinin yerine geçmez.
 
 ### 11.B Birlikte Karar Vereceğimiz Konular
 
@@ -541,7 +553,11 @@ Faz 1'de her iki yol da yoktur. Faz 1'de uygulamadan satın alınabilenler: **se
 | **A12** | ⭐ **Faz 1'de dış sistem entegrasyonu** | ✅ **KAPANDI — STRATEJİK KARAR** | **Faz 1 hiçbir dış sisteme bağlanmaz.** Ne CenterCom canlı entegrasyonu, ne harici shop tedarikçisi entegrasyonu. Gerekçe: *dış bağımlılık = kontrol edilemeyen gecikme riski.* Tek seferlik veri aktarımı entegrasyon sayılmaz — o kalır (§5.8). Canlı bağlantı istenirse **Faz 1 sonrası ayrı proje.** Bkz. §5.6. |
 | **A13** | **Online shop stratejisi** | ✅ **KAPANDI** | **Faz 2 = biz kurarız (mobil + web, tek sistem).** Salondan teslim varsayılan. **Pazaryeri önerilmez** (yanlış problem: Elite'in müşteri bulma değil, mevcut müşteriye satamama sorunu var). Harici tedarikçiyle entegrasyon **Faz 1'e konmaz**; istenirse Faz 1 sonrası ayrı proje, ön koşul = çalışır ve belgelenmiş API. **v2.7 revizyonu:** Shop'un Faz 1'e alınıp alınmayacağı **tartışma konusudur** (§11.B/4). §6'daki Faz 2 önerimiz geçerliliğini korur. |
 | **A14** | **Talep listesi mutabakatı** | ✅ **KAPANDI** | 14 maddelik talep listesi madde madde karşılandı. **11 madde net kapsam, 4 konu tartışmada** (§11). Kapsam toplantısının temeli bu bölümdür. |
-| **A15** | **QR ile check-in** | ✅ **KAPANDI** | Müşteri bu beklentiden vazgeçti. Katılım kaydı: antrenör işaretlemesi veya üye bildirimi (§11.A, madde 3 notu). |
+| **A15** | **QR ile check-in (derse giriş)** | ✅ **KAPANDI** | Derse giriş için QR yoktur — müşteri bu beklentiden vazgeçti. Katılım kaydı: antrenör işaretlemesi veya üye bildirimi (§11.A, madde 3 notu). Etkinlik bileti doğrulaması ayrı bir konudur ve QR iledir (bkz. A19). |
+| **A16** | **Antrenör mobil görünümü** | ✅ **KAPANDI** | Ders bazlı katılım kararının sonucu. Sınav günü geçti/kaldı girişi kapsam dışı — panelde kalır. |
+| **A17** | **Yönetici mobil görünümü** | ✅ **KAPANDI** | Bilinçli olarak dar: kritik bildirim + salt-okunur özet. Panelin tekrarı değil; kapsamlı analiz Faz 3. |
+| **A18** | **Tanımlanabilir rol ve yetki** | ✅ **KAPANDI** | Roller ve yetkiler çalışma anında tanımlanabilir. Mobil ve panel aynı izin modelini paylaşır. Bugünden sabit rol listesi belirlenmeyecek — bilinçli tercih. |
+| **A19** | **Etkinlik bileti doğrulama** | ✅ **KAPANDI** | Bilet e-posta ile gider, girişte QR okunur, tek kullanımlıktır. |
 
 ## B. Yerinde keşifte doğrulanacaklar
 
@@ -569,6 +585,8 @@ Faz 1'de her iki yol da yoktur. Faz 1'de uygulamadan satın alınabilenler: **se
 | **B22** | **Fotoğraf ve video varlıkları** *(AÇIK)*: Mevcut sitedeki fotoğraf/video varlıklarının kullanım hakları kimde? Kaynak dosyalar (yüksek çözünürlük) alınabilir mi? Yeni çekim planlanıyor mu? *(Yeni sitenin görsel kalitesi doğrudan buna bağlı.)* |
 | **B23** | **IHK eğitim programı** *(AÇIK)*: Program güncel mi, devam ediyor mu? Yeni sitede ne ağırlıkta yer alacak? *(Mevcut sitede "anerkanntes Bildungsinstitut" konumlandırması var — korunacak mı?)* |
 | **B24** | **Mevcut site firmasından talep edilecekler** *(talep listesi hazır)*: Zamanı geldiğinde Elite kendisi talep eder. Liste: alan adı/DNS yönetim erişimi · tam URL envanteri veya site yedeği · Google Search Console erişimi ve sıralama verileri · analitik erişimi/geçmişi · fotoğraf ve video kaynak dosyaları · içerik dışa aktarımı · alan adına bağlı e-posta hesapları/yönlendirmeleri envanteri |
+| **B25** | ✅ **KAPANDI** — **Etkinlik bileti doğrulama:** Bkz. A19. |
+| **B26** | **Ders notu kime yazılır?** *(AÇIK)*: Not derse mi yazılıyor (katılan herkes görür) yoksa üyeye mi (kişiye özel geri bildirim)? İkisi farklı veri modelidir; kapsam toplantısında netleşmeli. |
 
 ## C. Talep listesi izlenebilirlik
 
@@ -576,9 +594,9 @@ Faz 1'de her iki yol da yoktur. Faz 1'de uygulamadan satın alınabilenler: **se
 |---|---|---|
 | 1 | Profil + kuşak | Faz 1 — 5.1 / 5.4 |
 | 2 | Antrenman planı ve ders kaydı | Faz 1 — 5.1 |
-| 3 | Katılım ve antrenman geçmişi | Faz 1 — 5.1 ✅ *(QR yok — A15)* |
+| 3 | Katılım ve antrenman geçmişi | Faz 1 — 5.1 ✅ *(QR yok — A15; antrenör görünümü — A16)* |
 | 4 | Haberler ve push | Faz 1 — 5.1 |
-| 5 | Seminerler + bilet | Faz 1 — 5.1 / 5.7 |
+| 5 | Seminerler + bilet | Faz 1 — 5.1 / 5.7 ✅ *(e-posta bilet + QR doğrulama — A19)* |
 | 6 | Sınav sistemi ve gelişim | Faz 1 — 5.1 / 5.4 |
 | 7 | Antrenör profilleri | Faz 1 — 5.1 |
 | 7b | *AI sohbet botu* | **Tartışmada — §11.B/3** 🔄 |
@@ -602,6 +620,9 @@ Faz 1'de her iki yol da yoktur. Faz 1'de uygulamadan satın alınabilenler: **se
 | **Dijital sözleşme** | Müşteri bağımsız olarak istedi (kuruluş, yenileme, fesih). |
 | **Ticari ödeme rayı** | Müşteri bağımsız olarak istedi ("uygulama üzerinden ek satış"). |
 | **Devreye alma + veri aktarımı** | **V1'de hiç yoktu.** |
+| **Antrenör görünümü** | Ders bazlı katılım kararı bir yüzey gerektiriyor. |
+| **Yönetici görünümü** | Dar kapsam; panelin erişemediği anlık bildirim ihtiyacı. |
+| **Tanımlanabilir rol ve yetki** | Rol modelinin sonradan değişmesi tüm ekranları etkiler; esnek kurmak sonradan kırmaktan ucuzdur. |
 
 ---
 
@@ -641,6 +662,9 @@ Faz 1'de her iki yol da yoktur. Faz 1'de uygulamadan satın alınabilenler: **se
 | ↳ *Veli–çocuk ilişkilerinin yeniden kurulması* | 🔴 Orta |
 | ↳ *Kuşak verisinin sıfırdan üretilmesi* + toplu giriş aracı | 🔴 Orta-büyük |
 | ↳ *900 üyenin uygulamaya alınması* | 🔴🔴 **Gizli canavar** |
+| **Antrenör ve yönetici görünümü** | 🔴 Orta |
+| **Tanımlanabilir rol ve yetki modeli** | 🔴 Küçük-orta |
+| **Etkinlik bileti QR doğrulama** | 🔴 Küçük |
 
 > ⚠️ **v2.7 notu:** §11.B'deki dört konu (açık grup sohbeti, basit video, basit yapay zekâ asistanı, online shop) bu tabloda **yer almıyor** — hiçbiri henüz Faz 1 kapsamında değil. Faz 1'e alınmalarına karar verilirse her biri ayrı bir efor kalemi olarak eklenir.
 
@@ -680,6 +704,8 @@ Faz 1'de her iki yol da yoktur. Faz 1'de uygulamadan satın alınabilenler: **se
 
 > **Tahminleme iki seviyeli yapılacaktır:** (1) net kapsam için temel tahmin, (2) §11.B'deki her tartışma konusu için ayrı delta. Amaç, kapsam toplantısında bir konu Faz 1'e alınmak istendiğinde süre etkisinin anında söylenebilmesidir. **Bu çalışma henüz yapılmadı.**
 
+> **Güncelleme:** Satır seviyesinde iş kırılımı çalışması başladı. Tahmin modeli beş kovaya dayanıyor — **Yönetim Paneli, Mobil Uygulama, Web Sitesi, Altyapı, Devreye Alma.** İlk üçü müşteriye giden teslimatlardır; Altyapı görünür ekranı olmayan sürekli iştir; Devreye Alma bu projeye özgü tek seferlik geçiş işidir. Proje yönetimi ve koordinasyon (EK-H.17) kalem olarak değil, taban toplamın üzerine **%15** olarak modellenir. Sayısal tahmin değerleri bu belgeye henüz yazılmadı.
+
 ---
 
 ## G. Dil kontrolü (Almanca sürüm öncesi)
@@ -698,14 +724,14 @@ Faz 1'de her iki yol da yoktur. Faz 1'de uygulamadan satın alınabilenler: **se
 
 ---
 
-## H. Özellik Dışı İş Kalemleri (İç)
+## H. Altyapı — Özellik Dışı İş Kalemleri (İç)
 
 > Bu bölüm iç kullanımdır — müşteri sürümünde yer almaz. Kaynak: docs/R&D/research/non-feature-workload-research-raw.md
 
 Her kalem için: **[S]** = sabit maliyet (kapsam büyüklüğüyle ölçeklenmez), **[Ö]** = özellik sayısıyla ölçeklenir, **[AB]** = Almanya/AB'ye özgü.
 
 ### H.1 Kimlik Doğrulama, Yetkilendirme, Oturum Yönetimi
-- Rol/izin (RBAC) modeli tasarımı, iki tüzel kişilik ve admin/üye/veli/çocuk rollerinin ayrımı **[S+Ö]**
+- Rol/izin (RBAC) modeli tasarımı — sabit bir rol listesi değil, **tanımlanabilir rol ve yetki modeli** (admin/antrenör/üye/veli/çocuk ve iki tüzel kişilik ayrımı dahil; A18) **[S+Ö]**
 - Oturum yönetimi, token yenileme, çoklu cihaz oturumu, "her yerden çıkış" **[S]**
 - Parola sıfırlama, e-posta/telefon doğrulama, 2FA/MFA **[S]**
 - Neden hafife alınır: "Login var" tek satır görünür; ama yetki matrisi her yeni özellikte yeniden gözden geçirilir. Tipik gecikme: rol modelinin geç değişmesi tüm ekranları etkiler.
@@ -817,7 +843,7 @@ Her kalem için: **[S]** = sabit maliyet (kapsam büyüklüğüyle ölçeklenmez
 
 Bu ayrımın kritikliği: sabit başlangıç maliyetleri küçük/orta ölçekli projelerde ölçek ekonomisi kaybı yaratır — bu 900 kullanıcılık projede sabit "kurulum vergisi" oransal olarak ağır basacaktır.
 
-> **Tahmin modeline etkisi:** Bu kalemler özelliklerin üstüne yüzde olarak eklenmez — ayrı bir kova olarak kendi kalemleriyle puanlanır. Sebebi: çoğu sabit maliyettir, özellik sayısıyla ölçeklenmez.
+> **Tahmin modeline etkisi:** Bu kalemler özelliklerin üstüne yüzde olarak eklenmez — ayrı bir kova olarak kendi kalemleriyle puanlanır. Sebebi: çoğu sabit maliyettir, özellik sayısıyla ölçeklenmez. **İstisna:** H.17 (Proje Yönetimi, Koordinasyon, Müşteri İletişimi) bu kuralın dışındadır — ayrı bir kalem olarak puanlanmaz, taban toplamın üzerine yüzde olarak eklenir *(bkz. F.6)*.
 
 ---
 
@@ -853,4 +879,4 @@ Bu ayrımın kritikliği: sabit başlangıç maliyetleri küçük/orta ölçekli
 
 ---
 
-*Belge sonu — v2.9 ÇALIŞMA DRAFT*
+*Belge sonu — v2.10 ÇALIŞMA DRAFT*
