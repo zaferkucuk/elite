@@ -1,6 +1,6 @@
 # Elite Kickboxing — Stratejik Yol Haritası
 
-**Sürüm:** 2.7 — **ÇALIŞMA DRAFT (Türkçe)**
+**Sürüm:** 2.8 — **ÇALIŞMA DRAFT (Türkçe)**
 **Tarih:** 28 Temmuz 2026
 **Hazırlayan:** Soluty GmbH
 **Durum:** İç çalışma sürümü. Müşteri sürümü Almanca (formal *Sie*) olarak ayrıca hazırlanacaktır.
@@ -9,6 +9,7 @@
 > **v2.1–2.5:** Kapsam kararları, ticari akış, devreye alma, müşteri cevapları.
 > **v2.6:** ⚠️ **STRATEJİK KARAR — Faz 1 dış sistem bağımlılığı içermez (§5.6 yeniden yazıldı).** Faz 2 online shop tam kapsamla tanımlandı (§6).
 > **v2.7:** Talep listesi madde madde karşılandı. Belge iki seviyeli hâle getirildi: **net kapsam** ve **tartışma konuları** (§11). Açık grup sohbeti, basit video, basit yapay zekâ asistanı ve online shop tartışma listesine alındı.
+> **v2.8:** EK-H eklendi — özellik dışı iş kalemleri (17 kategori). Kaynak: docs/R&D/research/non-feature-workload-research-raw.md
 >
 > *EK* bölümü yalnızca çalışma sürümüne aittir; müşteri sürümünde yer almaz.
 
@@ -649,4 +650,123 @@ Faz 1'de her iki yol da yoktur. Faz 1'de uygulamadan satın alınabilenler: **se
 
 ---
 
-*Belge sonu — v2.7 ÇALIŞMA DRAFT*
+## H. Özellik Dışı İş Kalemleri (İç)
+
+> Bu bölüm iç kullanımdır — müşteri sürümünde yer almaz. Kaynak: docs/R&D/research/non-feature-workload-research-raw.md
+
+Her kalem için: **[S]** = sabit maliyet (kapsam büyüklüğüyle ölçeklenmez), **[Ö]** = özellik sayısıyla ölçeklenir, **[AB]** = Almanya/AB'ye özgü.
+
+### H.1 Kimlik Doğrulama, Yetkilendirme, Oturum Yönetimi
+- Rol/izin (RBAC) modeli tasarımı, iki tüzel kişilik ve admin/üye/veli/çocuk rollerinin ayrımı **[S+Ö]**
+- Oturum yönetimi, token yenileme, çoklu cihaz oturumu, "her yerden çıkış" **[S]**
+- Parola sıfırlama, e-posta/telefon doğrulama, 2FA/MFA **[S]**
+- Neden hafife alınır: "Login var" tek satır görünür; ama yetki matrisi her yeni özellikte yeniden gözden geçirilir. Tipik gecikme: rol modelinin geç değişmesi tüm ekranları etkiler.
+
+### H.2 Hesap Yaşam Döngüsü
+- Davet → aktivasyon → doğrulama akışı **[S]**
+- Mükerrer kayıt tespiti ve hesap birleştirme **[Ö]** — özellikle 900 kullanıcı göçünde kritik
+- Hesap devre dışı bırakma/silme (DSGVO ile bağlantılı) **[S+AB]** ⚖️
+- Veli-çocuk hesap bağlama, tek veliye birden çok çocuk, reşit olma (18 yaş) geçişinde hesabın çocuğa devri **[S+AB]** ⚖️
+- Neden hafife alınır: kimlik modeli "veri modeli" sanılır; oysa durum makinesidir. Reşit olma geçişi ve veli onayının geri çekilmesi nadiren kapsam belgesinde yer alır.
+
+### H.3 Bildirim Altyapısı
+- Push (APNs + FCM) sertifika/anahtar yönetimi, token yaşam döngüsü **[S]**
+- E-posta teslim edilebilirliği: SPF, DKIM, DMARC DNS kayıtları + DMARC'ı p=none'dan p=reject'e kademeli taşıma (haftalar süren izleme) **[S]**
+- SMS entegrasyonu, şablon yönetimi, çok dillilik (DE/EN/TR), kuyruk + tekrar deneme + başarısızlık yönetimi **[S+Ö]**
+- Neden hafife alınır: "bildirim gönder" tek satır; oysa teslim edilebilirlik altyapısı olmadan şifre sıfırlama/fatura e-postaları spam'e düşer. Gmail/Microsoft 2024'ten beri kimlik doğrulama gerekliliklerini sıkılaştırdığı için SPF/DKIM/DMARC olmadan gönderilen posta varsayılan olarak spam'e gidebilir.
+
+### H.4 Mobil Uygulamaya Özgü Altyapı
+- Sürüm yönetimi + zorunlu güncelleme (force update) mantığı — backend versiyon uyumu dahil (yaygın bir hata: uygulamanın "version code" gönderirken backend'in "semantic version" beklemesi, force-update mantığını bozar) **[S]**
+- Deep linking / Universal Links (iOS AASA dosyası) + Android App Links (assetlinks.json), her sürümde test — deep link'ler uygulama güncellemelerinden sonra sıkça kırılır **[S]**
+- Çevrimdışı davranış, sertifika/provisioning profili yönetimi **[S]**
+- App Store / Google Play yayın süreci: Apple çoğu başvuruyu 24 saat içinde inceler, ancak yeni açılmış hesaplar ve hassas kategoriler (finans/ödeme/çocuk) için ilk yayın günlerce-haftalarca sürebilir; red-yeniden gönderim döngüsü her seferinde 24-48 saat ekler. Google Play güncellemeleri tipik olarak 1-3 saat, yeni uygulamalar/politika incelemesi 3-7 gün. **[S+AB kısmen — çocuk verisi/ödeme ek inceleme]**
+- Neden hafife alınır: yayın takvimi "yükle ve bitir" sanılır; red sebepleri (eksik gizlilik açıklaması, izin gerekçesi, metadata uyumsuzluğu) lansmanı kaydırır. 2024-2025'te yapay zekâ ile üretilmiş başvuru dalgası nedeniyle bazı dönemlerde uzun bekleme süreleri yaşandı.
+
+### H.5 Veri Katmanı
+- Veri modeli + migration altyapısı (schema evolution) **[S]**
+- Arama, filtreleme, sayfalama (her liste ekranında tekrarlayan gizli iş) **[Ö]**
+- Dışa aktarım (CSV/Excel), denetim izi / audit log (GoBD + DSGVO için çift amaçlı) **[S+AB]** ⚖️
+- Neden hafife alınır: "liste göster" tek satır; ama performanslı sayfalama + filtre + yetki kombinasyonu her ekranda yeniden çözülür.
+
+### H.6 Güvenlik
+- Hız sınırlama (rate limiting), kaba kuvvet koruması **[S]**
+- Gizli anahtar yönetimi (secrets management), şifreleme (at rest / in transit) **[S]**
+- OWASP Top 10 odaklı iş kalemleri, güvenlik testi/pentest **[S+Ö]**
+- Deep link güvenliği (OWASP MASVS-PLATFORM: link hijacking, veri doğrulama) **[S]**
+- Neden hafife alınır: güvenlik "non-functional" olduğu için kapsam listesinde yok; ama eksik güvenlik gereksinimleri büyük oranda sonradan yeniden işe (rework) dönüşür.
+
+### H.7 Ödeme Altyapısının Görünmeyen Tarafı **[kritik]**
+- Idempotency anahtarları (çift tahsilat önleme) — Stripe tüm POST isteklerine idempotency anahtarı eklemeyi önerir **[S]**
+- Webhook güvenilirliği: imza doğrulama, 200'ü hızlı dönme (Stripe 30 saniye içinde yanıt beklemezse yeniden dener), asenkron kuyruk, Stripe'ın 72 saatlik tekrar deneme penceresi, mükerrer/sırasız event yönetimi (handler'lar idempotent olmak zorunda) **[S]**
+- Ödeme durum makinesi, mutabakat (reconciliation) işleri, iade, chargeback **[S+Ö]**
+- SCA/3DS akışları **[S+AB]** ⚖️
+- PCI DSS kapsam yönetimi: hosted fields/iframe/redirect ile SAQ A'ya inme (raw kart verisi hiç sisteme girmesin — SAQ A yalnızca ~21 kontrol içerirken SAQ D yüzlerce kontrol gerektirir) **[S]**
+- PSP hesap onay süreci (KYB) — iki tüzel kişilik için ayrı ayrı, takvim riski **[S+AB]** ⚖️
+- Neden hafife alınır: "Stripe ile ödeme al" tek satır; ama para söz konusu olduğunda her uç durum (başarısız/bekleyen/iptal/iade/mükerrer webhook) ele alınmak zorunda.
+
+### H.8 Yasal/Uyum Gerekliliklerinin TEKNİK Karşılığı ⚖️ **[AB — bu projenin en ayırt edici bloğu]**
+- **DSGVO/GDPR veri sahibi hakları**: erişim (SAR), taşınabilirlik (makine-okunur export — JSON/CSV), silinme (Art. 17 — tüm replikalar, yedekler, log'lar dahil; yedek/dağıtık kopyaların silinmesi saatler-aylar sürebilir), düzeltme, işleme kısıtlama — hepsi 1 ay içinde yanıt **[S+Ö][AB]** ⚖️
+- **Rıza yönetimi ve ispatı** (consent logs), çerez/izleme yönetimi (CMP) **[S][AB]** ⚖️
+- **Reşit olmayan kullanıcı için veli onayı** (DSGVO Art. 8, Almanya varsayılan 16 yaşı korudu; "makul çaba" ile veli doğrulaması, veli portalı/dashboard) **[S][AB]** ⚖️
+- **GoBD**: değiştirilemez (unveränderbar) kayıt, boşluksuz+eşsiz fatura numaralandırma, tam değişiklik geçmişi, revizyon-güvenli arşiv, 2025 sonrası faturalar için 8 yıl (öncesi 10 yıl) saklama **[S][AB]** ⚖️
+- **ZUGFeRD/XRechnung e-fatura** (EN 16931): B2B'de 1 Ocak 2025'ten beri ALMA zorunlu; GÖNDERME 2027'de (>800.000€ ciro) ve 2028'de (tümü) zorunlu; iki tüzel kişilik için ayrı numara aralıkları (Nummernkreise) **[S][AB]** ⚖️
+- **§312k BGB fesih düğmesi**: "Jetzt kündigen" (mahkemeler "Kündigungsabsicht abschicken" gibi belirsiz ifadeleri reddetti — OLG Hamburg 2024) + onay sayfası, login olmadan erişilebilir (OLG Nürnberg 2024), kalıcı veri taşıyıcıda tarih-saatli onay kaydı; uygulaması avukatların deneyimine göre web sitesi mimarisinde derin değişiklik gerektirdiğinden birkaç hafta sürebilir ve mobil sürümde de gerekir **[S][AB]** ⚖️
+- **DSA**: bildirim/şikayet mekanizması, şeffaflık, dark pattern yasağı, reşit olmayan koruması **[S][AB]** ⚖️
+- **Veri işleme envanteri (RoPA), AVV/sipariş işleme sözleşmesi, eIDAS dijital imza** (SES/AES/QES — sözleşme türüne göre; çoğu ticari sözleşme için SES/AES yeterli, Schriftform gerektiren durumlarda QES) **[S][AB]** ⚖️
+- Neden hafife alınır: hukuki gereklilikler "avukat işi" sanılır; oysa her biri veri modeli, API, UI ve süreç değişikliği gerektirir. §312k düğmesi vzbv (tüketici koruma derneği) tarafından sistematik denetlenir; eksiklik fesih hakkı + ihtar (Abmahnung) doğurur.
+
+### H.9 İşletme / DevOps
+- Ortam kurulumu (dev/test/prod), CI/CD pipeline **[S]**
+- Yedekleme + geri yükleme testi (sadece yedek değil, restore denemesi) **[S]**
+- İzleme, uyarı, hata takibi (error tracking), log saklama **[S]**
+- Alan adı/SSL/DNS, sertifika yenileme otomasyonu **[S]**
+- Neden hafife alınır: sabit başlangıç maliyetleri (araç kurulumu, standart ve idari rapor kurulumu) küçük projelerde ölçek ekonomisi kaybı yaratır — yani bu maliyet küçük projede oransal olarak daha büyüktür.
+
+### H.10 Çok Dillilik / Lokalizasyon
+- i18n metin altyapısı, tarih/saat/para birimi biçimleri (DE/EN/TR) **[S]**
+- Çeviri iş akışı, eksik çeviri yönetimi, üç dilde QA **[Ö]**
+- Neden hafife alınır: "3 dil" tek satır; ama her yeni ekran/e-posta/bildirim üç kez üretilir ve test edilir.
+
+### H.11 Arka Plan İşleri
+- Zamanlanmış görevler (cron), kuyruk altyapısı, başarısız iş yönetimi, toplu işlemler **[S+Ö]**
+- Neden hafife alınır: fatura üretimi, hatırlatma, mutabakat gibi işler "otomatik olur" sanılır; başarısız iş yönetimi olmadan sessizce çöker.
+
+### H.12 Veri Göçü
+- Kaynak veri analizi, temizleme, eşleme, doğrulama, tekrar çalıştırılabilirlik, geri alma planı **[Ö]**
+- Neden hafife alınır: doğrulama fazı sıklıkla göçün kendisinden daha pahalıya mal olur; kaynak veri kalitesi ve mükerrer kayıtlar süre/bütçe aşımının en sık nedenidir.
+
+### H.13 Test ve Kalite
+- Test stratejisi, cihaz/tarayıcı matrisi (iOS+Android+3 web yüzeyi), kabul testi, regresyon, hata düzeltme döngüsü **[S+Ö]**
+- Neden hafife alınır: test "sonunda yapılır" sanılır; regresyon her sürümde tekrarlar.
+
+### H.14 Erişilebilirlik (BFSG/WCAG) ⚖️ **[AB — özellikle araştırıldı]**
+- BFSG (Barrierefreiheitsstärkungsgesetz), EU Direktifi 2019/882'nin (European Accessibility Act) Almanya uygulaması, 28.06.2025'ten beri yürürlükte; B2C web, online shop, uygulama, dijital doküman kapsamda; teknik ölçüt genelde WCAG 2.1 (bazı kaynaklar 2.2) Level AA.
+- İş kalemleri: klavye navigasyonu, renk kontrastı, alt-text, anlamlı yapı, ekran okuyucu testi, erişilebilirlik beyanı (accessibility statement), sürekli denetim **[S+Ö]**
+- Geçiş dönemi: 28.06.2025 öncesi kullanılan ürünler/hizmetler için 27.06.2030'a kadar; ama yeni platform bu istisnadan yararlanamaz.
+- Neden hafife alınır: erişilebilirlik "tasarım detayı" sanılır; oysa üç yüzeyi de (mobil+web+panel) etkiler ve sonradan eklemek baştan yapmaktan pahalıdır.
+
+### H.15 Tasarım İşi
+- UI/UX tasarım, tasarım sistemi (design system), üç ayrı yüzey (mobil/web/panel) için ayrı tasarım **[S+Ö]**
+- Neden hafife alınır: tasarım sistemi bir kez kurulur (sabit) ama her ekran varyantı ölçeklenir.
+
+### H.16 Teslim ve Devir
+- Eğitim, dokümantasyon, destek süreci tanımı, hipercare/stabilizasyon dönemi **[S]**
+- Neden hafife alınır: proje "canlıya alınca biter" sanılır; hipercare dönemi nadiren fiyatlanır.
+
+### H.17 Proje Yönetimi, Koordinasyon, Müşteri İletişimi
+- Planlama ve yönetim; müşteri toplantıları, gereksinim netleştirme, değişiklik triyajı **[S+Ö]**
+- Neden hafife alınır: bu iş "faturalanamaz" görülür; oysa toplantı koordinasyonu ve gereksinim netleştirme en sık atlanan faaliyetler arasındadır.
+
+### Sabit vs. Ölçeklenen Ayrımı (tahmin modeli için)
+
+**Sabit (proje başına bir kez — küçük projede oransal olarak daha ağır):** kimlik/oturum altyapısı, bildirim altyapısı (APNs/FCM/SPF-DKIM-DMARC), CI/CD + ortamlar, yedek/restore, izleme, DNS/SSL, tasarım sistemi kurulumu, GoBD arşiv altyapısı, §312k düğmesi, çerez/rıza yönetimi, e-fatura formatı entegrasyonu, PCI kapsam mimarisi, i18n altyapısı, veli onayı mekanizması.
+
+**Özellik sayısıyla ölçeklenen:** her ekranın arama/filtre/sayfalama/yetki'si, her varlığın audit log'u, her akışın 3 dilde çevirisi + testi, her ekranın erişilebilirlik uyumu, her yeni özelliğin regresyon testi, DSGVO haklarının her yeni veri türüne yayılması.
+
+Bu ayrımın kritikliği: sabit başlangıç maliyetleri küçük/orta ölçekli projelerde ölçek ekonomisi kaybı yaratır — bu 900 kullanıcılık projede sabit "kurulum vergisi" oransal olarak ağır basacaktır.
+
+> **Tahmin modeline etkisi:** Bu kalemler özelliklerin üstüne yüzde olarak eklenmez — ayrı bir kova olarak kendi kalemleriyle puanlanır. Sebebi: çoğu sabit maliyettir, özellik sayısıyla ölçeklenmez.
+
+---
+
+*Belge sonu — v2.8 ÇALIŞMA DRAFT*
