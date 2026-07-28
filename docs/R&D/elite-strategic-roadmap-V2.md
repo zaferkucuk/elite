@@ -1,6 +1,6 @@
 # Elite Kickboxing — Stratejik Yol Haritası
 
-**Sürüm:** 2.8 — **ÇALIŞMA DRAFT (Türkçe)**
+**Sürüm:** 2.9 — **ÇALIŞMA DRAFT (Türkçe)**
 **Tarih:** 28 Temmuz 2026
 **Hazırlayan:** Soluty GmbH
 **Durum:** İç çalışma sürümü. Müşteri sürümü Almanca (formal *Sie*) olarak ayrıca hazırlanacaktır.
@@ -10,6 +10,7 @@
 > **v2.6:** ⚠️ **STRATEJİK KARAR — Faz 1 dış sistem bağımlılığı içermez (§5.6 yeniden yazıldı).** Faz 2 online shop tam kapsamla tanımlandı (§6).
 > **v2.7:** Talep listesi madde madde karşılandı. Belge iki seviyeli hâle getirildi: **net kapsam** ve **tartışma konuları** (§11). Açık grup sohbeti, basit video, basit yapay zekâ asistanı ve online shop tartışma listesine alındı.
 > **v2.8:** EK-H eklendi — özellik dışı iş kalemleri (17 kategori). Kaynak: docs/R&D/research/non-feature-workload-research-raw.md
+> **v2.9:** §5.2 web sitesi kapsamı mevcut site incelemesi ve güncel standartlarla (yerel görünürlük, yapay zekâ destekli aramalar, doğrudan iletişim kanalları) yeniden tanımlandı. İç iş listesi EK-I olarak eklendi. Tasarım ayrı iş kolu olarak genişletildi. B21–B24 soruları eklendi.
 >
 > *EK* bölümü yalnızca çalışma sürümüne aittir; müşteri sürümünde yer almaz.
 
@@ -129,16 +130,59 @@ Elite'in en önemli önceliği. Üyenin cebindeki Elite.
 
 ### 5.2 Modern Web Sitesi
 
-Bugün statik bir tanıtım sayfası; yarın **çalışan bir kapı.**
+Web sitesi, Elite'in dijital vitrinidir — üyelerin değil, **henüz üye olmayanların** ilk temas noktası. Faz 1'de site, mobil uygulama ve yönetim paneliyle aynı sistemin üçüncü yüzü olarak kurulur: aynı veri, aynı içerik, tek yönetim.
 
-- **Deneme dersi akışı** — online kayıt
-- **Canlı ders programı** — uygulamayla aynı kaynaktan
-- **Üyelik başvurusu ve dijital sözleşme**
-- **Seminer ve etkinlik kaydı — online ödeme dahil** *(§5.7)*
-- Antrenör ve stüdyo tanıtımı · Blog / haberler
-- Almanca / İngilizce / Türkçe
+#### Tanıtım ve Marka Yüzeyi
 
-> İnsanlar Elite'i internetten buluyor. Ne yapacaklarını bilmiyorlarsa o ziyaret kaybolur. Web sitesi bir broşür değil, **kazanım kanalıdır.**
+- **Ana sayfa** — video, stüdyo istatistikleri, güven sinyalleri (değerlendirmeler, federasyon ve kurum iş birlikleri)
+- **Altı branş sayfası** — Kickboxen Alle, Kinder, Frauen, Anfänger, Fortgeschrittene, Wettkampf Vorbereitung; her biri video, içerik ve ders programı bağlantısıyla
+- **Eğitim programı sayfaları** — IHK iş birliğiyle yürütülen eğitim konumlandırması *(mevcut sitedeki "Bildungsinstitut" kimliği — B23)*
+- **Semt sayfaları** — Berlin'in altı semtinden gelen sporcular için ulaşım ve içerik sayfaları; mevcut sitedeki güçlü yerel görünürlük **korunur ve güçlendirilir**
+- **Antrenör profilleri** — sistemden beslenir; panelde güncellenen bilgi sitede anında görünür
+- **Stüdyo ve galeri** · **Üyelik modelleri ve fiyatlar** · **Sıkça sorulan sorular** · **Konum, ulaşım, çalışma saatleri**
+
+#### Canlı İçerik
+
+- **Canlı ders programı** — uygulama ile aynı kaynaktan; panelde yapılan değişiklik sitede anında görünür *(mevcut sitedeki durağan program görselinin yerini alır)*
+- **Blog ve haberler** · **Seminer ve etkinlik takvimi** — detay sayfaları ve kayıt bağlantısıyla
+- **Instagram akışı** — güncel paylaşımlar sitede
+
+#### Başvuru ve Kayıt Akışları
+
+- **Deneme dersi kaydı** — branş seçimi, uygun saatler, onay ve hatırlatma
+- **Üyelik başvurusu** — dijital sözleşme ve dijital imza ile, kâğıtsız
+- **Seminer ve etkinlik kaydı** — online ödeme dahil
+
+#### Doğrudan İletişim
+
+- **WhatsApp ile tek tıkla mesaj** · **Mobilde tek tıkla arama** · **Konu bazlı iletişim formu** · **Bülten kaydı** (çift onaylı) ⚖️
+
+#### Üye Girişi
+
+- Web üzerinden giriş ve temel üye alanı — uygulamadaki hesapla aynı
+
+#### İçerik Yönetimi
+
+- Tüm site içeriği panelden yönetilir
+- **Üç dil:** Almanca, İngilizce, Türkçe — otomatik çeviriyle üç dilli teslim; düzeltmeler panel üzerinden Elite tarafından yapılır
+
+#### Bulunurluk — Aranınca Çıkmak, Sorulunca Önerilmek
+
+- **Klasik arama görünürlüğü** — teknik temel, yapısal veri, hız ve performans
+- **Yerel görünürlük** — altı semt sayfası, Google işletme profili bağlantısı: yorum vitrini ve etkinliklerin otomatik yayını
+- **Yapay zekâ destekli aramalarda görünürlük** — içerik, yapay zekâ araçlarının Elite'i doğru tanıması ve önermesi için yapılandırılır: soru-cevap blokları, alıntılanabilir bilgi kutuları
+- **Ölçüm** — ziyaretçi ve dönüşüm takibi, rıza kurallarına uygun ⚖️
+
+#### Tasarım
+
+- Sanat yönetimi ve görsel konsept — mevcut markanın premium, atmosferik çizgisi korunur ve modernize edilir
+- Tüm sayfa tipleri için şablon tasarımı; mobil öncelikli
+
+#### Güvenli Geçiş
+
+- Mevcut sitenin sayfaları ve yıllar içinde birikmiş arama sıralamaları **korunarak** taşınır — yönlendirme haritası, içerik taşıma, geçiş sonrası izleme
+
+> **Kapsam sınırları:** WhatsApp bağlantısı Faz 1'de "tek tıkla mesaj" olarak kurulur; gelen mesajların tek merkezden yönetimi sonraki fazların konusudur (§8). Web sitesinde yapay zekâ destekli kullanıcı desteği Faz 1 kapsamında değildir; ayrı bir fazda planlanmıştır.
 
 ---
 
@@ -521,6 +565,10 @@ Faz 1'de her iki yol da yoktur. Faz 1'de uygulamadan satın alınabilenler: **se
 | **B18** | **Harici shop tedarikçisiyle sözleşme ne diyor?** Teslim taahhüdü, fikri mülkiyet, API yükümlülüğü, fesih koşulları. *(Elite'in hukuki durumu — biz karar veremeyiz.)* |
 | **B19** | **Kaç ürün kalemi satılacak?** 20 mi, 200 mü — Faz 2'nin boyutunu doğrudan belirler. |
 | **B20** | **Ürün görselleri ve metinleri kimde?** Elite'in işi; yoksa Faz 2 lansmanı gecikir *(zarif bozulma sorunu — boş katalog).* |
+| **B21** | ✅ **KAPANDI** — **İkinci konum:** Mevcut sitedeki formda geçen "Probetraining KuDamm" ikinci bir konum değildir; tek fiziksel adres geçerlidir. |
+| **B22** | **Fotoğraf ve video varlıkları** *(AÇIK)*: Mevcut sitedeki fotoğraf/video varlıklarının kullanım hakları kimde? Kaynak dosyalar (yüksek çözünürlük) alınabilir mi? Yeni çekim planlanıyor mu? *(Yeni sitenin görsel kalitesi doğrudan buna bağlı.)* |
+| **B23** | **IHK eğitim programı** *(AÇIK)*: Program güncel mi, devam ediyor mu? Yeni sitede ne ağırlıkta yer alacak? *(Mevcut sitede "anerkanntes Bildungsinstitut" konumlandırması var — korunacak mı?)* |
+| **B24** | **Mevcut site firmasından talep edilecekler** *(talep listesi hazır)*: Zamanı geldiğinde Elite kendisi talep eder. Liste: alan adı/DNS yönetim erişimi · tam URL envanteri veya site yedeği · Google Search Console erişimi ve sıralama verileri · analitik erişimi/geçmişi · fotoğraf ve video kaynak dosyaları · içerik dışa aktarımı · alan adına bağlı e-posta hesapları/yönlendirmeleri envanteri |
 
 ## C. Talep listesi izlenebilirlik
 
@@ -746,7 +794,11 @@ Her kalem için: **[S]** = sabit maliyet (kapsam büyüklüğüyle ölçeklenmez
 - Neden hafife alınır: erişilebilirlik "tasarım detayı" sanılır; oysa üç yüzeyi de (mobil+web+panel) etkiler ve sonradan eklemek baştan yapmaktan pahalıdır.
 
 ### H.15 Tasarım İşi
-- UI/UX tasarım, tasarım sistemi (design system), üç ayrı yüzey (mobil/web/panel) için ayrı tasarım **[S+Ö]**
+- Sanat yönetimi ve görsel konsept — mevcut markanın çizgisi temel alınır **[S]**
+- Sayfa şablonları tasarımı — 10+ şablon tipi **[S+Ö]**
+- Bileşen durumları ve duyarlı davranış **[Ö]**
+- Görsel/video kürasyonu **[Ö]**
+- Mobil uygulama ve yönetim paneli için ayrı tasarım **[S+Ö]**
 - Neden hafife alınır: tasarım sistemi bir kez kurulur (sabit) ama her ekran varyantı ölçeklenir.
 
 ### H.16 Teslim ve Devir
@@ -769,4 +821,36 @@ Bu ayrımın kritikliği: sabit başlangıç maliyetleri küçük/orta ölçekli
 
 ---
 
-*Belge sonu — v2.8 ÇALIŞMA DRAFT*
+# EK-I — WEB SİTESİ AYRINTILI İŞ LİSTESİ (İÇ)
+
+> İç yapı listesidir; efor değeri içermez, müşteri sürümüne girmez. §5.2'nin iç karşılığıdır. Diğer bloklar (§5.1, §5.3 vb.) aynı çözünürlüğe getirilecektir — bu iş henüz açık.
+
+**I.1 Mimari temel** — Sunucu tarafı üretim mimarisi *(yapay zekâ tarayıcıları istemci kodu çalıştırmaz; GEO ön koşulu)* · çok dilli yönlendirme: hreflang, URL yapısı, dil seçici · görsel/video optimizasyon hattı: duyarlı görseller, modern formatlar, poster kareleri
+
+**I.2 Tanıtım yüzeyi** — Ana sayfa · branş şablonu + 6 branş sayfası · eğitim programı sayfaları (IHK) · semt şablonu + 6 semt sayfası · antrenör liste + detay (sistemden) · fiyat ve üyelik modelleri · galeri · SSS (soru-cevap yapısında) · konum/ulaşım
+
+**I.3 Canlı içerik** — Blog (liste, detay, kategori) · canlı ders programı (branş/gün/antrenör filtreli) · seminer/etkinlik liste + detay · haber/duyurular · Instagram akışı
+
+**I.4 Dönüşüm ve doğrudan iletişim** — Üyelik başvurusu + dijital sözleşme + imza · deneme dersi akışı (branş, uygun saat, onay, hatırlatma) · seminer kaydı + ödeme · iletişim formu (konu bazlı yönlendirme) · WhatsApp tıkla-yaz (yüzen düğme, hazır mesaj) · bülten çift onay ⚖️ · tıkla-ara (mobil yapışkan arama düğmesi)
+
+**I.5 Üye giriş yüzeyi** — Web giriş · temel üye alanı
+
+**I.6 İçerik yönetimi** — Sayfa yönetimi · üç dilde içerik + otomatik çeviri düzeltme akışı · blog/haber yönetimi · web medya yönetimi · sayfa başına arama alanları (üç dil)
+
+**I.7 Bulunurluk: klasik + yerel** — Yapısal veri: işletme, kurs, etkinlik, SSS, video, değerlendirme, gezinme · performans / Core Web Vitals · teknik temel: site haritası, canonical, 404, hreflang · yerel arama: 6 semt sayfası optimizasyonu, ad-adres-telefon tutarlılığı · Google işletme profili: yorum vitrini + etkinlik otomatik yayını · analitik + dönüşüm ölçümü (rıza uyumlu) · sosyal paylaşım kartları
+
+**I.8 Üretken motor optimizasyonu (GEO)** — Soru-cevap içerik mimarisi, alıntılanabilir özet kutuları, doğrudan cevap formatı · varlık tutarlılığı: tekil işletme kimliği, profil bağlantıları, arama motoru kayıtları · yapay zekâ tarayıcı politikası (llms.txt, robots kararları) · görünürlük kontrolü: hangi motor Elite hakkında ne söylüyor
+
+**I.9 Yasal sayfalar ⚖️** — Impressum, Datenschutz, AGB, Widerrufsbelehrung
+
+**I.10 Eski siteden geçiş** — URL envanteri + yönlendirme haritası (~30 URL; 6 semt sayfası kritik) · içerik taşıma: branş metinleri, fotoğraflar, videolar · geçiş sonrası sıralama izleme
+
+**Yapısal notlar:**
+- Tek fiziksel konum vardır; semt sayfaları hizmet bölgesi olarak işaretlenir, ayrı işletme gibi gösterilmez *(yerel aramada ceza sebebi)*.
+- Mevcut sitedeki durağan ders programı görseli, sistemden beslenen canlı programla değişir.
+- WhatsApp sınırı: Faz 1 = tıkla-yaz. Gelen kutusu/otomasyon sonraki fazların konusudur (§8).
+- Web sitesinde yapay zekâ destekli kullanıcı desteği Faz 1 dışıdır — tartışma konusu bile değildir (§11.B/3 yalnızca mobil uygulama içindir).
+
+---
+
+*Belge sonu — v2.9 ÇALIŞMA DRAFT*
