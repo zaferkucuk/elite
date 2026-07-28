@@ -13,8 +13,10 @@ This is a **guidance document**, not authority.
 | Project Instructions (Claude Project settings) | Behavior rules, positioning, language policy, safety gates | Authoritative |
 | `ARCHITECTURE.md` | Repo structure, file naming, three-layer information model | Source of truth for structure |
 | `docs/R&D/strategy/` documents | Strategic direction (three horizons, phase design) | Source of truth for scope |
-| `docs/R&D/elite-strategic-roadmap.md` | Customer-facing main deliverable | Source of truth for customer messaging |
+| `docs/R&D/elite-strategic-roadmap-V2.md` | Customer-facing main deliverable (active) | Source of truth for customer messaging |
 | `CLAUDE.md` (this file) | Navigation, references, operational hints | Guidance |
+
+> `docs/R&D/elite-strategic-roadmap.md` (v1) is a frozen archive — historical reference only, no longer updated.
 
 **Conflict resolution:** defer to Project Instructions for behavior; defer to ARCHITECTURE.md for structure; defer to strategy documents for scope and sequence; defer to roadmap draft for customer-facing language.
 
@@ -26,7 +28,7 @@ This is a **guidance document**, not authority.
 
 1. `CLAUDE.md` — operational guidance (this file)
 2. `ARCHITECTURE.md` — repo structure and information model
-3. `docs/R&D/elite-strategic-roadmap.md` — current state of the main deliverable
+3. `docs/R&D/elite-strategic-roadmap-V2.md` — current state of the main deliverable (active version; `elite-strategic-roadmap.md` is the frozen v1 archive, not read at session start)
 
 This is non-negotiable. Reading takes a few seconds; skipping creates drift, contradictions, and lost context across sessions.
 
@@ -45,7 +47,7 @@ This is non-negotiable. Reading takes a few seconds; skipping creates drift, con
 
 **Do not skip step 2 even if context appears fresh.** Memory pointers can drift from document truth; the three files hold the truth.
 
-**If a mandatory file is missing** (e.g. `elite-strategic-roadmap.md` not yet created): say so explicitly, do not proceed silently. Surface the gap to the user.
+**If a mandatory file is missing** (e.g. `elite-strategic-roadmap-V2.md` not yet created): say so explicitly, do not proceed silently. Surface the gap to the user.
 
 ---
 
@@ -60,12 +62,14 @@ elite/
 ├── ARCHITECTURE.md
 │
 └── docs/R&D/
-    ├── elite-strategic-roadmap.md         ◀ MAIN DELIVERABLE
+    ├── elite-strategic-roadmap-V2.md      ◀ MAIN DELIVERABLE (active)
+    ├── elite-strategic-roadmap.md         ◀ v1, frozen archive — historical reference only
     ├── appendices/                        ◀ customer-facing deep documents (A–F)
     ├── research/                          ◀ raw research (Soluty internal, archived)
     ├── context/                           ◀ customer profile, positioning, meetings
     ├── strategy/                          ◀ internal strategy notes
     ├── internal/                          ◀ productization, decisions, integrations, blackbox
+    ├── output/                            ◀ generated PDF/HTML export artifacts (build output)
     └── assets/                            ◀ diagrams, screenshots
 ```
 
@@ -95,7 +99,7 @@ Every topic produces three artifacts at three different layers. This is the core
 |---|---|---|---|
 | **Raw research** | `docs/R&D/research/YYYY-MM-DD-<topic>-raw.md` | Soluty (internal) | Frozen on creation, dated archive |
 | **Appendix** | `docs/R&D/appendices/<letter>-<topic>.md` | Customer (deep readers) | Versioned (v1.0, v1.1) |
-| **Roadmap summary** | `docs/R&D/elite-strategic-roadmap.md` (relevant section) | Customer (all) | Lives with main doc version |
+| **Roadmap summary** | `docs/R&D/elite-strategic-roadmap-V2.md` (relevant section) | Customer (all) | Lives with main doc version |
 
 **Flow:** raw research → distill into appendix → extract summary into roadmap section + reference appendix at end.
 
@@ -142,8 +146,8 @@ Detailed personal context lives in `docs/R&D/context/customer-profile.md`.
 
 | Concern | Location |
 |---|---|
-| Customer principals, dynamics | `docs/R&D/context/customer-profile.md` |
-| Language/tone decisions | `docs/R&D/context/our-positioning.md` |
+| Customer principals, dynamics | `docs/R&D/context/customer-profile.md` *(planned, not yet created)* |
+| Language/tone decisions | `docs/R&D/context/our-positioning.md` *(planned, not yet created)* |
 | Past meeting notes | `docs/R&D/context/meeting-notes/YYYY-MM-DD-<topic>.md` |
 | Site audit findings | merged into `docs/R&D/appendices/A-technical-audit.md` (raw in `research/`) |
 | Legal risk landscape | `docs/R&D/appendices/B-legal-details.md` (raw in `research/`) |
@@ -151,16 +155,18 @@ Detailed personal context lives in `docs/R&D/context/customer-profile.md`.
 | Global benchmarks | `docs/R&D/appendices/D-global-benchmarks.md` (raw in `research/`) |
 | Competitive software analysis | `docs/R&D/appendices/E-competitive-software.md` (raw in `research/`) |
 | Soluty references | `docs/R&D/appendices/F-soluty-references.md` |
-| Three-horizon narrative | `docs/R&D/strategy/three-horizons.md` |
-| Phase design | `docs/R&D/strategy/phase-design.md` |
-| Closing strategy | `docs/R&D/strategy/win-strategy.md` |
-| Customer-facing main deliverable | `docs/R&D/elite-strategic-roadmap.md` |
+| Three-horizon narrative | `docs/R&D/strategy/three-horizons.md` *(planned, not yet created)* |
+| Phase design | `docs/R&D/strategy/phase-design.md` *(planned, not yet created)* |
+| Closing strategy | `docs/R&D/strategy/win-strategy.md` *(planned, not yet created)* |
+| Customer-facing main deliverable | `docs/R&D/elite-strategic-roadmap-V2.md` (active); `elite-strategic-roadmap.md` = v1, frozen archive |
 | Diagrams (process maps, timelines, matrices) | `docs/R&D/assets/diagrams/` |
 | Site issue screenshots | `docs/R&D/assets/screenshots/` |
-| Productization opportunities | `docs/R&D/internal/productization-notes.md` |
-| Direction-changing decisions | `docs/R&D/internal/decisions.md` |
+| Productization opportunities | `docs/R&D/internal/productization-notes.md` *(planned, not yet created)* |
+| Direction-changing decisions | `docs/R&D/internal/decisions.md` *(planned, not yet created)* |
 | External system integrations (internal reference) | `docs/R&D/internal/integrations.md` |
-| Post-incident lessons | `docs/R&D/internal/blackbox.md` |
+| CenterCom integration dependencies & scenarios (internal reference) | `docs/R&D/internal/centercom-integration.md` |
+| Post-incident lessons | `docs/R&D/internal/blackbox.md` *(planned, not yet created)* |
+| Generated PDF/HTML export artifacts | `docs/R&D/output/` (build output, see `scripts/build-pdf.sh`) |
 
 ---
 
@@ -321,11 +327,12 @@ Switching workstreams mid-task without an explicit pause is the fastest way to l
 ## 11. Closing Note
 
 ```
-Project Instructions               → How Claude behaves (Authoritative)
-ARCHITECTURE.md                    → How the repo is structured (Authoritative)
-docs/R&D/strategy/                 → What we propose (Source of truth for scope)
-docs/R&D/elite-strategic-roadmap.md → What the customer reads (Source of truth for messaging)
-CLAUDE.md (this file)              → How to navigate the work (Guidance)
+Project Instructions                  → How Claude behaves (Authoritative)
+ARCHITECTURE.md                       → How the repo is structured (Authoritative)
+docs/R&D/strategy/                    → What we propose (Source of truth for scope)
+docs/R&D/elite-strategic-roadmap-V2.md → What the customer reads (Source of truth for messaging)
+  (elite-strategic-roadmap.md = v1, frozen archive)
+CLAUDE.md (this file)                 → How to navigate the work (Guidance)
 ```
 
 When uncertain, consult Project Instructions, surface the decision to the user, or default to the safer no-op.
@@ -334,5 +341,5 @@ When uncertain, consult Project Instructions, surface the decision to the user, 
 
 *Operational guidance only. Authority lives in the documents above.*
 
-**Last Updated:** 2026-05-24
-**Version:** 0.3 (external-system integrations reference added; section 4 inserted, sections 4-10 renumbered to 5-11)
+**Last Updated:** 2026-07-27
+**Version:** 0.4 (main deliverable reference updated to `elite-strategic-roadmap-V2.md`, v1 reclassified as frozen archive; `docs/R&D/output/` added; not-yet-created context/strategy/internal files marked as planned)
