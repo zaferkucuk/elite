@@ -1,13 +1,14 @@
 # Elite Kickboxing — Stratejik Yol Haritası
 
-**Sürüm:** 2.6 — **ÇALIŞMA DRAFT (Türkçe)**
-**Tarih:** 27 Temmuz 2026
+**Sürüm:** 2.7 — **ÇALIŞMA DRAFT (Türkçe)**
+**Tarih:** 28 Temmuz 2026
 **Hazırlayan:** Soluty GmbH
 **Durum:** İç çalışma sürümü. Müşteri sürümü Almanca (formal *Sie*) olarak ayrıca hazırlanacaktır.
 
 > v1 (`elite-strategic-roadmap.md`) arşiv olarak korunur.
 > **v2.1–2.5:** Kapsam kararları, ticari akış, devreye alma, müşteri cevapları.
 > **v2.6:** ⚠️ **STRATEJİK KARAR — Faz 1 dış sistem bağımlılığı içermez (§5.6 yeniden yazıldı).** Faz 2 online shop tam kapsamla tanımlandı (§6).
+> **v2.7:** Talep listesi madde madde karşılandı. Belge iki seviyeli hâle getirildi: **net kapsam** ve **tartışma konuları** (§11). Açık grup sohbeti, basit video, basit yapay zekâ asistanı ve online shop tartışma listesine alındı.
 >
 > *EK* bölümü yalnızca çalışma sürümüne aittir; müşteri sürümünde yer almaz.
 
@@ -94,15 +95,19 @@ Elite'in en önemli önceliği. Üyenin cebindeki Elite.
 > **Neden ders bazlı kayıt, turnike varken?** Fiziksel giriş-çıkış ve dolap kilit sistemi mevcut sistemde kalır — buna dokunmuyoruz. Ama turnike *binaya girişi* kaydeder; kuşak sistemi *hangi antrenmana katıldığını* bilmek zorundadır. "Bu kuşağa geçmek için X antrenman" kuralı ancak ders bazlı kayıtla çalışır.
 > Bu kayıt antrenör tarafından işaretlenebilir, ya da üye tarafından uygulama üzerinden bildirilebilir. Turnikenin yerine geçmez — kuşak sisteminin ihtiyaç duyduğu farklı bir bilgiyi üretir.
 
-**Haberler ve Bildirimler** — Kapalı günler · İptal edilen dersler · Duyurular · **Push**
+**Haberler ve Bildirimler** — Kapalı günler · İptal edilen dersler · Duyurular · **Push** · **Doğum günü ve özel gün kutlamaları**
 
 **Seminerler ve Etkinlikler** — Liste · Antrenör ve içerik bilgisi · **Kayıt ve bilet satışı** *(§5.7)* · Takvim
 
-**Sınav Sistemi ve Teknikler** — Sınav takvimi · Sınava kayıt · Kuşak ilerlemesi · **Kuşağa bağlı teknik listesi + video** *(§5.4)*
+**Sınav Sistemi ve Teknikler** — Sınav takvimi · Sınava kayıt · Kuşak ilerlemesi · **Kuşağa bağlı teknik listesi** *(§5.4)*
 
 **Antrenör Profilleri** — Tanıtımlar ve uzmanlık alanları
 
-> **Yapay zekâ asistanı:** Talep listesindeki *"opsiyonel yapay zekâ sohbet botu"* Faz 3'e aittir. Bir asistan ancak sisteminizin verisiyle konuştuğunda değerlidir. **Faz 1'de bağlanacağı yer hazırlanır; asistan Faz 3'te gelir.**
+**Topluluk ve Antrenman Partneri** — Yapılandırılmış antrenman partneri eşleştirme: kuşak seviyesi, kilo sınıfı, antrenman saatleri
+
+> Açık grup sohbeti bu kapsamın dışındadır ve birlikte karar verilecek konular arasındadır *(§11.B)*.
+
+> **Yapay zekâ asistanı:** Talep listesindeki *"opsiyonel yapay zekâ sohbet botu"* için iki yol vardır: sık sorulan sorulara cevap veren **basit bir asistan Faz 1'de** kurulabilir; ya da sisteminizin verisiyle konuşan **kapsamlı asistanlar Faz 3'te** gelir. Bu iki yol arasındaki tercih birlikte yapılacaktır *(§11.B)*.
 
 **Çocuk ve Ebeveyn Alanı** — Veli hesabı + çoklu çocuk profili · Çocuğun katılımı · Gelişimi · Sınav tarihleri
 
@@ -142,7 +147,7 @@ Her başlığın bir yöneteni olmak zorundadır. Haberi kim girer? Sınav takvi
 
 Panel ayrı bir ürün değildir. **Uygulamanın kumanda odasıdır.**
 
-İçerik yönetimi (web + app) · Ders programı ve doluluk · Kuşak ve sınav yönetimi · Teknik tanımlama ve video bağlantısı · Seminer, etkinlik ve **bilet** tanımlama · Rezerve edilebilir hizmet tanımlama · **Satış, ödeme ve iade takibi** *(§5.7)* · Duyuru ve bildirim · **Dijital sözleşme, yenileme ve fesih takibi** · Üye gelişim görünümü
+İçerik yönetimi (web + app) · Ders programı ve doluluk · Kuşak ve sınav yönetimi · Teknik tanımlama · Seminer, etkinlik ve **bilet** tanımlama · Rezerve edilebilir hizmet tanımlama · **Satış, ödeme ve iade takibi** *(§5.7)* · Duyuru ve bildirim · **Dijital sözleşme, yenileme ve fesih takibi** · Üye gelişim görünümü
 
 **Panel, mevcut sistemin işini tekrar etmez.**
 
@@ -162,10 +167,11 @@ Sistemi standart bir spor salonu yazılımından ayıran katman.
 
 > Bugün bu bilgi hiçbir sistemde yaşamıyor. Antrenörlerin hafızasında ve kâğıtta duruyor. Bir üye kuşak atlamaya hazır mı — bugün sezgiyle cevaplanıyor. Yarın veriyle.
 
-**Teknik videoları — Faz 1'in sınırı:** Panelden bir tekniğe **video bağlantısı iliştirilir**; üye tekniğe dokunur, video oynar.
-Faz 1'de **yok** (Faz 5'e ait): video yükleme/işleme/barındırma · medya kütüphanesi · izlenme analitiği · evde antrenman **programları**
+**Teknik videoları:** Kuşağa bağlı **teknik listeleri** Faz 1'in parçasıdır. Bu tekniklere **video eklenmesi** — panelden yükleme, depolama ve uygulamada oynatma — birlikte karar verilecek konular arasındadır *(§11.B)*.
 
-> **Zarif bozulma:** Video, tekniğin **opsiyonel** niteliğidir. Elite on video çekerse on teknikte video görünür; kalanında yalnızca metin. **"Yakında" ekranı yok, boş bölüm yok.**
+Kapsamlı medya yönetimi (merkezî arşiv, etiketleme, arama, izlenme analitiği, evde antrenman **programları**) Faz 5'e aittir.
+
+> **Zarif bozulma:** Video, tekniğin **opsiyonel** niteliğidir. Elite on video hazırlarsa on teknikte video görünür; kalanında yalnızca metin. **"Yakında" ekranı yok, boş bölüm yok.**
 
 ---
 
@@ -387,7 +393,7 @@ WhatsApp, Instagram, Facebook, TikTok, YouTube, e-posta, telefon, web formu — 
 
 ## 9. FAZ 5 — Medya Kütüphanesi ve Sosyal Medya
 
-Faz 1'de teknik videoları **gösterilir.** Faz 5'te video **bir varlık olarak yönetilir.**
+Videoların basit hâlde gösterimi birlikte karar verilecek konular arasındadır *(§11.B)*. Faz 5'te video **bir varlık olarak yönetilir.**
 
 **Medya kütüphanesi:** Yükleme, işleme, barındırma · Merkezî arşiv, etiketleme, arama · İzlenme analitiği
 **Öğrenme alanı:** Kombinasyonlar · **Evde antrenman programları**
@@ -406,21 +412,63 @@ Teklifimiz **yalnızca Faz 1** içindir.
 
 ---
 
-## 11. Birlikte Netleştireceğimiz Konular
+## 11. Kapsam Mutabakatı — Net Konular ve Tartışma Konuları
 
-### 11.1 Topluluk ve Antrenman Partneri (Talep 9)
+Elite'in ilettiği talep listesinin madde madde karşılığıdır. İki seviyelidir: **kapsamı net olan konular** ve **birlikte karar vereceğimiz konular.** Bu ayrım, kapsam toplantısında her maddenin ayrı ayrı konuşulabilmesi içindir.
 
-**Antrenman partneri bulma** üzerinde hemfikiriz — yapılandırılmış eşleştirme: kuşak seviyesi, kilo sınıfı, antrenman saatleri.
+### 11.A Net Kapsam
 
-**Açık grup sohbeti** konusunda çekincemiz var. Elite'in uygulamasında çocuk üyeler var. Serbest ve açık bir grup sohbeti, Elite'i hukuken bir *barındırma sağlayıcısı* konumuna taşır:
+| # | Talep | Karşılık |
+|---|---|---|
+| 1 | Üye profili, kuşak, gelişim | Tam karşılanıyor — §5.1 / §5.4 |
+| 2 | Ders programı ve kurs kaydı | Tam karşılanıyor — §5.1 |
+| 3 | Katılım ve antrenman geçmişi | Karşılanıyor — §5.1 *(yöntem: aşağıdaki not)* |
+| 4 | Haberler ve bildirimler | Tam karşılanıyor + doğum günü ve özel gün kutlamaları — §5.1 |
+| 5 | Seminerler ve etkinlikler | Tam karşılanıyor — bilet ve ödeme dahil — §5.1 / §5.7 |
+| 6 | Sınav sistemi ve gelişim | Tam karşılanıyor + kuşağa bağlı teknik listeleri — §5.1 / §5.4 |
+| 7 | Antrenör profilleri | Tam karşılanıyor — §5.1 |
+| 8 | Çocuk ve ebeveyn alanı | Tam karşılanıyor — kimlik mimarisinin çekirdeği — §5.1 |
+| 9a | Antrenman partneri bulma | Tam karşılanıyor — yapılandırılmış eşleştirme — §5.1 |
+| 11 | Kişisel antrenman ve ek hizmetler | Tam karşılanıyor — §5.1 / §5.7 |
+| 12 | Dijital doküman yönetimi | Tam karşılanıyor — §5.1 / §5.5 |
+| 14 | Motivasyon ve dijital başarımlar | Tam karşılanıyor — §5.1 |
 
-- **Sorumluluk:** Kullanıcı içeriğinden doğan hukuki sorumluluk Elite'e geçer.
-- **Moderasyon:** Çocukların bulunduğu sohbet ortamı sürekli gözetim gerektirir. Bu antrenörlerin işi olamaz.
-- **Risk:** Yetişkinlerin ve çocukların serbestçe iletişim kurabildiği alan, taşınması gereken en ağır risktir.
+**Madde 3 — katılım kaydı yöntemi.** Katılım iki yoldan işaretlenir: **antrenör ders sonunda katılımcıları işaretler**, ya da **üye uygulamadan bildirir.** Fiziksel giriş kaydı mevcut sisteminizde kalır; kuşak sisteminin ihtiyaç duyduğu bilgi *hangi antrenmana katıldığıdır* — bu ikisi farklı bilgilerdir ve birbirinin yerine geçmez.
 
-**Önerimiz:** Sohbeti üyelerin zaten kullandığı yere bırakalım. Topluluk hissini başka yollarla kuralım.
+### 11.B Birlikte Karar Vereceğimiz Konular
 
-**Bu bir ret değil, bir koruma önerisidir.**
+Aşağıdaki dört konu Faz 1 kapsamına **alınabilir de, sonraki fazlara bırakılabilir de.** Her birinin Faz 1'e alınması teslim süresini etkiler. Karar Elite'e aittir.
+
+#### 1) Açık grup sohbeti *(Talep 9b)*
+
+Antrenman partneri eşleştirme konusunda hemfikiriz ve net kapsamdadır. **Serbest ve açık grup sohbeti** ayrı bir konudur ve bu konudaki çekincelerimizi açıkça paylaşmak istiyoruz:
+
+- **Hukuki konum:** Uygulamada çocuk üyeler var. Açık bir sohbet alanı, Elite'i kullanıcı içeriğinden doğan sorumluluğu taşıyan bir konuma getirir ⚖️
+- **Moderasyon:** Çocukların bulunduğu bir sohbet ortamı sürekli gözetim gerektirir. Bu, antrenörlerin yan görevi olarak yürütülebilecek bir iş değildir — **Elite tarafında adı belli bir sorumlu** gerekir ve bu kalıcı bir operasyonel yüktür
+- **Koruma tasarımı zorunludur:** Yaşa göre ayrılmış kanallar · yetişkin–çocuk arasında birebir özel mesajlaşma bulunmaması · bildir/sustur/sil/engelle araçları · kayıt ve arşiv · 16 yaş altı için veli onayı ⚖️ · kullanım koşulları
+
+Bu koşullarla kurulabilir. Koşulsuz açık sohbeti önermiyoruz — **bu bir ret değil, bir koruma önerisidir.** Nihai karar Elite'indir.
+
+#### 2) Basit video görüntüleme ve depolama *(Talep 10)*
+
+Panelden video yüklenmesi, depolanması ve üyenin uygulamadan istediği yerde izleyebilmesi. Kapsamlı medya yönetimi (arşiv, etiketleme, arama, izlenme analitiği, evde antrenman programları) **Faz 5'te** planlanmıştır.
+
+Bu basit hâl Faz 1'e alınabilir ya da sonraki fazlara bırakılabilir. Not: video içeriğinin hazırlanması Elite'e aittir; depolama ve trafik sürekli bir işletme gideri doğurur.
+
+#### 3) Basit yapay zekâ asistanı *(Talep 7b)*
+
+Sık sorulan sorulara cevap veren, üye verisine bağlanmayan basit bir asistan. Sisteminizin verisiyle konuşan **kapsamlı asistanlar Faz 3'te** planlanmıştır.
+
+Bu basit hâl Faz 1'e alınabilir ya da Faz 3 beklenebilir. Not: yapay zekâ asistanı sürekli bir kullanım gideri doğurur.
+
+#### 4) Online shop *(Talep 13)*
+
+Ürün satışının Faz 1'e alınıp alınmayacağı açık bir konudur. İki yol vardır:
+
+- **Harici tedarikçinin çalışması tamamlanır** ve iki sistem arasında bağlantı kurulur. Ön koşulu, o sistemin çalışır ve belgelenmiş bir teknik arayüzünün olmasıdır — bu görülmeden bağlantı taahhüt edilemez.
+- **Ürün satışı platformun içinde kurulur** — mobil uygulama ve web tek sistem olarak *(§6)*.
+
+Faz 1'de her iki yol da yoktur. Faz 1'de uygulamadan satın alınabilenler: **seminer ve etkinlik bileti, kişisel antrenman, rezerve edilebilir hizmetler** *(§5.7)*.
 
 ---
 
@@ -434,19 +482,21 @@ Teklifimiz **yalnızca Faz 1** içindir.
 
 | # | Konu | Durum | Karar |
 |---|---|---|---|
-| A1 | Topluluk / açık grup sohbeti | 🔄 Müzakerede | Faz 1'e alınmadı. Pozisyon §11.1'de. |
-| A2 | Antrenman partneri arama | 🔄 Müzakerede | A1 ile masaya konacak. |
+| A1 | Topluluk / açık grup sohbeti | 🔄 Müzakerede | Antrenman partneri eşleştirme **net kapsamda** (§11.A). Açık grup sohbeti **tartışma konusu** — çekinceler ve koruma koşulları §11.B/1'de. Karar müşterinin. |
+| A2 | Antrenman partneri arama | ✅ KAPANDI | Yapılandırılmış eşleştirme net kapsamda (§11.A). |
 | A3 | "Ek hizmetler" | ✅ KAPANDI | Jenerik rezerve edilebilir hizmet akışı. Sağlık verisi kapsam dışı. |
 | A4 | ~~Ödeme / aidat görünürlüğü~~ | ⚠️ **REVİZE — A12 nedeniyle** | CenterCom'daki aidat/fatura verisinin app'te gösterilmesi **Faz 1'den ÇIKTI** (canlı bağlantı gerektiriyordu). App'te görünen: **bizim sistemimizde oluşan** sözleşme durumu + §5.7 satışlarının ödeme geçmişi. |
 | A5 | Çocuk / ebeveyn alanı | ✅ KAPANDI | Faz 1 çekirdeği — kimlik mimarisi. |
-| A6 | AI sohbet botu | ✅ KAPANDI | Faz 3'te. Faz 1'de bağlantı noktası. |
-| A7 | Mobil uygulamada video | ✅ KAPANDI | Faz 1 = tüketim, Faz 5 = yönetim. |
+| A6 | AI sohbet botu | 🔄 Müzakerede | Kapsamlı asistanlar Faz 3. **Basit SSS asistanının Faz 1'e alınması tartışma konusu** (§11.B/3). Yönlendirme yapılmaz. |
+| A7 | Mobil uygulamada video | 🔄 Müzakerede | Kapsamlı medya yönetimi Faz 5. **Basit video görüntüleme + depolamanın Faz 1'e alınması tartışma konusu** (§11.B/2). Yönlendirme yapılmaz. |
 | A8 | Ticari ödeme rayı | ✅ KAPANDI | Faz 1'e alındı (§5.7). İki tüzel yapı baştan. Para Soluty'den geçmez. |
 | A9 | Devreye alma / veri aktarımı | ✅ KAPANDI | Faz 1'e alındı (§5.8). V1'de hiç yoktu. |
 | A10 | Fiziksel giriş / ders bazlı katılım | ✅ KAPANDI | Fiziksel giriş CenterCom'da (müşteri teyidi). Katılım: antrenör işaretlemesi veya üye bildirimi. |
 | A11 | Fesih akışının başlangıç noktası | ✅ KAPANDI | Fesih **Soluty'de başlar.** CenterCom'a Elite ekibi işler. |
 | **A12** | ⭐ **Faz 1'de dış sistem entegrasyonu** | ✅ **KAPANDI — STRATEJİK KARAR** | **Faz 1 hiçbir dış sisteme bağlanmaz.** Ne CenterCom canlı entegrasyonu, ne harici shop tedarikçisi entegrasyonu. Gerekçe: *dış bağımlılık = kontrol edilemeyen gecikme riski.* Tek seferlik veri aktarımı entegrasyon sayılmaz — o kalır (§5.8). Canlı bağlantı istenirse **Faz 1 sonrası ayrı proje.** Bkz. §5.6. |
-| **A13** | **Online shop stratejisi** | ✅ **KAPANDI** | **Faz 2 = biz kurarız (mobil + web, tek sistem).** Salondan teslim varsayılan. **Pazaryeri önerilmez** (yanlış problem: Elite'in müşteri bulma değil, mevcut müşteriye satamama sorunu var). Harici tedarikçiyle entegrasyon **Faz 1'e konmaz**; istenirse Faz 1 sonrası ayrı proje, ön koşul = çalışır ve belgelenmiş API. |
+| **A13** | **Online shop stratejisi** | ✅ **KAPANDI** | **Faz 2 = biz kurarız (mobil + web, tek sistem).** Salondan teslim varsayılan. **Pazaryeri önerilmez** (yanlış problem: Elite'in müşteri bulma değil, mevcut müşteriye satamama sorunu var). Harici tedarikçiyle entegrasyon **Faz 1'e konmaz**; istenirse Faz 1 sonrası ayrı proje, ön koşul = çalışır ve belgelenmiş API. **v2.7 revizyonu:** Shop'un Faz 1'e alınıp alınmayacağı **tartışma konusudur** (§11.B/4). §6'daki Faz 2 önerimiz geçerliliğini korur. |
+| **A14** | **Talep listesi mutabakatı** | ✅ **KAPANDI** | 14 maddelik talep listesi madde madde karşılandı. **11 madde net kapsam, 4 konu tartışmada** (§11). Kapsam toplantısının temeli bu bölümdür. |
+| **A15** | **QR ile check-in** | ✅ **KAPANDI** | Müşteri bu beklentiden vazgeçti. Katılım kaydı: antrenör işaretlemesi veya üye bildirimi (§11.A, madde 3 notu). |
 
 ## B. Yerinde keşifte doğrulanacaklar
 
@@ -477,20 +527,21 @@ Teklifimiz **yalnızca Faz 1** içindir.
 |---|---|---|
 | 1 | Profil + kuşak | Faz 1 — 5.1 / 5.4 |
 | 2 | Antrenman planı ve ders kaydı | Faz 1 — 5.1 |
-| 3 | Katılım ve antrenman geçmişi | Faz 1 — 5.1 |
+| 3 | Katılım ve antrenman geçmişi | Faz 1 — 5.1 ✅ *(QR yok — A15)* |
 | 4 | Haberler ve push | Faz 1 — 5.1 |
 | 5 | Seminerler + bilet | Faz 1 — 5.1 / 5.7 |
 | 6 | Sınav sistemi ve gelişim | Faz 1 — 5.1 / 5.4 |
 | 7 | Antrenör profilleri | Faz 1 — 5.1 |
-| 7b | *AI sohbet botu* | Faz 3 ✅ |
+| 7b | *AI sohbet botu* | **Tartışmada — §11.B/3** 🔄 |
 | 8 | Çocuk ve ebeveyn alanı | Faz 1 — 5.1 ✅ |
-| 9 | Topluluk / grup sohbeti | §11.1 — müzakerede 🔄 |
-| 10a | *Teknik videoları (gösterim)* | Faz 1 — 5.4 ✅ |
-| 10b | *Video arşivi, evde antrenman programı* | Faz 5 ✅ |
+| 9 | Topluluk / grup sohbeti | **9a partner eşleştirme: Faz 1 ✅ · 9b açık sohbet: §11.B/1** 🔄 |
+| 10a | *Teknik listeleri* | Faz 1 — 5.4 ✅ |
+| 10b | *Basit video görüntüleme* | **Tartışmada — §11.B/2** 🔄 |
+| 10c | *Video arşivi, evde antrenman programı* | Faz 5 ✅ |
 | 11 | Kişisel antrenman + ek hizmetler | Faz 1 — 5.1 / 5.7 ✅ |
 | 12 | Dijital doküman yönetimi | Faz 1 — 5.1 / 5.5 ✅ |
-| 13 | Shop bağlantısı | **Faz 2 — biz kurarız (A13)** |
-| 14 | Motivasyon / başarımlar | Faz 1 — 5.1 |
+| 13 | Shop bağlantısı | **Tartışmada — §11.B/4** 🔄 *(Faz 2 önerisi: A13)* |
+| 14 | Motivasyon / başarımlar | Faz 1 — 5.1 ✅ *(+ doğum günü bildirimi)* |
 
 ## D. Soluty'nin eklediği (talep listesinde yok)
 
@@ -542,6 +593,8 @@ Teklifimiz **yalnızca Faz 1** içindir.
 | ↳ *Kuşak verisinin sıfırdan üretilmesi* + toplu giriş aracı | 🔴 Orta-büyük |
 | ↳ *900 üyenin uygulamaya alınması* | 🔴🔴 **Gizli canavar** |
 
+> ⚠️ **v2.7 notu:** §11.B'deki dört konu (açık grup sohbeti, basit video, basit yapay zekâ asistanı, online shop) bu tabloda **yer almıyor** — hiçbiri henüz Faz 1 kapsamında değil. Faz 1'e alınmalarına karar verilirse her biri ayrı bir efor kalemi olarak eklenir.
+
 > ⚠️ **A12'nin dürüst muhasebesi:** Entegrasyon katmanının Faz 1'den çıkması **iş yükünü bir miktar azaltır.** Yerine geçen manuel süreç tasarımı daha küçüktür.
 > **Ama takas net ve savunulabilir:** iş yükünden az miktarda düştük, buna karşılık **teslim riskinin en büyük kaynağını ortadan kaldırdık.** Müşteriye bu şekilde anlatılır — "daha az iş yaptık" değil, **"riski sattık, hızı aldık."**
 
@@ -576,6 +629,8 @@ Teklifimiz **yalnızca Faz 1** içindir.
 ⚠️ **Henüz yapılmadı.** F.2 ve F.3'e bakılacak.
 **Beklenti: 8 ay civarı. Kısaltma zor ama A12 sonrası biraz daha savunulabilir hale geldi — çünkü belirsizlik azaldı.**
 
+> **Tahminleme iki seviyeli yapılacaktır:** (1) net kapsam için temel tahmin, (2) §11.B'deki her tartışma konusu için ayrı delta. Amaç, kapsam toplantısında bir konu Faz 1'e alınmak istendiğinde süre etkisinin anında söylenebilmesidir. **Bu çalışma henüz yapılmadı.**
+
 ---
 
 ## G. Dil kontrolü (Almanca sürüm öncesi)
@@ -586,10 +641,12 @@ Teklifimiz **yalnızca Faz 1** içindir.
 - ❌ Süre ve maliyet müşteri sürümünde **yer almaz**
 - ⚠️ Mevcut sistemin adı ve **harici shop tedarikçisinin adı** müşteri belgesinde **anılmaz** — "mevcut sistem", "harici tedarikçi"
 - ⚠️ §11.1 hukuki çerçevesi, 16 yaş altı veli onayı, §5.7 GoBD, §6.5 cayma hakkı, B17 — **hukukçuya**
+- ⚠️ §11.B/1 açık grup sohbeti: kullanıcı içeriği sorumluluğu, çocuk koruma, 16 yaş altı veli onayı — **hukukçuya**
+- ⚠️ §11.B/2 video: içerikte görünen üyelerin ve çocukların görüntü hakkı (Recht am eigenen Bild) — **hukukçuya**
 - ⚠️ PSP, video platformu, pazaryeri adları müşteri metninde **dikkatli kullanılır** (§6.6'da Amazon/eBay geçiyor — jenerik "pazaryerleri"ne çevrilebilir, onaya tabi)
 - ✅ Yapay zekâ her zaman "asistan"
 - ✅ **Gelir vaadi verilmez.** Kaldıraç gösterilir, rakam uydurulmaz.
 
 ---
 
-*Belge sonu — v2.6 ÇALIŞMA DRAFT*
+*Belge sonu — v2.7 ÇALIŞMA DRAFT*
