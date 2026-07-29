@@ -1,6 +1,6 @@
 # Elite Kickboxing — Stratejik Yol Haritası
 
-**Sürüm:** 2.15 — **ÇALIŞMA DRAFT (Türkçe)**
+**Sürüm:** 2.16 — **ÇALIŞMA DRAFT (Türkçe)**
 **Tarih:** 29 Temmuz 2026
 **Hazırlayan:** Soluty GmbH
 **Durum:** İç çalışma sürümü. Müşteri sürümü Almanca (formal *Sie*) olarak ayrıca hazırlanacaktır.
@@ -17,6 +17,7 @@
 > **v2.13:** EK-J giriş notu ve F.6 Güncelleme bloğu düzeltildi — adam-güne çevrimin J.10'da tamamlandığı, takvim çevriminin hâlâ açık olduğu netleştirildi.
 > **v2.14:** J.11 eklendi — §11.B müzakere konularının deltaları (adam-gün karşılıkları). Online shop kırılımına gözden kaçan bir tasarım kalemi eklendi. J.9/3, F.6 ve F.3'ün ilgili notları J.11'e yönlendirildi.
 > **v2.15:** Talep listesi müzakere delta puanları işlendi (§11.B). Üye belge yönetimi gerçek bir kapsam boşluğu olarak işlendi (5 yeni kalem) — §5.1 zaten vaat ediyordu, eksik olan arkasındaki iştir. İki küçük eksik mevcut kalemlere yedirildi. Zincirleme sayı güncellemeleri EK-J genelinde yayıldı.
+> **v2.16:** T4-B.5 (online shop görsel tasarımı) satırı geri alındı — J.1'in çift sayım kuralı sayfa şablonu tasarımını zaten ilgili web/mobil kalemi içinde sayıyor ("Tasarım sistemi ve sanat yönetimi → D.15, sayfa şablonu tasarımı B.2'de"); ayrı bir tasarım satırı bu kuralı deliyordu. Hata düzeltmesi, kapsam daraltma değil — tasarım işi T4-A ve T4-B kalemlerinin içinde sayılı kalıyor. J.11.6 ve J.11.2'deki T4 ve toplam rakamları buna göre güncellendi.
 >
 > *EK* bölümü yalnızca çalışma sürümüne aittir; müşteri sürümünde yer almaz.
 
@@ -1416,10 +1417,10 @@ Adam-gün değerleri J.10.3'teki bant çarpanlarıyla, PERT beklenen değeri (J.
 | **T3** Basit yapay zekâ asistanı | 31 | +11 | +%5 |
 | **T2** Basit video | 34 | +14 | +%5 |
 | **T1** Açık grup sohbeti | 44 | +18 | +%7 |
-| **T4** Online shop (içeride) | 128 | +55 | +%20 |
-| **Dördü birden** | **237** | **+98** | **+%37** |
+| **T4** Online shop (içeride) | 123 | +53 | +%19 |
+| **Dördü birden** | **232** | **+96** | **+%37** |
 
-Dördü de kapsama girerse: taban 634 → **871 puan**, iç planlama 206 → **~304 adam-gün**.
+Dördü de kapsama girerse: taban 634 → **866 puan**, iç planlama 206 → **~302 adam-gün**.
 
 > **Uyarı — bu satırlar toplanabilir değildir.** Örtüşmeler J.11.8'de.
 
@@ -1509,7 +1510,7 @@ Kapsam varsayımı: Sık sorulan sorulara cevap veren, **üye verisine bağlanma
 
 ---
 
-### J.11.6 T4 — Online shop, platformun içinde (128 puan · +55 adam-gün)
+### J.11.6 T4 — Online shop, platformun içinde (123 puan · +53 adam-gün)
 
 Kapsam varsayımı: §6'da tanımlanan Faz 2 önerisinin Faz 1'e alınması. §5.7 ödeme rayını zaten kurduğu için bu **§6'nın tamamı değil, üzerine binen kısımdır.**
 
@@ -1526,7 +1527,6 @@ Kapsam varsayımı: §6'da tanımlanan Faz 2 önerisinin Faz 1'e alınması. §5
 | T4-B.2 | Sepet ve sipariş akışı (web) | | L | 5 |
 | T4-B.3 | Siparişlerim (web) | | S | 2 |
 | T4-B.4 | Ürün sayfalarının arama görünürlüğü | Yapısal veri: ürün, teklif, stok durumu | M | 3 |
-| T4-B.5 | Online shop görsel tasarımı | Katalog, ürün detayı, sepet ve sipariş sayfalarının mevcut tasarım sistemine entegre görsel tasarımı | L | 5 |
 | T4-C.1 | Ürün tanımlama | Kategori, açıklama, üç dil | L | 5 |
 | T4-C.2 | Varyant yönetimi | Beden/renk matrisi, varyant bazlı fiyat ve stok | XL | 8 |
 | T4-C.3 | Ürün görseli yönetimi | | M | 3 |
@@ -1544,7 +1544,7 @@ Kapsam varsayımı: §6'da tanımlanan Faz 2 önerisinin Faz 1'e alınması. §5
 | T4-D.6 | Gelirin ikinci tüzel yapıya yönlendirilmesi ⚖️ | §5.7'de mimari hazır; burada fiilen devreye girer | L | 5 |
 | T4-D.7 | Ürün için ayrı fatura numara aralığı ⚖️ | GoBD | M | 3 |
 | T4-D.8 | Kargo entegrasyonu ve gönderi takibi | | L | 5 |
-| | **Toplam** | | | **128** |
+| | **Toplam** | | | **123** |
 
 > **Ön koşul — B19 ve B20.** Kaç ürün kalemi satılacağı (20 mi, 200 mü) ve ürün görselleri/metinlerinin kimde olduğu açıktır. İkincisi puanı değil **lansmanı** etkiler: boş katalog yayına alınamaz.
 
@@ -1573,4 +1573,4 @@ Müşteriye söylenecek olan bir süre değil, bir sıradır: **önce arayüzün
 
 *EK-J sonu*
 
-*Belge sonu — v2.15 ÇALIŞMA DRAFT*
+*Belge sonu — v2.16 ÇALIŞMA DRAFT*
