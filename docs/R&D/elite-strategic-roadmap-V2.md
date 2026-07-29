@@ -1,6 +1,6 @@
 # Elite Kickboxing — Stratejik Yol Haritası
 
-**Sürüm:** 2.11 — **ÇALIŞMA DRAFT (Türkçe)**
+**Sürüm:** 2.12 — **ÇALIŞMA DRAFT (Türkçe)**
 **Tarih:** 29 Temmuz 2026
 **Hazırlayan:** Soluty GmbH
 **Durum:** İç çalışma sürümü. Müşteri sürümü Almanca (formal *Sie*) olarak ayrıca hazırlanacaktır.
@@ -13,6 +13,7 @@
 > **v2.9:** §5.2 web sitesi kapsamı mevcut site incelemesi ve güncel standartlarla (yerel görünürlük, yapay zekâ destekli aramalar, doğrudan iletişim kanalları) yeniden tanımlandı. İç iş listesi EK-I olarak eklendi. Tasarım ayrı iş kolu olarak genişletildi. B21–B24 soruları eklendi.
 > **v2.10:** Uygulama çok rollü hâle geldi — antrenör ve yönetici görünümleri eklendi (§5.1). Tanımlanabilir rol ve yetki modeli tanımlandı (§5.3, A18). Etkinlik bileti e-posta ile teslim + tek kullanımlık QR doğrulamasıyla netleşti (§5.1, §5.7, A19). EK-H "Altyapı" olarak adlandırıldı.
 > **v2.11:** EK-J eklendi — Faz 1'in satır seviyesinde iş kırılımı ve efor modeli (beş kova). EK-I'nın "henüz açık" notu kapatıldı, EK-J'ye yönlendirildi. F.6'ya EK-J referansı eklendi.
+> **v2.12:** J.10 eklendi — puandan süreye çevrim (senaryolar, bant çarpanları, PERT tahmini, kaldıraçlar, kalibrasyon protokolü). J.9/1 güncellendi ve J.10'a yönlendirildi.
 >
 > *EK* bölümü yalnızca çalışma sürümüne aittir; müşteri sürümünde yer almaz.
 
@@ -1253,7 +1254,7 @@ Oran, işin üç yüzeye (mobil, web, panel) yayılması, üç dilde yürümesi 
 
 ## J.9 Modelin sınırları — bilinçli olarak açık bırakılanlar
 
-1. **Puan ≠ süre.** Puanın güne çevrilmesi yapılmadı. Katsayı belirlenmeden bu tablodan takvim çıkarılamaz.
+1. **Puan ≠ süre.** Puanın adam-güne çevrilmesi artık J.10'da yapıldı (üç senaryo + PERT tahmini). Ama bu hâlâ bir takvim değildir — paralellik sınırları ve bekleme süreleri henüz hesaba katılmadı (bkz. J.10.7).
 2. **Katmanlı mimari etkisi tabloda yok.** Faz 1'in Corex katmanlı mimarisine uygun geliştirilmesi kararı (bkz. `internal/decisions.md`, 2026-07-27) geliştirme süresini tahminen %30 artırıyor. Bu, puana değil **puan→süre katsayısına** yansıtılacaktır.
 3. **§11.B'deki dört konu bu tabloda yok.** Açık grup sohbeti, basit video, basit yapay zekâ asistanı ve online shop — hiçbiri Faz 1 kapsamında değil. Faz 1'e alınmalarına karar verilirse her biri ayrı delta olarak hesaplanır.
 4. **Açık sorular puanı etkileyebilir.** B5 (veli-çocuk ilişkisi mevcut sistemde var mı → E.3), B22 (görsel varlıklar → D.15.4), B26 (ders notu görünürlük modeli → A.13.3).
@@ -1261,6 +1262,128 @@ Oran, işin üç yüzeye (mobil, web, panel) yayılması, üç dilde yürümesi 
 
 ---
 
+## J.10 Puandan süreye — senaryolar ve tahmin
+
+### J.10.1 Birim: meşgul saat
+
+Bu bölümdeki tüm saat değerleri **koordinasyonu yürüten kişinin meşgul saatidir**:
+yönlendirme, çıktı incelemesi, düzeltme, test, entegrasyon, karar. Üretim
+aracının duvar saati değildir — kıt kaynak insan saatidir ve takvimi belirleyen
+de odur.
+
+Varsayımlar: günde 6 verimli saat · tek kişi · katmanlı mimari etkisi (Corex)
+**dahil değil** · takvim değil, adam-gün.
+
+### J.10.2 Üç senaryo
+
+**İyimser (136 adam-gün)** — Omurga ilk 2–3 ayda oturur; sonrasında hız belirgin
+artar. Üretim aracının yetenekleri proje boyunca iyileşir. Koşulludur: kapsam
+donar (§11.B'nin dört konusu Faz 1'e girmez), müşteri kararları gecikmez
+(B22, B23, B26 ve ödeme sağlayıcı/tüzel yapı konuları), mimari kararlar ilk
+seferde tutar (özellikle D.1.1 rol modeli). Üç koşul birlikte tutmazsa bu
+senaryo geçersizdir.
+
+**Normal (190 adam-gün)** — Koordinasyon Soluty'de, uygulama üretim aracıyla.
+Web sitesinin **yalnızca tasarım işi** dışarıdan uzman desteğiyle yürür; web
+sitesinin kalan yapımı Soluty'dedir. Dış tasarım desteğinin efor tablosuna net
+etkisi ihmal edilebilir (~8 saat) ancak **takvim bağımlılığı yaratır**: tasarım
+gecikirse B.2 ve B.6 bekler.
+
+**Kötümser (300 adam-gün)** — Katmanlı mimari beklenenden fazla zorlar, mimari
+kararlar tekrar ele alınır, öğrenme eğrisi uzar. **Hiçbir düzeltici kol
+çekilmemiş** hâldir — kollar J.10.5'te ayrıca tanımlıdır ve bilinçli olarak bu
+senaryonun dışında tutulmuştur.
+
+### J.10.3 Bant çarpanları
+
+| Beden | İyimser | Normal | Kötümser |
+|---|---|---|---|
+| XS | 0,75 | 1,0 | 1,5 |
+| S | 1,75 | 2,5 | 4 |
+| M | 3,5 | 5 | 8 |
+| L | 8 | 11 | 17 |
+| XL | 16 | 22 | 38 |
+| **Toplam saat** | **814** | **1.138** | **1.801** |
+| **Adam-gün** | **136** | **190** | **300** |
+
+Puan başına maliyet hiçbir senaryoda doğrusal değildir; karmaşıklık cezası
+kötümser dünyada büyür (XS→XL oranı normalde 2,75 · kötümserde 3,2). Kötümser
+senaryoda XS bandı bilinçli olarak artırılmamıştır: statik bir içerik sayfası
+taşmaz, taşan karmaşık kalemlerdir.
+
+### J.10.4 PERT sonucu
+
+Üç noktalı tahmin: **E = (İyimser + 4×Normal + Kötümser) / 6**
+
+| | Adam-gün |
+|---|---|
+| Beklenen değer (E) | **199** |
+| Standart sapma (SD) | 27 |
+| E + 1SD | 227 |
+| **E + 2SD** | **254** |
+
+**İki sayının iki ayrı rolü vardır:**
+
+| Sayı | Kullanım |
+|---|---|
+| **199 adam-gün** | İç planlama: kaynak, sıra, kilometre taşları |
+| **254 adam-gün** | Taahhüt tabanı: müşteriye verilecek tarih buradan türetilir |
+
+Aradaki 55 günlük fark keyfi değildir; projenin kendi belirsizlik bandından
+hesaplanmıştır. Proje kuralı gereği söylenen tarihe eklenen +2 hafta bunun
+**üstüne** biner ve farklı bir riski karşılar: öngörülemeyenleri.
+
+⚠️ **SD'nin sınırı:** Üç senaryo bağımsız tahminler değildir; aynı yargının
+ölçeklenmiş hâlleridir. Dolayısıyla SD bir **duyarlılık bandıdır, güven aralığı
+değildir.** Gerçekleşen değer bandın dışına, özellikle üstüne çıkabilir.
+
+### J.10.5 Kaldıraçlar — senaryo değil, karar
+
+Aşağıdakiler senaryoların içinde DEĞİLDİR. Sapma görüldüğünde çekilebilecek
+kollardır ve her birinin bedeli vardır.
+
+**K1 — Katmanlı mimari kapsamını daraltmak.** Süreyi düşürür. Bedeli takvimde
+değil iş modelindedir: Elite tek seferlik özel çözüme dönüşür, ikinci müşteride
+her şey sıfırdan başlar. Ara seçenek: yalnızca en yüksek yeniden kullanım
+değerli kalemlerde (D.1 rol modeli, D.5 veri katmanı) katmanlı yapıyı korumak,
+kalanı Elite'e özel yürütmek.
+
+**K2 — Ekibe kişi eklemek.** Net kazanç doğrusal değildir: darboğaz koordinasyon
+saatidir, ikinci kişi bağımsız çalışamıyorsa aynı saatten yer. Gerçek paralellik
+ancak **bağımsız bir dilim** devredilirse oluşur — en uygun aday web sitesinin
+tamamıdır (B kovası, 114 puan).
+
+**K3 — Kapsam kırpmak.** §11.B'nin dört konusu zaten Faz 1 dışındadır; ilk
+kırpılacak yer orası değildir.
+
+### J.10.6 Kalibrasyon protokolü
+
+Bu tahmin ölçülmeden güncellenemez. Ölçüm tasarımı:
+
+| | |
+|---|---|
+| **Ne ölçülür** | Tamamlanan her kalem için koordinasyon meşgul saati + kalemin bandı |
+| **6. hafta** | Erken sinyal. Karar alınmaz |
+| **12. hafta** | Asıl kalibrasyon: bant başına gerçekleşen saat hesaplanır, bantlar güncellenir, kalan iş yeniden hesaplanır |
+| **12. hafta kararı** | Gerçekleşen hız normal senaryonun %120'sini aşıyorsa hangi kaldıraç (J.10.5) çekilir |
+
+⚠️ **Tuzak:** İlk 2–3 ay ortalamanın altında seyreder — omurga henüz oturmamıştır.
+6. haftada görülen "normalin %140'ındayız" tablosu beklenen davranıştır.
+**Bu veriden doğrusal ileriye dönük hesap yapılmaz;** panik kararı tam burada
+verilir ve yanlış olur.
+
+### J.10.7 Henüz dahil olmayanlar
+
+1. **Katmanlı mimari (Corex) etkisi** — tahminen %30, yalnızca standart inşa ve
+   yargı yoğun sınıflara uygulanır (435 + 106 = 541 puan); tasarım, bulunurluk
+   ve devreye alma bundan etkilenmez.
+2. **Takvim çevrimi** — paralellik sınırları ve bekleme süreleri (ödeme
+   sağlayıcı hesap onayı ×2 tüzel yapı, uygulama mağazası incelemesi, e-posta
+   politikası kademeli sıkılaştırma, hukukçu dönüşü, kuşak verisi girişi).
+3. **Proje yönetimi %15** — J.8'de tanımlıdır, adam-gün rakamlarına eklenmemiştir.
+
+---
+
 *EK-J sonu*
 
-*Belge sonu — v2.11 ÇALIŞMA DRAFT*
+*Belge sonu — v2.12 ÇALIŞMA DRAFT*
