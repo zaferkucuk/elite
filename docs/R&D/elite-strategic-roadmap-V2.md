@@ -1,6 +1,6 @@
 # Elite Kickboxing — Stratejik Yol Haritası
 
-**Sürüm:** 2.12 — **ÇALIŞMA DRAFT (Türkçe)**
+**Sürüm:** 2.13 — **ÇALIŞMA DRAFT (Türkçe)**
 **Tarih:** 29 Temmuz 2026
 **Hazırlayan:** Soluty GmbH
 **Durum:** İç çalışma sürümü. Müşteri sürümü Almanca (formal *Sie*) olarak ayrıca hazırlanacaktır.
@@ -14,6 +14,7 @@
 > **v2.10:** Uygulama çok rollü hâle geldi — antrenör ve yönetici görünümleri eklendi (§5.1). Tanımlanabilir rol ve yetki modeli tanımlandı (§5.3, A18). Etkinlik bileti e-posta ile teslim + tek kullanımlık QR doğrulamasıyla netleşti (§5.1, §5.7, A19). EK-H "Altyapı" olarak adlandırıldı.
 > **v2.11:** EK-J eklendi — Faz 1'in satır seviyesinde iş kırılımı ve efor modeli (beş kova). EK-I'nın "henüz açık" notu kapatıldı, EK-J'ye yönlendirildi. F.6'ya EK-J referansı eklendi.
 > **v2.12:** J.10 eklendi — puandan süreye çevrim (senaryolar, bant çarpanları, PERT tahmini, kaldıraçlar, kalibrasyon protokolü). J.9/1 güncellendi ve J.10'a yönlendirildi.
+> **v2.13:** EK-J giriş notu ve F.6 Güncelleme bloğu düzeltildi — adam-güne çevrimin J.10'da tamamlandığı, takvim çevriminin hâlâ açık olduğu netleştirildi.
 >
 > *EK* bölümü yalnızca çalışma sürümüne aittir; müşteri sürümünde yer almaz.
 
@@ -706,7 +707,7 @@ Faz 1'de her iki yol da yoktur. Faz 1'de uygulamadan satın alınabilenler: **se
 
 > **Tahminleme iki seviyeli yapılacaktır:** (1) net kapsam için temel tahmin, (2) §11.B'deki her tartışma konusu için ayrı delta. Amaç, kapsam toplantısında bir konu Faz 1'e alınmak istendiğinde süre etkisinin anında söylenebilmesidir. **Bu çalışma henüz yapılmadı.**
 
-> **Güncelleme:** Satır seviyesinde iş kırılımı çalışması başladı. Tahmin modeli beş kovaya dayanıyor — **Yönetim Paneli, Mobil Uygulama, Web Sitesi, Altyapı, Devreye Alma.** İlk üçü müşteriye giden teslimatlardır; Altyapı görünür ekranı olmayan sürekli iştir; Devreye Alma bu projeye özgü tek seferlik geçiş işidir. Proje yönetimi ve koordinasyon (EK-H.17) kalem olarak değil, taban toplamın üzerine **%15** olarak modellenir. Sayısal tahmin değerleri bu belgeye henüz yazılmadı. Satır seviyesindeki tam kırılım ve puanlama EK-J'dedir; puan→süre çevrimi orada da henüz yapılmamıştır (bkz. J.9/1).
+> **Güncelleme:** Satır seviyesinde iş kırılımı çalışması başladı. Tahmin modeli beş kovaya dayanıyor — **Yönetim Paneli, Mobil Uygulama, Web Sitesi, Altyapı, Devreye Alma.** İlk üçü müşteriye giden teslimatlardır; Altyapı görünür ekranı olmayan sürekli iştir; Devreye Alma bu projeye özgü tek seferlik geçiş işidir. Proje yönetimi ve koordinasyon (EK-H.17) kalem olarak değil, taban toplamın üzerine **%15** olarak modellenir. Satır seviyesindeki kırılım ve puanlama EK-J'dedir; puandan adam-güne çevrim de J.10'da (üç senaryo + PERT tahmini) yapılmıştır. Takvim çevrimi ve katmanlı mimari etkisi hâlâ açıktır (bkz. J.10.7).
 
 ---
 
@@ -885,7 +886,7 @@ Bu ayrımın kritikliği: sabit başlangıç maliyetleri küçük/orta ölçekli
 
 > **Müşteri sürümünde yer almaz.** Bu bölüm Faz 1'in iç maliyet modelidir.
 > Puanlar **göreli iş büyüklüğüdür** — gün, adam-gün veya para değildir.
-> Puanın süreye çevrilmesi ayrı bir çalışmadır ve henüz yapılmamıştır (bkz. F.6).
+> Puanın adam-güne çevrilmesi J.10'da yapılmıştır; takvime çevrim (paralellik ve bekleme süreleri) hâlâ açıktır.
 
 ---
 
@@ -1386,4 +1387,4 @@ verilir ve yanlış olur.
 
 *EK-J sonu*
 
-*Belge sonu — v2.12 ÇALIŞMA DRAFT*
+*Belge sonu — v2.13 ÇALIŞMA DRAFT*
