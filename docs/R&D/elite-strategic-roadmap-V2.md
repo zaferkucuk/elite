@@ -1,6 +1,6 @@
 # Elite Kickboxing — Stratejik Yol Haritası
 
-**Sürüm:** 2.14 — **ÇALIŞMA DRAFT (Türkçe)**
+**Sürüm:** 2.15 — **ÇALIŞMA DRAFT (Türkçe)**
 **Tarih:** 29 Temmuz 2026
 **Hazırlayan:** Soluty GmbH
 **Durum:** İç çalışma sürümü. Müşteri sürümü Almanca (formal *Sie*) olarak ayrıca hazırlanacaktır.
@@ -16,6 +16,7 @@
 > **v2.12:** J.10 eklendi — puandan süreye çevrim (senaryolar, bant çarpanları, PERT tahmini, kaldıraçlar, kalibrasyon protokolü). J.9/1 güncellendi ve J.10'a yönlendirildi.
 > **v2.13:** EK-J giriş notu ve F.6 Güncelleme bloğu düzeltildi — adam-güne çevrimin J.10'da tamamlandığı, takvim çevriminin hâlâ açık olduğu netleştirildi.
 > **v2.14:** J.11 eklendi — §11.B müzakere konularının deltaları (adam-gün karşılıkları). Online shop kırılımına gözden kaçan bir tasarım kalemi eklendi. J.9/3, F.6 ve F.3'ün ilgili notları J.11'e yönlendirildi.
+> **v2.15:** Talep listesi müzakere delta puanları işlendi (§11.B). Üye belge yönetimi gerçek bir kapsam boşluğu olarak işlendi (5 yeni kalem) — §5.1 zaten vaat ediyordu, eksik olan arkasındaki iştir. İki küçük eksik mevcut kalemlere yedirildi. Zincirleme sayı güncellemeleri EK-J genelinde yayıldı.
 >
 > *EK* bölümü yalnızca çalışma sürümüne aittir; müşteri sürümünde yer almaz.
 
@@ -591,6 +592,9 @@ Faz 1'de her iki yol da yoktur. Faz 1'de uygulamadan satın alınabilenler: **se
 | **B24** | **Mevcut site firmasından talep edilecekler** *(talep listesi hazır)*: Zamanı geldiğinde Elite kendisi talep eder. Liste: alan adı/DNS yönetim erişimi · tam URL envanteri veya site yedeği · Google Search Console erişimi ve sıralama verileri · analitik erişimi/geçmişi · fotoğraf ve video kaynak dosyaları · içerik dışa aktarımı · alan adına bağlı e-posta hesapları/yönlendirmeleri envanteri |
 | **B25** | ✅ **KAPANDI** — **Etkinlik bileti doğrulama:** Bkz. A19. |
 | **B26** | **Ders notu kime yazılır?** *(AÇIK)*: Not derse mi yazılıyor (katılan herkes görür) yoksa üyeye mi (kişiye özel geri bildirim)? İkisi farklı veri modelidir; kapsam toplantısında netleşmeli. |
+| **B27** | **"Formulare" ne kapsıyor?** *(AÇIK)*: Yalnızca imzalanacak belgeler mi, yoksa üyenin doldurduğu formlar (sağlık beyanı vb.) mı? İkincisi ayrı ve daha büyük bir iştir. |
+| **B28** | **Talep listesi madde 7 "Kommunikation"** *(AÇIK)*: Başlık iletişim diyor ama alt maddeler yalnızca antrenör profilleri ve yapay zekâ asistanı. Hangi iletişim bekleniyor? Bkz. J.11.3. |
+| **B29** | **Hangi belge türleri toplanacak?** *(AÇIK)* ⚖️: Kimlik belgesi saklanacaksa hukuki dayanak gerekir (PAuswG sınırları + DSGVO veri minimizasyonu). Motoru kurarız, ne toplanacağına Elite karar verir — ama bu karar hukukçu görüşü gerektirir. |
 
 ## C. Talep listesi izlenebilirlik
 
@@ -599,10 +603,10 @@ Faz 1'de her iki yol da yoktur. Faz 1'de uygulamadan satın alınabilenler: **se
 | 1 | Profil + kuşak | Faz 1 — 5.1 / 5.4 |
 | 2 | Antrenman planı ve ders kaydı | Faz 1 — 5.1 |
 | 3 | Katılım ve antrenman geçmişi | Faz 1 — 5.1 ✅ *(QR yok — A15; antrenör görünümü — A16)* |
-| 4 | Haberler ve push | Faz 1 — 5.1 |
-| 5 | Seminerler + bilet | Faz 1 — 5.1 / 5.7 ✅ *(e-posta bilet + QR doğrulama — A19)* |
+| 4 | Haberler ve push | Faz 1 — 5.1 ✅ *(+ ders iptalinde otomatik bildirim)* |
+| 5 | Seminerler + bilet | Faz 1 — 5.1 / 5.7 ✅ *(e-posta bilet + QR doğrulama — A19; + takvim görünümü)* |
 | 6 | Sınav sistemi ve gelişim | Faz 1 — 5.1 / 5.4 |
-| 7 | Antrenör profilleri | Faz 1 — 5.1 |
+| 7 | Antrenör profilleri | Faz 1 — 5.1 *(iletişim kanalı açık — B28, bkz. J.11.3)* |
 | 7b | *AI sohbet botu* | **Tartışmada — §11.B/3** 🔄 |
 | 8 | Çocuk ve ebeveyn alanı | Faz 1 — 5.1 ✅ |
 | 9 | Topluluk / grup sohbeti | **9a partner eşleştirme: Faz 1 ✅ · 9b açık sohbet: §11.B/1** 🔄 |
@@ -610,7 +614,7 @@ Faz 1'de her iki yol da yoktur. Faz 1'de uygulamadan satın alınabilenler: **se
 | 10b | *Basit video görüntüleme* | **Tartışmada — §11.B/2** 🔄 |
 | 10c | *Video arşivi, evde antrenman programı* | Faz 5 ✅ |
 | 11 | Kişisel antrenman + ek hizmetler | Faz 1 — 5.1 / 5.7 ✅ |
-| 12 | Dijital doküman yönetimi | Faz 1 — 5.1 / 5.5 ✅ |
+| 12 | Dijital doküman yönetimi | Faz 1 — 5.1 / 5.5 ✅ *(+ üye belge yükleme ve saklama — A.9.6, C.13, D.5.6-7)* |
 | 13 | Shop bağlantısı | **Tartışmada — §11.B/4** 🔄 *(Faz 2 önerisi: A13)* |
 | 14 | Motivasyon / başarımlar | Faz 1 — 5.1 ✅ *(+ doğum günü bildirimi)* |
 
@@ -722,6 +726,7 @@ Faz 1'de her iki yol da yoktur. Faz 1'de uygulamadan satın alınabilenler: **se
 - ⚠️ §11.1 hukuki çerçevesi, 16 yaş altı veli onayı, §5.7 GoBD, §6.5 cayma hakkı, B17 — **hukukçuya**
 - ⚠️ §11.B/1 açık grup sohbeti: kullanıcı içeriği sorumluluğu, çocuk koruma, 16 yaş altı veli onayı — **hukukçuya**
 - ⚠️ §11.B/2 video: içerikte görünen üyelerin ve çocukların görüntü hakkı (Recht am eigenen Bild) — **hukukçuya**
+- ⚠️ Kimlik belgesi ve benzeri hassas belgelerin saklanması (B29) — **hukukçuya**
 - ⚠️ PSP, video platformu, pazaryeri adları müşteri metninde **dikkatli kullanılır** (§6.6'da Amazon/eBay geçiyor — jenerik "pazaryerleri"ne çevrilebilir, onaya tabi)
 - ✅ Yapay zekâ her zaman "asistan"
 - ✅ **Gelir vaadi verilmez.** Kaldıraç gösterilir, rakam uydurulmaz.
@@ -936,24 +941,26 @@ Her iş **tek bir kovada** sayılır:
 
 | Kova | Puan | Pay |
 |---|---|---|
-| A — Mobil Uygulama | 155 | %25 |
-| B — Web Sitesi | 114 | %19 |
-| C — Yönetim Paneli | 105 | %17 |
-| D — Altyapı | 212 | %34 |
+| A — Mobil Uygulama | 158 | %25 |
+| B — Web Sitesi | 114 | %18 |
+| C — Yönetim Paneli | 113 | %18 |
+| D — Altyapı | 220 | %35 |
 | E — Devreye Alma | 29 | %5 |
-| **Taban toplam** | **615** | %100 |
-| Proje yönetimi ve koordinasyon (%15) | 92 | |
-| **GENEL TOPLAM** | **707** | |
+| **Taban toplam** | **634** | %100 |
+| Proje yönetimi ve koordinasyon (%15) | 95 | |
+| **GENEL TOPLAM** | **729** | |
+
+*(yuvarlama nedeniyle toplam %100'ü aşabilir)*
 
 **Okunması gereken üç şey:**
 
-1. **Altyapı tek başına en büyük kova (%34).** Müşterinin hiçbir ekranda görmediği iş, toplam işin üçte biri. Bu, süre savunmasının (F) sayısal karşılığıdır.
-2. **Mobil / web oranı 1.36.** Yalnızca ekran-akış işine bakıldığında (web'den bulunurluk ve geçiş çıkarılınca) 155 / 88 = 1.76. Savunulabilir bir tablo.
+1. **Altyapı tek başına en büyük kova (%35).** Müşterinin hiçbir ekranda görmediği iş, toplam işin üçte biri. Bu, süre savunmasının (F) sayısal karşılığıdır.
+2. **Mobil / web oranı 1.39.** Yalnızca ekran-akış işine bakıldığında (web'den bulunurluk ve geçiş çıkarılınca) 158 / 88 = 1.80. Savunulabilir bir tablo.
 3. **Devreye alma %5 görünüyor ama iş sonucunu belirleyen kalem bu.** Puanı küçük, riski büyük — ayrıca burada puanlanmayan saf operasyonel efor (antrenör koordinasyonu, kampanya, üye desteği) var.
 
 ---
 
-## J.3 Kova A — Mobil Uygulama (155)
+## J.3 Kova A — Mobil Uygulama (158)
 
 | # | Kalem | Açıklama | Beden | P |
 |---|---|---|---|---|
@@ -971,7 +978,7 @@ Her iş **tek bir kovada** sayılır:
 | A.2.1 | Program görünümü | Haftalık/günlük görünüm, branş ve antrenör filtreleri | M | 3 |
 | A.2.2 | Ders detayı | İçerik, antrenör, doluluk göstergesi | S | 2 |
 | A.2.3 | Derse kayıt ve iptal | Kontenjan kontrolü, bekleme listesi, iptal kuralları | L | 5 |
-| A.2.4 | Ders öncesi hatırlatma tetikleri | Tetikleme mantığı; gönderim altyapısı D.3'te | S | 2 |
+| A.2.4 | Ders öncesi hatırlatma tetikleri | Ders öncesi hatırlatma + ders iptali/değişikliğinde kayıtlı üyelere otomatik bildirim tetiği; gönderim altyapısı D.3'te | S | 2 |
 | **A.3** | **Katılım ve istatistik** | | | **10** |
 | A.3.1 | Antrenör katılımcı işaretleme | Ders sonu katılım işaretleme akışı | L | 5 |
 | A.3.2 | Üye kendi katılım bildirimi | Üyenin uygulamadan katılım bildirmesi | S | 2 |
@@ -981,7 +988,7 @@ Her iş **tek bir kovada** sayılır:
 | A.4.2 | Bildirim merkezi | Uygulama içi bildirim listesi, okundu durumu | S | 2 |
 | A.4.3 | Doğum günü ve özel gün gösterimi | Kutlama ekranı ve tetiği | S | 2 |
 | **A.5** | **Seminer ve etkinlikler** | | | **8** |
-| A.5.1 | Etkinlik listesi ve detayı | Antrenör, içerik, tarih, kontenjan | M | 3 |
+| A.5.1 | Etkinlik listesi, takvimi ve detayı | Liste ve takvim görünümü; antrenör, içerik, tarih, kontenjan | M | 3 |
 | A.5.2 | Etkinlik kayıt akışı | Kayıt, misafir katılımcı seçeneği; ödeme A.15'te | M | 3 |
 | A.5.3 | Biletlerim | Satın alınan biletlerin listesi ve gösterimi | S | 2 |
 | **A.6** | **Sınav ve kuşak** | | | **13** |
@@ -997,12 +1004,13 @@ Her iş **tek bir kovada** sayılır:
 | A.8.1 | Hizmet kataloğu | Rezerve edilebilir hizmetlerin listesi | S | 2 |
 | A.8.2 | Uygun saat ve rezervasyon akışı | Müsaitlik, seçim, onay, çakışma kontrolü | L | 5 |
 | A.8.3 | Rezervasyonlarım | Liste, iptal, değişiklik | S | 2 |
-| **A.9** | **Sözleşme ve belgeler** | | | **11** |
+| **A.9** | **Sözleşme ve belgeler** | | | **14** |
 | A.9.1 | Sözleşme görünümü | Durum, süre, bitiş tarihi | S | 2 |
 | A.9.2 | Yenileme akışı | Arayüz; iş mantığı §5.5 / D.8'de | S | 2 |
 | A.9.3 | Fesih talebi girişi | Arayüz; §312k mekaniği D.8'de | S | 2 |
 | A.9.4 | Belgelerim | Liste, imza durumu, indirme | S | 2 |
 | A.9.5 | Mobilde imza akışı | İmza alma arayüzü; imza altyapısı D.8'de | M | 3 |
+| A.9.6 | Üye belge yükleme | Fotoğraf çekme veya dosya seçme, yükleme durumu | M | 3 |
 | **A.10** | **Motivasyon** | | | **5** |
 | A.10.1 | Rozet görünümü | Kazanılan ve kilitli rozetler | S | 2 |
 | A.10.2 | Kazanım kuralları ve tetikleri | 50/100 antrenman, 1 yıl, ilk sınav, ilk seminer | M | 3 |
@@ -1096,7 +1104,7 @@ Her iş **tek bir kovada** sayılır:
 
 ---
 
-## J.5 Kova C — Yönetim Paneli (105)
+## J.5 Kova C — Yönetim Paneli (113)
 
 | # | Kalem | Açıklama | Beden | P |
 |---|---|---|---|---|
@@ -1110,7 +1118,7 @@ Her iş **tek bir kovada** sayılır:
 | C.1.2 | Uygulama içeriği yönetimi | Haber, duyuru, tanıtım içerikleri | M | 3 |
 | C.1.3 | Antrenör profili yönetimi | Web ve uygulamayı besler | M | 3 |
 | **C.2** | **Ders programı ve doluluk** | | | **10** |
-| C.2.1 | Ders ve seri tanımlama | Tekrarlayan program, istisna günler | L | 5 |
+| C.2.1 | Ders ve seri tanımlama | Tekrarlayan program, istisna günler; iptal işlemi kayıtlı üyelere otomatik bildirimi tetikler | L | 5 |
 | C.2.2 | Kontenjan ve bekleme listesi yönetimi | | M | 3 |
 | C.2.3 | Doluluk görünümü | Ders bazlı katılım ve doluluk | S | 2 |
 | **C.3** | **Kuşak ve sınav yönetimi** | | | **14** |
@@ -1144,10 +1152,13 @@ Her iş **tek bir kovada** sayılır:
 | **C.12** | **Rol ve yetki tanımlama** | | | **6** |
 | C.12.1 | Rol tanımlama ve yetki matrisi arayüzü | Roller ve yetkiler tanımlanabilir — A18 | M | 3 |
 | C.12.2 | Kullanıcıya rol atama | Mobil ve panel aynı izin modelini paylaşır | M | 3 |
+| **C.13** | **Üye belge yönetimi** | | | **8** |
+| C.13.1 | Belge türü tanımlama | Hangi belge, kimden, zorunlu mu, durum takibi | L | 5 |
+| C.13.2 | Personelin üye adına belge yüklemesi ve görüntülemesi | | M | 3 |
 
 ---
 
-## J.6 Kova D — Altyapı (212)
+## J.6 Kova D — Altyapı (220)
 
 > EK-H'nin puanlanmış hâli. Alt numaralar EK-H ile birebir eşleşir (D.1 = H.1).
 > Gerekçeler ve "neden hafife alınır" notları EK-H'de; burada yalnızca puanlama.
@@ -1172,12 +1183,14 @@ Her iş **tek bir kovada** sayılır:
 | D.4.2 | Derin bağlantı | iOS Universal Links + Android App Links, her sürümde test | M | 3 |
 | D.4.3 | Çevrimdışı davranış ve sertifika yönetimi | Provisioning profilleri | L | 5 |
 | D.4.4 | Mağaza yayın süreci | İnceleme, red-yeniden gönderim döngüsü. Ödeme ve çocuk verisi ek inceleme getirir | M | 3 |
-| **D.5** | **Veri katmanı** | | | **19** |
+| **D.5** | **Veri katmanı** | | | **27** |
 | D.5.1 | Veri modeli ve göç altyapısı | Şema evrimi | L | 5 |
 | D.5.2 | Generic arama, filtreleme, sayfalama | Bir kez inşa edilir; her ekranda yeniden sayılmaz | L | 5 |
 | D.5.3 | Denetim izi (audit log) ⚖️ | GoBD + DSGVO çift amaçlı; kuşak geçmişi dahil | L | 5 |
 | D.5.4 | Dışa aktarım | CSV/Excel | S | 2 |
 | D.5.5 | Sertifika ve belge üretim motoru | PDF üretimi | S | 2 |
+| D.5.6 | Üye belgesi depolama ve yetkiye bağlı erişim ⚖️ | Belge türü bazında yetki — A18 ile | L | 5 |
+| D.5.7 | Belge saklama süresi ve silme kuralları ⚖️ | DSGVO veri minimizasyonu | M | 3 |
 | **D.6** | **Güvenlik** | | | **13** |
 | D.6.1 | Hız sınırlama ve kaba kuvvet koruması | | M | 3 |
 | D.6.2 | Gizli anahtar yönetimi ve şifreleme | At rest / in transit | M | 3 |
@@ -1248,7 +1261,7 @@ Her iş **tek bir kovada** sayılır:
 
 EK-H.17 diğer altyapı kalemleri gibi puanlanmaz. Sebebi: planlama, müşteri toplantıları, gereksinim netleştirme ve değişiklik triyajı **kapsamın büyüklüğüyle birlikte ölçeklenir** — sabit bir kalem değildir.
 
-**Taban 615 × %15 = 92.**
+**Taban 634 × %15 = 95.**
 
 Oran, işin üç yüzeye (mobil, web, panel) yayılması, üç dilde yürümesi ve müşteri tarafında birden çok karar merciinin bulunması dikkate alınarak seçilmiştir.
 
@@ -1278,20 +1291,20 @@ Varsayımlar: günde 6 verimli saat · tek kişi · katmanlı mimari etkisi (Cor
 
 ### J.10.2 Üç senaryo
 
-**İyimser (136 adam-gün)** — Omurga ilk 2–3 ayda oturur; sonrasında hız belirgin
+**İyimser (140 adam-gün)** — Omurga ilk 2–3 ayda oturur; sonrasında hız belirgin
 artar. Üretim aracının yetenekleri proje boyunca iyileşir. Koşulludur: kapsam
 donar (§11.B'nin dört konusu Faz 1'e girmez), müşteri kararları gecikmez
 (B22, B23, B26 ve ödeme sağlayıcı/tüzel yapı konuları), mimari kararlar ilk
 seferde tutar (özellikle D.1.1 rol modeli). Üç koşul birlikte tutmazsa bu
 senaryo geçersizdir.
 
-**Normal (190 adam-gün)** — Koordinasyon Soluty'de, uygulama üretim aracıyla.
+**Normal (196 adam-gün)** — Koordinasyon Soluty'de, uygulama üretim aracıyla.
 Web sitesinin **yalnızca tasarım işi** dışarıdan uzman desteğiyle yürür; web
 sitesinin kalan yapımı Soluty'dedir. Dış tasarım desteğinin efor tablosuna net
 etkisi ihmal edilebilir (~8 saat) ancak **takvim bağımlılığı yaratır**: tasarım
 gecikirse B.2 ve B.6 bekler.
 
-**Kötümser (300 adam-gün)** — Katmanlı mimari beklenenden fazla zorlar, mimari
+**Kötümser (310 adam-gün)** — Katmanlı mimari beklenenden fazla zorlar, mimari
 kararlar tekrar ele alınır, öğrenme eğrisi uzar. **Hiçbir düzeltici kol
 çekilmemiş** hâldir — kollar J.10.5'te ayrıca tanımlıdır ve bilinçli olarak bu
 senaryonun dışında tutulmuştur.
@@ -1305,8 +1318,8 @@ senaryonun dışında tutulmuştur.
 | M | 3,5 | 5 | 8 |
 | L | 8 | 11 | 17 |
 | XL | 16 | 22 | 38 |
-| **Toplam saat** | **814** | **1.138** | **1.801** |
-| **Adam-gün** | **136** | **190** | **300** |
+| **Toplam saat** | **841** | **1.175** | **1.859** |
+| **Adam-gün** | **140** | **196** | **310** |
 
 Puan başına maliyet hiçbir senaryoda doğrusal değildir; karmaşıklık cezası
 kötümser dünyada büyür (XS→XL oranı normalde 2,75 · kötümserde 3,2). Kötümser
@@ -1319,19 +1332,19 @@ taşmaz, taşan karmaşık kalemlerdir.
 
 | | Adam-gün |
 |---|---|
-| Beklenen değer (E) | **199** |
-| Standart sapma (SD) | 27 |
-| E + 1SD | 227 |
-| **E + 2SD** | **254** |
+| Beklenen değer (E) | **206** |
+| Standart sapma (SD) | 28 |
+| E + 1SD | 234 |
+| **E + 2SD** | **262** |
 
 **İki sayının iki ayrı rolü vardır:**
 
 | Sayı | Kullanım |
 |---|---|
-| **199 adam-gün** | İç planlama: kaynak, sıra, kilometre taşları |
-| **254 adam-gün** | Taahhüt tabanı: müşteriye verilecek tarih buradan türetilir |
+| **206 adam-gün** | İç planlama: kaynak, sıra, kilometre taşları |
+| **262 adam-gün** | Taahhüt tabanı: müşteriye verilecek tarih buradan türetilir |
 
-Aradaki 55 günlük fark keyfi değildir; projenin kendi belirsizlik bandından
+Aradaki 56 günlük fark keyfi değildir; projenin kendi belirsizlik bandından
 hesaplanmıştır. Proje kuralı gereği söylenen tarihe eklenen +2 hafta bunun
 **üstüne** biner ve farklı bir riski karşılar: öngörülemeyenleri.
 
@@ -1377,7 +1390,7 @@ verilir ve yanlış olur.
 ### J.10.7 Henüz dahil olmayanlar
 
 1. **Katmanlı mimari (Corex) etkisi** — tahminen %30, yalnızca standart inşa ve
-   yargı yoğun sınıflara uygulanır (435 + 106 = 541 puan); tasarım, bulunurluk
+   yargı yoğun sınıflara uygulanır (454 + 106 = 560 puan); tasarım, bulunurluk
    ve devreye alma bundan etkilenmez.
 2. **Takvim çevrimi** — paralellik sınırları ve bekleme süreleri (ödeme
    sağlayıcı hesap onayı ×2 tüzel yapı, uygulama mağazası incelemesi, e-posta
@@ -1401,12 +1414,12 @@ Adam-gün değerleri J.10.3'teki bant çarpanlarıyla, PERT beklenen değeri (J.
 | Konu | Puan | +Adam-gün | Faz 1 tabanına etkisi |
 |---|---|---|---|
 | **T3** Basit yapay zekâ asistanı | 31 | +11 | +%5 |
-| **T2** Basit video | 34 | +14 | +%6 |
+| **T2** Basit video | 34 | +14 | +%5 |
 | **T1** Açık grup sohbeti | 44 | +18 | +%7 |
-| **T4** Online shop (içeride) | 128 | +55 | +%21 |
-| **Dördü birden** | **237** | **+98** | **+%39** |
+| **T4** Online shop (içeride) | 128 | +55 | +%20 |
+| **Dördü birden** | **237** | **+98** | **+%37** |
 
-Dördü de kapsama girerse: taban 615 → **852 puan**, iç planlama 199 → **~297 adam-gün**.
+Dördü de kapsama girerse: taban 634 → **871 puan**, iç planlama 206 → **~304 adam-gün**.
 
 > **Uyarı — bu satırlar toplanabilir değildir.** Örtüşmeler J.11.8'de.
 
@@ -1434,6 +1447,18 @@ Kapsam varsayımı: §11.B/1'de sıralanan koruma koşulları **dahildir.** Onla
 | | **Toplam** | | | **44** |
 
 **Kapsam dışı:** Görsel ve medya paylaşımı. İstenirse +3 puan.
+
+> **Görüşülecek — antrenörle doğrudan iletişim kanalı.** Üyenin kendi
+> antrenörüyle doğrudan iletişim kurabileceği bir kısayol/kanal talep
+> listesinin 7. maddesindeki "Kommunikation" başlığıyla örtüşür. Teknik
+> boyutu küçüktür (kanal altyapısı zaten kurulu — istenirse +3 puan), ancak
+> **T1-D.3 ile doğrudan çelişir:** o kalem yetişkin–çocuk arasında birebir
+> özel mesajlaşma bulunmamasını şart koşuyor.
+> Tartışılacak seçenekler: (a) reşit üyelerle doğrudan, çocuklarda kanal
+> veliye açılır · (b) antrenör–çocuk yazışması veliye görünür ve arşivlenir ·
+> (c) kanal yapılandırılmış konu başlıklarıyla sınırlı, serbest metin değil.
+> Karar toplantıda verilecektir. Seçim yapılmadan taahhüt verilmemelidir —
+> çocuk koruma yükümlülüğü sözleşmeyle tümüyle devredilemez.
 
 > **Puanlanmayan yük — müşteri tarafında.** Kalıcı moderasyon sorumlusu gerekir (§11.B/1). Bu Soluty'nin iş kalemi değildir ama kararın gerçek maliyetinin parçasıdır.
 
@@ -1548,4 +1573,4 @@ Müşteriye söylenecek olan bir süre değil, bir sıradır: **önce arayüzün
 
 *EK-J sonu*
 
-*Belge sonu — v2.14 ÇALIŞMA DRAFT*
+*Belge sonu — v2.15 ÇALIŞMA DRAFT*
