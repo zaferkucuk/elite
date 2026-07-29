@@ -1,6 +1,6 @@
 # Elite Kickboxing — Stratejik Yol Haritası
 
-**Sürüm:** 2.13 — **ÇALIŞMA DRAFT (Türkçe)**
+**Sürüm:** 2.14 — **ÇALIŞMA DRAFT (Türkçe)**
 **Tarih:** 29 Temmuz 2026
 **Hazırlayan:** Soluty GmbH
 **Durum:** İç çalışma sürümü. Müşteri sürümü Almanca (formal *Sie*) olarak ayrıca hazırlanacaktır.
@@ -15,6 +15,7 @@
 > **v2.11:** EK-J eklendi — Faz 1'in satır seviyesinde iş kırılımı ve efor modeli (beş kova). EK-I'nın "henüz açık" notu kapatıldı, EK-J'ye yönlendirildi. F.6'ya EK-J referansı eklendi.
 > **v2.12:** J.10 eklendi — puandan süreye çevrim (senaryolar, bant çarpanları, PERT tahmini, kaldıraçlar, kalibrasyon protokolü). J.9/1 güncellendi ve J.10'a yönlendirildi.
 > **v2.13:** EK-J giriş notu ve F.6 Güncelleme bloğu düzeltildi — adam-güne çevrimin J.10'da tamamlandığı, takvim çevriminin hâlâ açık olduğu netleştirildi.
+> **v2.14:** J.11 eklendi — §11.B müzakere konularının deltaları (adam-gün karşılıkları). Online shop kırılımına gözden kaçan bir tasarım kalemi eklendi. J.9/3, F.6 ve F.3'ün ilgili notları J.11'e yönlendirildi.
 >
 > *EK* bölümü yalnızca çalışma sürümüne aittir; müşteri sürümünde yer almaz.
 
@@ -669,7 +670,7 @@ Faz 1'de her iki yol da yoktur. Faz 1'de uygulamadan satın alınabilenler: **se
 | **Tanımlanabilir rol ve yetki modeli** | 🔴 Küçük-orta |
 | **Etkinlik bileti QR doğrulama** | 🔴 Küçük |
 
-> ⚠️ **v2.7 notu:** §11.B'deki dört konu (açık grup sohbeti, basit video, basit yapay zekâ asistanı, online shop) bu tabloda **yer almıyor** — hiçbiri henüz Faz 1 kapsamında değil. Faz 1'e alınmalarına karar verilirse her biri ayrı bir efor kalemi olarak eklenir.
+> ⚠️ **v2.7 notu:** §11.B'deki dört konu (açık grup sohbeti, basit video, basit yapay zekâ asistanı, online shop) bu tabloda **yer almıyor** — hiçbiri henüz Faz 1 kapsamında değil. Her biri için ayrı efor kalemleri hesaplanmıştır — bkz. J.11.
 
 > ⚠️ **A12'nin dürüst muhasebesi:** Entegrasyon katmanının Faz 1'den çıkması **iş yükünü bir miktar azaltır.** Yerine geçen manuel süreç tasarımı daha küçüktür.
 > **Ama takas net ve savunulabilir:** iş yükünden az miktarda düştük, buna karşılık **teslim riskinin en büyük kaynağını ortadan kaldırdık.** Müşteriye bu şekilde anlatılır — "daha az iş yaptık" değil, **"riski sattık, hızı aldık."**
@@ -705,7 +706,7 @@ Faz 1'de her iki yol da yoktur. Faz 1'de uygulamadan satın alınabilenler: **se
 ⚠️ **Henüz yapılmadı.** F.2 ve F.3'e bakılacak.
 **Beklenti: 8 ay civarı. Kısaltma zor ama A12 sonrası biraz daha savunulabilir hale geldi — çünkü belirsizlik azaldı.**
 
-> **Tahminleme iki seviyeli yapılacaktır:** (1) net kapsam için temel tahmin, (2) §11.B'deki her tartışma konusu için ayrı delta. Amaç, kapsam toplantısında bir konu Faz 1'e alınmak istendiğinde süre etkisinin anında söylenebilmesidir. **Bu çalışma henüz yapılmadı.**
+> **Tahminleme iki seviyeli yapılmıştır:** (1) net kapsam için temel tahmin — EK-J ve J.10'da, (2) §11.B'deki her tartışma konusu için ayrı delta — J.11'de. Amaç, kapsam toplantısında bir konu Faz 1'e alınmak istendiğinde süre etkisinin anında söylenebilmesidir.
 
 > **Güncelleme:** Satır seviyesinde iş kırılımı çalışması başladı. Tahmin modeli beş kovaya dayanıyor — **Yönetim Paneli, Mobil Uygulama, Web Sitesi, Altyapı, Devreye Alma.** İlk üçü müşteriye giden teslimatlardır; Altyapı görünür ekranı olmayan sürekli iştir; Devreye Alma bu projeye özgü tek seferlik geçiş işidir. Proje yönetimi ve koordinasyon (EK-H.17) kalem olarak değil, taban toplamın üzerine **%15** olarak modellenir. Satır seviyesindeki kırılım ve puanlama EK-J'dedir; puandan adam-güne çevrim de J.10'da (üç senaryo + PERT tahmini) yapılmıştır. Takvim çevrimi ve katmanlı mimari etkisi hâlâ açıktır (bkz. J.10.7).
 
@@ -1257,7 +1258,7 @@ Oran, işin üç yüzeye (mobil, web, panel) yayılması, üç dilde yürümesi 
 
 1. **Puan ≠ süre.** Puanın adam-güne çevrilmesi artık J.10'da yapıldı (üç senaryo + PERT tahmini). Ama bu hâlâ bir takvim değildir — paralellik sınırları ve bekleme süreleri henüz hesaba katılmadı (bkz. J.10.7).
 2. **Katmanlı mimari etkisi tabloda yok.** Faz 1'in Corex katmanlı mimarisine uygun geliştirilmesi kararı (bkz. `internal/decisions.md`, 2026-07-27) geliştirme süresini tahminen %30 artırıyor. Bu, puana değil **puan→süre katsayısına** yansıtılacaktır.
-3. **§11.B'deki dört konu bu tabloda yok.** Açık grup sohbeti, basit video, basit yapay zekâ asistanı ve online shop — hiçbiri Faz 1 kapsamında değil. Faz 1'e alınmalarına karar verilirse her biri ayrı delta olarak hesaplanır.
+3. **§11.B'deki dört konu bu tabloda yok.** Açık grup sohbeti, basit video, basit yapay zekâ asistanı ve online shop — hiçbiri Faz 1 kapsamında değil ve J.2–J.10'daki hiçbir sayıya dahil değildir. Her biri için ayrı delta hesaplanmıştır — bkz. J.11.
 4. **Açık sorular puanı etkileyebilir.** B5 (veli-çocuk ilişkisi mevcut sistemde var mı → E.3), B22 (görsel varlıklar → D.15.4), B26 (ders notu görünürlük modeli → A.13.3).
 5. **Web'in bulunurluk kalemleri (B.7, B.8) inşa işi değil, optimizasyon disiplinidir.** Aynı kovada duruyorlar ama doğaları farklı; süreye çevrilirken ayrı ele alınmalıdır.
 
@@ -1385,6 +1386,166 @@ verilir ve yanlış olur.
 
 ---
 
+## J.11 Müzakere konularının deltaları (§11.B)
+
+### J.11.1 Amaç
+
+§11.B'deki dört konu Faz 1 kapsamında **değildir** ve J.2–J.10'daki hiçbir sayıya dahil değildir. Kapsam toplantısında biri Faz 1'e alınmak istenirse süre etkisinin anında söylenebilmesi için her biri ayrı delta olarak kırılmıştır.
+
+Kırılım, kesin kapsamla **aynı ölçek ve aynı beş kova** merceğiyle yapılmıştır (J.1). Kalem numaraları `T<konu>-<kova>.<sıra>` biçimindedir; kova harfleri J.1 ile aynıdır (A mobil, B web, C panel, D altyapı).
+
+Adam-gün değerleri J.10.3'teki bant çarpanlarıyla, PERT beklenen değeri (J.10.4) üzerinden hesaplanmış ve proje yönetimi %15 eklenmiştir.
+
+### J.11.2 Özet
+
+| Konu | Puan | +Adam-gün | Faz 1 tabanına etkisi |
+|---|---|---|---|
+| **T3** Basit yapay zekâ asistanı | 31 | +11 | +%5 |
+| **T2** Basit video | 34 | +14 | +%6 |
+| **T1** Açık grup sohbeti | 44 | +18 | +%7 |
+| **T4** Online shop (içeride) | 128 | +55 | +%21 |
+| **Dördü birden** | **237** | **+98** | **+%39** |
+
+Dördü de kapsama girerse: taban 615 → **852 puan**, iç planlama 199 → **~297 adam-gün**.
+
+> **Uyarı — bu satırlar toplanabilir değildir.** Örtüşmeler J.11.8'de.
+
+---
+
+### J.11.3 T1 — Açık grup sohbeti (44 puan · +18 adam-gün)
+
+Kapsam varsayımı: §11.B/1'de sıralanan koruma koşulları **dahildir.** Onlarsız puanlamak sahte bir ucuzluk üretir; koşulsuz açık sohbet zaten önerilmemektedir.
+
+| # | Kalem | Açıklama | Beden | P |
+|---|---|---|---|---|
+| T1-A.1 | Kanal listesi ve kanal görünümü | Yaşa göre ayrılmış kanallar, katılım durumu | M | 3 |
+| T1-A.2 | Mesaj akışı | Gönderme, alma, canlı güncelleme; altyapı T1-D.1'de | L | 5 |
+| T1-A.3 | Bildir / engelle / şikayet akışı | Üyenin kullandığı koruma araçları | M | 3 |
+| T1-A.4 | Okunmamış göstergesi | Bildirim bağlantısı; gönderim altyapısı D.3'te | XS | 1 |
+| T1-C.1 | Kanal tanımlama ve yaş kuralları | Hangi yaş grubu hangi kanalda | M | 3 |
+| T1-C.2 | Moderasyon kuyruğu | Şikayet, sustur, sil, engelle | L | 5 |
+| T1-C.3 | Sohbet arşivi ve arama | Kayıt görüntüleme | S | 2 |
+| T1-D.1 | Gerçek zamanlı mesajlaşma altyapısı | Bağlantı yönetimi, teslim garantisi, sıralama, çevrimdışı kuyruk | XL | 8 |
+| T1-D.2 | Mesaj saklama ve arşiv ⚖️ | Denetim izi D.5.3'ü kullanır | M | 3 |
+| T1-D.3 | Yaş bazlı erişim + yetişkin–çocuk 1:1 engeli | §11.B/1'in çekirdek koruma kuralı | L | 5 |
+| T1-D.4 | İçerik filtresi | Kelime listesi, otomatik işaretleme | M | 3 |
+| T1-D.5 | DSA mekanizmasının genişletilmesi ⚖️ | D.8.7 mevcut; kullanıcı içeriğine genişler | S | 2 |
+| T1-D.6 | Veli onayının sohbete genişletilmesi ⚖️ | D.8.3 mevcut; bir izin daha | XS | 1 |
+| | **Toplam** | | | **44** |
+
+**Kapsam dışı:** Görsel ve medya paylaşımı. İstenirse +3 puan.
+
+> **Puanlanmayan yük — müşteri tarafında.** Kalıcı moderasyon sorumlusu gerekir (§11.B/1). Bu Soluty'nin iş kalemi değildir ama kararın gerçek maliyetinin parçasıdır.
+
+---
+
+### J.11.4 T2 — Basit video görüntüleme ve depolama (34 puan · +14 adam-gün)
+
+Kapsam varsayımı: Panelden yükleme, depolama, uygulamada oynatma. Merkezî arşiv, etiketleme, arama ve izlenme analitiği **dahil değildir** — bunlar Faz 5'tir.
+
+| # | Kalem | Açıklama | Beden | P |
+|---|---|---|---|---|
+| T2-A.1 | Video oynatıcı ekranı | Tekniğe bağlı oynatma | M | 3 |
+| T2-A.2 | Oynatma durumları | Yükleniyor, hata, ağ değişimi | S | 2 |
+| T2-C.1 | Video yükleme arayüzü | İlerleme, iptal, yeniden deneme | L | 5 |
+| T2-C.2 | Tekniğe bağlama | C.4.1 mevcut; bağlantı alanı eklenir | S | 2 |
+| T2-C.3 | Video listesi, değiştirme, silme | | S | 2 |
+| T2-D.1 | Depolama ve dağıtım altyapısı | | L | 5 |
+| T2-D.2 | Kodlama ve işleme hattı | Ham video doğrudan oynatılamaz | XL | 8 |
+| T2-D.3 | Erişim kontrolü | Yetkili üye; bağlantı sızıntısı engeli | L | 5 |
+| T2-D.4 | Depolama ve trafik kotası izleme | Süregelen gider uyarısı | S | 2 |
+| | **Toplam** | | | **34** |
+
+> **"Basit"in en pahalı yeri T2-D.2'dir.** Farklı cihazlardan yüklenen ham video, işlenmeden oynatılamaz. Yalnızca hazır ve uyumlu dosya kabul edilirse bu kalem düşer → **26 puan / ~11 adam-gün.** Bu durumda yükleme sorumluluğu Elite'e geçer.
+
+> **Puanlanmayan yük — müşteri tarafında.** Depolama ve trafik sürekli bir işletme gideridir. Ayrıca içerikte görünen üyelerin ve çocukların görüntü hakkı hukukçuya sorulmalıdır (EK-G).
+
+---
+
+### J.11.5 T3 — Basit yapay zekâ asistanı (31 puan · +11 adam-gün)
+
+Kapsam varsayımı: Sık sorulan sorulara cevap veren, **üye verisine bağlanmayan** asistan; yalnızca mobil uygulamada. Web sitesindeki destek asistanı dahil değildir (§5.2 kapsam sınırı). Sistemin verisiyle konuşan kapsamlı asistanlar Faz 3'tür.
+
+| # | Kalem | Açıklama | Beden | P |
+|---|---|---|---|---|
+| T3-A.1 | Sohbet arayüzü | Mesaj listesi, giriş alanı, yanıt göstergesi | M | 3 |
+| T3-A.2 | Kaynak gösterimi | Cevabın dayandığı bilgi | S | 2 |
+| T3-A.3 | İnsana yönlendirme | Cevaplayamadığında sınır durumu | S | 2 |
+| T3-C.1 | Bilgi tabanı yönetimi | Soru-cevap girme, düzenleme, üç dil | L | 5 |
+| T3-C.2 | Konuşma kayıtları | Cevaplanamayan soruların tespiti | M | 3 |
+| T3-D.1 | Asistan servisi entegrasyonu | İstem tasarımı dahil | L | 5 |
+| T3-D.2 | Bilgi tabanı erişim katmanı | | M | 3 |
+| T3-D.3 | Güvenlik sınırları | Kapsam dışı soru, veri sızıntısı, kötüye kullanım | L | 5 |
+| T3-D.4 | Kullanım ölçümü ve maliyet tavanı | | S | 2 |
+| T3-D.5 | Yapay zekâ bildirimi ⚖️ | Karşıdakinin asistanla konuştuğunun bildirilmesi | XS | 1 |
+| | **Toplam** | | | **31** |
+
+> **Puanlanmayan yük — müşteri tarafında.** Asistan sürekli bir kullanım gideri doğurur. Ayrıca bilgi tabanının güncel tutulması Elite'in işidir; güncellenmeyen bir asistan yanlış bilgi verir.
+
+---
+
+### J.11.6 T4 — Online shop, platformun içinde (128 puan · +55 adam-gün)
+
+Kapsam varsayımı: §6'da tanımlanan Faz 2 önerisinin Faz 1'e alınması. §5.7 ödeme rayını zaten kurduğu için bu **§6'nın tamamı değil, üzerine binen kısımdır.**
+
+| # | Kalem | Açıklama | Beden | P |
+|---|---|---|---|---|
+| T4-A.1 | Katalog | Kategori, liste, filtre, arama | L | 5 |
+| T4-A.2 | Ürün detayı | Varyant seçimi, görsel galerisi, stok durumu | L | 5 |
+| T4-A.3 | Sepet | Çok kalemli, varyantlı, miktar, stok kontrolü | L | 5 |
+| T4-A.4 | Sipariş akışı | Teslim yöntemi (salondan / kargo), adres | L | 5 |
+| T4-A.5 | Siparişlerim | Liste, durum takibi | M | 3 |
+| T4-A.6 | İade talebi akışı | Ürün iadesi; para iadesi §5.7'de | M | 3 |
+| T4-A.7 | Ön sipariş katılım akışı | Kulüp tişörtü, takım forması | M | 3 |
+| T4-B.1 | Katalog ve ürün detayı (web) | | L | 5 |
+| T4-B.2 | Sepet ve sipariş akışı (web) | | L | 5 |
+| T4-B.3 | Siparişlerim (web) | | S | 2 |
+| T4-B.4 | Ürün sayfalarının arama görünürlüğü | Yapısal veri: ürün, teklif, stok durumu | M | 3 |
+| T4-B.5 | Online shop görsel tasarımı | Katalog, ürün detayı, sepet ve sipariş sayfalarının mevcut tasarım sistemine entegre görsel tasarımı | L | 5 |
+| T4-C.1 | Ürün tanımlama | Kategori, açıklama, üç dil | L | 5 |
+| T4-C.2 | Varyant yönetimi | Beden/renk matrisi, varyant bazlı fiyat ve stok | XL | 8 |
+| T4-C.3 | Ürün görseli yönetimi | | M | 3 |
+| T4-C.4 | Stok takibi | Düşük stok uyarısı, stok düzeltme | L | 5 |
+| T4-C.5 | Sipariş yönetimi | Durum akışı, hazırlama listesi, teslim işaretleme | XL | 8 |
+| T4-C.6 | Ürün iadesi işleme | Fiziksel iade ve stoğun geri alınması | L | 5 |
+| T4-C.7 | Ön sipariş kampanya yönetimi | Toplama, eşik, üretim tetiği | L | 5 |
+| T4-C.8 | Üyeye özel fiyat kuralları | | M | 3 |
+| T4-C.9 | Ürün satış raporlaması | İki tüzel yapı ayrımıyla | M | 3 |
+| T4-D.1 | Ürün, varyant ve stok veri modeli | | L | 5 |
+| T4-D.2 | Stok eşzamanlılığı ve rezervasyon | Aynı anda gelen iki sipariş | L | 5 |
+| T4-D.3 | Sipariş durum makinesi | | L | 5 |
+| T4-D.4 | Cayma hakkı ⚖️ | 14 gün, iade akışı | M | 3 |
+| T4-D.5 | Fiyat gösterimi mevzuatı ⚖️ | Birim fiyat, KDV, kargo gösterimi | M | 3 |
+| T4-D.6 | Gelirin ikinci tüzel yapıya yönlendirilmesi ⚖️ | §5.7'de mimari hazır; burada fiilen devreye girer | L | 5 |
+| T4-D.7 | Ürün için ayrı fatura numara aralığı ⚖️ | GoBD | M | 3 |
+| T4-D.8 | Kargo entegrasyonu ve gönderi takibi | | L | 5 |
+| | **Toplam** | | | **128** |
+
+> **Ön koşul — B19 ve B20.** Kaç ürün kalemi satılacağı (20 mi, 200 mü) ve ürün görselleri/metinlerinin kimde olduğu açıktır. İkincisi puanı değil **lansmanı** etkiler: boş katalog yayına alınamaz.
+
+---
+
+### J.11.7 T4a — Harici tedarikçiyle bağlantı: puanlanmamıştır
+
+§11.B/4'ün ikinci yolu, harici tedarikçinin sistemiyle bağlantı kurmaktır. Bu **bilinçli olarak puanlanmamıştır.**
+
+1. **Ön koşul görülmemiştir.** Bağlanılacak sistemin çalışır ve belgelenmiş bir teknik arayüzü olduğu doğrulanmadan verilecek her sayı uydurma olur.
+2. **Daha önemlisi: A12'yi bozar.** Faz 1'in temel ilkesi hiçbir dış sisteme bağlı olmamasıdır (§5.6). Bu bağlantı Faz 1'e alınırsa teslim tarihi bir başkasının takvimine bağlanır — ve bu, iş yüküyle ölçülemeyecek bir risktir.
+
+Müşteriye söylenecek olan bir süre değil, bir sıradır: **önce arayüzün varlığı görülür, sonra konuşulur.**
+
+---
+
+### J.11.8 Toplantıda dikkat edilecek üç nokta
+
+**1 — Deltalar toplanabilir değildir.** Birden fazla konu seçilirse üst üste binen kalemler vardır: T2 ve T4 medya ve depolama altyapısını paylaşır; T1 ve T3 içerik güvenliği tarafında kısmen örtüşür. Birlikte seçilirlerse toplam, satırların toplamından bir miktar düşüktür. J.11.2'deki "dördü birden" satırı bu nedenle üst sınırdır.
+
+**2 — Adam-gün etkisi takvim etkisi değildir.** T4 bağımsız bir dilimdir; ayrı yürütülebilir ve K2 kaldıracının (J.10.5) doğal hedefidir. T1 ise omurgaya gömülüdür — kimlik, yetki ve bildirim katmanlarına dokunur, dolayısıyla takvimi adam-gün oranından fazla uzatır. Bu ayrım takvim çevriminde ele alınacaktır.
+
+**3 — Üç konunun süregelen maliyeti müşteri tarafındadır.** T1 kalıcı moderasyon sorumlusu, T2 depolama ve trafik gideri, T3 kullanım gideri doğurur. "Bir kez yaptıralım" çerçevesiyle bakılırsa yanlış karar verilir; bu yükler toplantıda açıkça konuşulmalıdır.
+
+---
+
 *EK-J sonu*
 
-*Belge sonu — v2.13 ÇALIŞMA DRAFT*
+*Belge sonu — v2.14 ÇALIŞMA DRAFT*
